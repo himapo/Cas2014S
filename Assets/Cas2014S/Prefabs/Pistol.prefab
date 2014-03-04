@@ -78,7 +78,7 @@ GameObject:
   - 82: {fileID: 8200000}
   - 114: {fileID: 11400000}
   m_Layer: 0
-  m_Name: Gun
+  m_Name: Pistol
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -682,7 +682,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 100008}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e19e6f1c83c9894e89e3e0249cab719, type: 3}
+  m_Script: {fileID: 11500000, guid: 04ca57b76262c1542b39d0ff99c8b809, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 100000, guid: a80b5aabdd8d0204e9fd1cd4d22556c7, type: 2}
