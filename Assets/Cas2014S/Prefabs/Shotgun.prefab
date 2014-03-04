@@ -636,8 +636,8 @@ Light:
   m_Type: 0
   m_Color: {r: 1, g: .932758629, b: .713235259, a: 1}
   m_Intensity: 0
-  m_Range: 10
-  m_SpotAngle: 135
+  m_Range: 20
+  m_SpotAngle: 90
   m_CookieSize: 10
   m_Shadows:
     m_Type: 0
@@ -686,7 +686,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 100000, guid: a80b5aabdd8d0204e9fd1cd4d22556c7, type: 2}
-  bulletImpulse: 200
+  bulletImpulse: 130
   raycastBullet: 1
   muzzle: {fileID: 400016}
   minStandRecoil: 1

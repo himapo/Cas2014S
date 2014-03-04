@@ -32,7 +32,7 @@ public class EnemyGun : GunBase {
 
 	void Fire()
 	{
-		Debug.Log("Enemy shoot");
+		//Debug.Log("Enemy shoot");
 
 		var bulletDirection = gameObject.transform.forward;
 
