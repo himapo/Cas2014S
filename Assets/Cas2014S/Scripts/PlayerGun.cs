@@ -3,12 +3,9 @@ using System.Collections;
 
 public class PlayerGun : GunBase
 {
-	public float minStandRecoil = 1.0f;
-	public float maxStandRecoil = 2.0f;
-	public float minRunRecoil = 2.0f;
-	public float maxRunRecoil = 4.0f;
-	public float minCrouchRecoil = 0.5f;
-	public float maxCrouchRecoil = 1.0f;
+	public float standRecoil = 2.0f;
+	public float runRecoil = 4.0f;
+	public float crouchRecoil = 1.0f;
 	
 	// 次弾発射までの間隔
 	public float intervalTime = 0.1f;
@@ -24,7 +21,7 @@ public class PlayerGun : GunBase
 	public int magazineSize = 10;
 	
 	public int magazineRemaining{ get; protected set; }
-	
+
 	// Use this for initialization
 	void Start()
 	{
@@ -79,10 +76,58 @@ public class PlayerGun : GunBase
 		}
 
 		var targetPosition = GetCameraTarget();
+
+		targetPosition = ApplyScatter(targetPosition, GetRecoil());
 		
 		Fire (targetPosition);
 		
 		intervalRemaining = intervalTime;
+	}
+
+	protected Vector3 ApplyScatter(Vector3 targetPosition, float scatterAngle)
+	{
+		var centerDirection = targetPosition - muzzle.transform.position;
+		var length = centerDirection.magnitude;
+		centerDirection.Normalize();
+		
+		var axis = Vector3.Cross(centerDirection, Vector3.up);
+		axis.Normalize();
+
+		// 銃口を原点とみなす
+		var targetPoint = centerDirection;
+		
+		// 中心軸から5度ずらす
+		targetPoint = Quaternion.AngleAxis(Random.value * scatterAngle, axis) * targetPoint;
+		
+		// 中心軸を中心に円状に分布
+		targetPoint = Quaternion.AngleAxis(Random.value * 360.0f, centerDirection) * targetPoint;
+
+		return targetPoint * length + muzzle.transform.position;
+	}
+
+	public float GetRecoil()
+	{
+		var playerController = GetPlayerController();
+		var run = playerController.run;
+		var crouch = playerController.crouch;
+
+		if(run > 0.0f)
+		{
+			return Mathf.Lerp(standRecoil, runRecoil, run);
+		}
+
+		if(crouch > 0.0f)
+		{
+			return Mathf.Lerp(standRecoil, crouchRecoil, crouch);
+		}
+
+		return standRecoil;
+	}
+
+	PlayerController GetPlayerController()
+	{
+		var player = GameObject.FindWithTag("Player");
+		return player.GetComponent<PlayerController>();
 	}
 	
 	public void Reload()

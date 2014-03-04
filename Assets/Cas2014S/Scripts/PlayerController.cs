@@ -17,7 +17,11 @@ public class PlayerController : MonoBehaviour {
 
 	public float crouchSpeed = 4.0f;
 
-	float crouch;
+	[HideInInspector]
+	public float crouch { get; set; }	// 0.0 - 1.0
+
+	[HideInInspector]
+	public float run { get; set; }	// 0.0 - 1.0
 
 	// Use this for initialization
 	void Start () {
@@ -72,5 +76,8 @@ public class PlayerController : MonoBehaviour {
 			0.0f);
 
         characterController.Move(speed * Time.deltaTime);
+
+		var horizontalSpeed = new Vector2(sideSpeed, forwardSpeed);
+		run = horizontalSpeed.magnitude / movementSpeed;
 	}
 }

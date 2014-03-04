@@ -9,24 +9,11 @@ public class Shotgun : PlayerGun {
 
 	protected override void Fire(Vector3 targetPosition)
 	{
-		var centerDirection = targetPosition - muzzle.transform.position;;
-		centerDirection.Normalize();
-
-		var axis = Vector3.Cross(centerDirection, Vector3.up);
-		axis.Normalize();
-
 		for(var i=0; i<bulletNumber; ++i)
 		{
-			// 銃口を原点とみなす
-			var targetPoint = centerDirection;
+			var scattered = ApplyScatter(targetPosition, scatterAngle);
 
-			// 中心軸から5度ずらす
-			targetPoint = Quaternion.AngleAxis(Random.value * scatterAngle, axis) * targetPoint;
-
-			// 中心軸を中心に円状に分布
-			targetPoint = Quaternion.AngleAxis(Random.value * 360.0f, centerDirection) * targetPoint;
-
-			var bulletDirection = targetPoint;
+			var bulletDirection = scattered - muzzle.transform.position;
 			bulletDirection.Normalize();
 
 			SpawnBullet(bulletDirection);
