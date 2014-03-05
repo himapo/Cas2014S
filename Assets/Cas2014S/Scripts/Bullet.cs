@@ -5,7 +5,7 @@ public class Bullet : MonoBehaviour {
 
 	public float bulletDamage = 3.0f;
 
-    public float lifeSpan = 3.0f;
+    public float lifeSpan = 2.0f;
 
 	public bool raycastBullet;
 

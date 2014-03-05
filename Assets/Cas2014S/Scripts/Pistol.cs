@@ -8,7 +8,7 @@ public class Pistol : PlayerGun {
 		var bulletDirection = targetPosition - muzzle.transform.position;
 		bulletDirection.Normalize();
 		
-		var bullet = SpawnBullet(bulletDirection);
+		SpawnBullet(bulletDirection);
 		
 		--magazineRemaining;
 		

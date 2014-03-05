@@ -28,6 +28,8 @@ public class PlayerGun : GunBase
 		intervalRemaining = 0.0f;
 		reloadDuration = 1.0f;
 		magazineRemaining = magazineSize;
+
+		AddGunSkill("GS_DamageUp");
 	}
 	
 	// Update is called once per frame

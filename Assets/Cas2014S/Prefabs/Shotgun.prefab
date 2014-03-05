@@ -686,15 +686,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 100000, guid: a80b5aabdd8d0204e9fd1cd4d22556c7, type: 2}
-  bulletImpulse: 130
+  bulletImpulse: 300
   raycastBullet: 1
   muzzle: {fileID: 400016}
-  minStandRecoil: 1
-  maxStandRecoil: 2
-  minRunRecoil: 2
-  maxRunRecoil: 4
-  minCrouchRecoil: .5
-  maxCrouchRecoil: 1
+  maxSkillSlot: 5
+  bulletDamage: 3
+  standRecoil: 2
+  runRecoil: 4
+  crouchRecoil: 1
   intervalTime: 1
   reloadSpeed: .5
   magazineSize: 4

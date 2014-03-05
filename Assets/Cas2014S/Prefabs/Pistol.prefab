@@ -689,12 +689,11 @@ MonoBehaviour:
   bulletImpulse: 300
   raycastBullet: 1
   muzzle: {fileID: 400016}
-  minStandRecoil: 1
-  maxStandRecoil: 2
-  minRunRecoil: 2
-  maxRunRecoil: 4
-  minCrouchRecoil: .5
-  maxCrouchRecoil: 1
+  maxSkillSlot: 5
+  bulletDamage: 3
+  standRecoil: 2
+  runRecoil: 4
+  crouchRecoil: 1
   intervalTime: .100000001
   reloadSpeed: 1
   magazineSize: 10

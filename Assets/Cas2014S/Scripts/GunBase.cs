@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class GunBase : MonoBehaviour
 {
@@ -11,15 +12,11 @@ public class GunBase : MonoBehaviour
 
 	public Transform muzzle;
 
-    // Use this for initialization
-    void Start()
-    {
-    }
+	List<GunSkill> gunSkills = new List<GunSkill>();
 
-    // Update is called once per frame
-    void Update()
-    {
-    }
+	public int maxSkillSlot = 5;
+
+	public float bulletDamage = 3.0f;
 
 	protected Vector3 GetCameraTarget()
 	{
@@ -54,8 +51,20 @@ public class GunBase : MonoBehaviour
 		bulletComponent.raycastBullet = raycastBullet;
 		bulletComponent.direction = direction;
 		bulletComponent.shooter = gameObject;
+		bulletComponent.bulletDamage = GetBulletDamage();
 
 		return bullet;
+	}
+
+	public float GetBulletDamage()
+	{
+		var result = bulletDamage;
+		var damageUp = GetComponent<GS_DamageUp>();
+		if(damageUp != null)
+		{
+			result *= damageUp.damageScale;
+		}
+		return result;
 	}
 
 	protected virtual void PlayFireSound()
@@ -92,5 +101,28 @@ public class GunBase : MonoBehaviour
 		}
 
 		light.intensity = 0.0f;
+	}
+
+	public void AddGunSkill(string skillName)
+	{
+		if(gunSkills.Count == maxSkillSlot)
+		{
+			RemoveGunSkill(0);
+		}
+
+		var gunSkill = gameObject.AddComponent(skillName) as GunSkill;
+		gunSkill.gun = this;
+		gunSkills.Add(gunSkill);
+	}
+
+	public void RemoveGunSkill(int index)
+	{
+		if(index >= gunSkills.Count)
+		{
+			return;
+		}
+
+		Destroy(gunSkills[index]);
+		gunSkills.RemoveAt(index);
 	}
 }
