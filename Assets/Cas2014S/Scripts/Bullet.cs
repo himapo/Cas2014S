@@ -42,9 +42,16 @@ public class Bullet : MonoBehaviour {
 
 		mask &= ~(1 << LayerMask.NameToLayer("Ignore Raycast"));
 		mask &= ~(1 << LayerMask.NameToLayer("Bullet"));
+		mask &= ~(1 << LayerMask.NameToLayer("Zone"));
 
 		if(!Physics.Raycast(transform.position, direction, out hit, Mathf.Infinity, mask))
 		{
+			return;
+		}
+
+		if(hit.transform.root.gameObject == shooter)
+		{
+			Debug.Log("Self shoot");
 			return;
 		}
 
@@ -53,8 +60,9 @@ public class Bullet : MonoBehaviour {
 
     void OnCollisionEnter(Collision collision)
     {
-		if(collision.collider.gameObject == shooter)
+		if(collision.transform.root.gameObject == shooter)
 		{
+			Debug.Log("Self shoot");
 			return;
 		}
 

@@ -13,23 +13,11 @@ public class HealZone : MyBehaviour {
 	
 	}
 
-	void OnTriggerEnter(Collider other)
+	void OnDie()
 	{
-		if(other.tag != "Player")
-		{
-			return;
-		}
+		GetComponentInChildren<HealCollision>().SendMessage("OnDie");
 
-		PlayerHealth.healingSpeed += 1.0f;
-	}
-
-	void OnTriggerExit(Collider other)
-	{
-		if(other.tag != "Player")
-		{
-			return;
-		}
-
-		PlayerHealth.healingSpeed -= 1.0f;
+		Debug.Log("HealZone::OnDie");
+		Destroy(gameObject);
 	}
 }

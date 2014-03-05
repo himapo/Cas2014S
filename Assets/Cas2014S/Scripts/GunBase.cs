@@ -27,13 +27,29 @@ public class GunBase : MonoBehaviour
 		RaycastHit cameraHit;
 		Vector3 result;
 
-		if(Physics.Raycast(cameraRay, out cameraHit))
+		LayerMask mask = -1;
+		
+		mask &= ~(1 << LayerMask.NameToLayer("Ignore Raycast"));
+		mask &= ~(1 << LayerMask.NameToLayer("Bullet"));
+		mask &= ~(1 << LayerMask.NameToLayer("Zone"));
+
+		var isHit = Physics.Raycast(cameraRay, out cameraHit, Mathf.Infinity, mask);
+
+		var targetDirection = cameraHit.point - muzzle.transform.position;
+		targetDirection.Normalize();
+
+		// 射撃方向が後ろ
+		var backward = Vector3.Dot(targetDirection, muzzle.transform.forward) < 0.0f;
+
+		if(!isHit || backward)
 		{
-			result = cameraHit.point;
+			// 銃口方向に飛ばす
+			result = muzzle.transform.position + muzzle.transform.forward * 100000.0f;
 		}
 		else
 		{
-			result = muzzle.transform.position + muzzle.transform.forward * 100000.0f;
+			// ターゲットの方向に飛ばす
+			result = cameraHit.point;
 		}
 
 		return result;
@@ -50,7 +66,7 @@ public class GunBase : MonoBehaviour
 		var bulletComponent = bullet.GetComponent<Bullet>();
 		bulletComponent.raycastBullet = raycastBullet;
 		bulletComponent.direction = direction;
-		bulletComponent.shooter = gameObject;
+		bulletComponent.shooter = transform.root.gameObject;
 		bulletComponent.bulletDamage = GetBulletDamage();
 
 		return bullet;

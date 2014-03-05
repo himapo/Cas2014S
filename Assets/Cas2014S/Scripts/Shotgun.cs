@@ -7,6 +7,11 @@ public class Shotgun : PlayerGun {
 
 	public float scatterAngle = 10.0f;
 
+	void Start()
+	{
+		magazineRemaining = magazineSize;
+	}
+
 	protected override void Fire(Vector3 targetPosition)
 	{
 		for(var i=0; i<bulletNumber; ++i)

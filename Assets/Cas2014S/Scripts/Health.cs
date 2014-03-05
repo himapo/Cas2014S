@@ -53,12 +53,12 @@ public class Health : MyBehaviour {
 
     public void OnBulletHit(BulletHitInfo info)
     {
-        //Debug.Log("Damage");
+		Debug.Log(string.Format("{0} Damage", gameObject.name));;
 
 		var damageInt = Mathf.FloorToInt(info.Damage);
 
         health -= damageInt;
-        health = Mathf.Clamp(health, 0, maxHealth);
+        health = Mathf.Clamp(health, 0, maxHealth); 
 		innerHealth = health;
 
 		worldGUI.SendMessage(
