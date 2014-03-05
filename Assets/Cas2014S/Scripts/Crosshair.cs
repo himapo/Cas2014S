@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Crosshair : MonoBehaviour {
 
-	public Texture texture;
+	public Texture[] textures;
 
 	GunController gunController;
 
@@ -32,7 +32,9 @@ public class Crosshair : MonoBehaviour {
 
 		GUIUtility.RotateAroundPivot(0.0f + 45.0f * gunIndex, pivotPoint);
 
-		var defaultSpace = 24;
+		var defaultSpace = 16;
+
+		var texture = textures[gunIndex];
 
 		// left
 		GUI.DrawTexture(new Rect(pivotPoint.x - 16 - defaultSpace - recoil, pivotPoint.y - 16, texture.width, texture.height), texture);

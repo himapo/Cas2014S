@@ -38,7 +38,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aad42587fb92dae46a3d5d38a0c19a54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  texture: {fileID: 2800000, guid: b0326fe11ec1fc04fa7f1bbc53b3fa78, type: 3}
+  textures:
+  - {fileID: 2800000, guid: 7a8df35b5094f884da1e71c6df1cb9ef, type: 3}
+  - {fileID: 2800000, guid: f852bcee9c3079646a9cbb41e7710577, type: 3}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
