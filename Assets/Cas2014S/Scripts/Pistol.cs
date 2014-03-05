@@ -8,7 +8,10 @@ public class Pistol : PlayerGun {
 		magazineRemaining = magazineSize;
 		
 		AddSkill("GS_DamageUp");
-		AddSkill("PS_AutoHeal");
+		//AddSkill("GS_DamageUp");
+		//AddSkill("GS_DamageUp");
+		//AddSkill("PS_AutoHeal");
+		//AddSkill("PS_AutoHeal");
 	}
 
 	protected override void Fire(Vector3 targetPosition)

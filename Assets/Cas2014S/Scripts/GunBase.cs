@@ -59,8 +59,8 @@ public class GunBase : MonoBehaviour
 	public float GetBulletDamage()
 	{
 		var result = bulletDamage;
-		var damageUp = GetComponent<GS_DamageUp>();
-		if(damageUp != null)
+		var damageUps = GetComponents<GS_DamageUp>();
+		foreach(var damageUp in damageUps)
 		{
 			result *= damageUp.damageScale;
 		}

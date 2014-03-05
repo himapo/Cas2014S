@@ -14,6 +14,8 @@ public class Bullet : MonoBehaviour {
 	[HideInInspector]
 	public GameObject shooter;
 
+	public float scatterDamage = 0.2f;
+
 	// Use this for initialization
 	void Start () {
 		if(raycastBullet)
@@ -74,9 +76,18 @@ public class Bullet : MonoBehaviour {
 		health.OnBulletHit(
 			new BulletHitInfo()
 			{
-				Damage = bulletDamage,
+				Damage = RandomizeDamage(),
 				HitPosition = hitPosition,
 			});
+	}
+
+	float RandomizeDamage()
+	{
+		var amplitude = bulletDamage * scatterDamage;
+
+		var r = Random.Range(-amplitude, amplitude);
+
+		return Mathf.Round(bulletDamage + r);
 	}
 
     void Explode()

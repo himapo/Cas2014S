@@ -22,6 +22,17 @@ public class MyBehaviour : MonoBehaviour {
 		}
 	}
 
+	protected Health PlayerHealth
+	{
+		get
+		{
+			return Player.GetComponent<Health>();
+		}
+		set
+		{
+		}
+	}
+	
 	protected PlayerController PlayerController
 	{
 		get
