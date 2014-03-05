@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class BulletHitInfo
 {
@@ -12,11 +13,11 @@ public class BulletHitInfo
     public float Damage { get; set; }
 }
 
-public class Health : MonoBehaviour {
+public class Health : MyBehaviour {
 
     public int maxHealth = 100;
 
-    public float healingSpeed = 1.0f;
+    public float healingSpeed = 0.0f;
 
     [HideInInspector]
     public int health;
@@ -38,7 +39,7 @@ public class Health : MonoBehaviour {
 
         if (health > 0)
         {
-            innerHealth += (healingSpeed * Time.deltaTime);
+            innerHealth += (GetHealingSpeed() * Time.deltaTime);
 
             health = Mathf.FloorToInt(Mathf.Clamp(innerHealth, 0, (float)maxHealth));
         }
@@ -68,4 +69,18 @@ public class Health : MonoBehaviour {
 				position = info.HitPosition,
 			});
     }
+
+	float GetHealingSpeed()
+	{
+		var result = healingSpeed;
+
+		var autoHeals = GetGunComponents<PS_AutoHeal>();
+
+		foreach(var autoHeal in autoHeals)
+		{
+			result += autoHeal.healingSpeed;
+		}
+
+		return result;
+	}
 }

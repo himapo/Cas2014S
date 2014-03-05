@@ -12,7 +12,7 @@ public class GunBase : MonoBehaviour
 
 	public Transform muzzle;
 
-	List<GunSkill> gunSkills = new List<GunSkill>();
+	List<Skill> skills = new List<Skill>();
 
 	public int maxSkillSlot = 5;
 
@@ -103,26 +103,30 @@ public class GunBase : MonoBehaviour
 		light.intensity = 0.0f;
 	}
 
-	public void AddGunSkill(string skillName)
+	public void AddSkill(string skillName)
 	{
-		if(gunSkills.Count == maxSkillSlot)
+		if(skills.Count == maxSkillSlot)
 		{
-			RemoveGunSkill(0);
+			RemoveSkill(0);
 		}
 
-		var gunSkill = gameObject.AddComponent(skillName) as GunSkill;
-		gunSkill.gun = this;
-		gunSkills.Add(gunSkill);
+		var skill = gameObject.AddComponent(skillName) as Skill;
+		var gunSkill = skill as GunSkill;
+		if(gunSkill != null)
+		{
+			gunSkill.gun = this;
+		}
+		skills.Add(skill);
 	}
 
-	public void RemoveGunSkill(int index)
+	public void RemoveSkill(int index)
 	{
-		if(index >= gunSkills.Count)
+		if(index >= skills.Count)
 		{
 			return;
 		}
 
-		Destroy(gunSkills[index]);
-		gunSkills.RemoveAt(index);
+		Destroy(skills[index]);
+		skills.RemoveAt(index);
 	}
 }

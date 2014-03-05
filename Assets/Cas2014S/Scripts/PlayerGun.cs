@@ -11,12 +11,12 @@ public class PlayerGun : GunBase
 	public float intervalTime = 0.1f;
 	
 	// 0.0で次弾発射可能
-	float intervalRemaining;
+	float intervalRemaining = 0.0f;
 	
 	public float reloadSpeed = 1.0f;
 	
 	// 1.0でリロード完了
-	float reloadDuration;
+	float reloadDuration = 1.0f;
 	
 	public int magazineSize = 10;
 	
@@ -25,11 +25,6 @@ public class PlayerGun : GunBase
 	// Use this for initialization
 	void Start()
 	{
-		intervalRemaining = 0.0f;
-		reloadDuration = 1.0f;
-		magazineRemaining = magazineSize;
-
-		AddGunSkill("GS_DamageUp");
 	}
 	
 	// Update is called once per frame
