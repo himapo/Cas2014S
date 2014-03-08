@@ -25,6 +25,7 @@ public class PlayerGun : GunBase
 	// Use this for initialization
 	void Start()
 	{
+		magazineRemaining = magazineSize;
 	}
 	
 	// Update is called once per frame
@@ -32,7 +33,7 @@ public class PlayerGun : GunBase
 	{
 		if(IsReloading())
 		{
-			reloadDuration += reloadSpeed * Time.deltaTime;
+			reloadDuration += GetReloadSpeed() * Time.deltaTime;
 			if(reloadDuration >= 1.0f)
 			{
 				reloadDuration = 1.0f;
@@ -53,6 +54,17 @@ public class PlayerGun : GunBase
 				intervalRemaining = 0.0f;
 			}
 		}
+	}
+
+	public float GetReloadSpeed()
+	{
+		var result = reloadSpeed;
+		var components = GetComponents<GS_ReloadUp>();
+		foreach(var component in components)
+		{
+			result *= component.reloadSpeedScale;
+		}
+		return result;
 	}
 	
 	public void Shoot()
