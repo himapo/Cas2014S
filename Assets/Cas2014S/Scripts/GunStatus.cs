@@ -1,9 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class GunStatus : MonoBehaviour {
-
-	public GunController gunController;
+public class GunStatus : MyBehaviour {
 
 	public GUIText[] guiTexts;
 
@@ -23,7 +21,7 @@ public class GunStatus : MonoBehaviour {
 				break;
 			}
 
-			var gun = gunController.guns[i];
+			var gun = GunController.guns[i];
 
 			if(gun.IsReloading())
 			{

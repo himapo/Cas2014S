@@ -7,9 +7,15 @@ public class GranadeLauncher : Pistol {
 	{
 		magazineRemaining = magazineSize;
 
-		//AddSkill("GS_ReloadUp");
-		//AddSkill("GS_ReloadUp");
-		//AddSkill("GS_ReloadUp");
-		//AddSkill("GS_ReloadUp");
+		AddSkill("GS_ReloadUp");
+		AddSkill("GS_ReloadUp");
+		AddSkill("GS_ReloadUp");
+		AddSkill("GS_ReloadUp");
+		AddSkill("GS_DamageUp");
+		AddSkill("GS_DamageUp");
+		AddSkill("GS_DamageUp");
+		AddSkill("GS_DamageUp");
+		AddSkill("GS_DamageUp");
+		AddSkill("GS_DamageUp");
 	}
 }

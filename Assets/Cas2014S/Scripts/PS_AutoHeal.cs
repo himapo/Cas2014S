@@ -1,7 +1,19 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class PS_AutoHeal : MonoBehaviour {
+public class PS_AutoHeal : PlayerSkill {
+
+	public override SkillType Type {
+		get {
+			return SkillType.AutoHeal;
+		}
+	}
+
+	public override string Name {
+		get {
+			return "自動回復";
+		}
+	}
 
 	public float healingSpeed = 1.0f;
 

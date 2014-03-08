@@ -10,6 +10,14 @@ public class Shotgun : PlayerGun {
 	void Start()
 	{
 		magazineRemaining = magazineSize;
+
+		AddSkill("GS_ReloadUp");
+		AddSkill("GS_DamageUp");
+		AddSkill("GS_ReloadUp");
+		AddSkill("PS_AutoHeal");
+		AddSkill("PS_AutoHeal");
+		AddSkill("PS_AutoHeal");
+		AddSkill("PS_AutoHeal");
 	}
 
 	protected override void Fire(Vector3 targetPosition)

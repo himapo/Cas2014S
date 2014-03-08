@@ -12,7 +12,8 @@ public class GunBase : MonoBehaviour
 
 	public Transform muzzle;
 
-	List<Skill> skills = new List<Skill>();
+	[HideInInspector]
+	public List<Skill> skills = new List<Skill>();
 
 	public int maxSkillSlot = 5;
 
