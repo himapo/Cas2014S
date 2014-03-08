@@ -3,14 +3,16 @@ using System.Collections;
 
 public class GranadeExplosion : Bullet {
 
+	public GameObject detonatorPrefab;
+
 	public float radius = 4.0f;
 
 	bool damageFinished = false;
 
 	// Use this for initialization
-//	void Start () {
-//		sphereCollider.enabled = false;
-//	}
+	void Start () {
+		Instantiate(detonatorPrefab, transform.position, Quaternion.identity);
+	}
 	
 	// Update is called once per frame
 //	void Update () {

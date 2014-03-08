@@ -44,6 +44,7 @@ MonoBehaviour:
   direction: {x: 0, y: 0, z: 0}
   shooter: {fileID: 0}
   scatterDamage: .200000003
+  detonatorPrefab: {fileID: 100000, guid: 999de6d3d571aac4db7a4760ab8cb1b8, type: 2}
   radius: 2
 --- !u!1001 &100100000
 Prefab:
