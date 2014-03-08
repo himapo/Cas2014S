@@ -38,4 +38,14 @@ public class WarriorController : MonoBehaviour {
 	{
 		Destroy(gameObject);
 	}
+
+	void OnShopOpen()
+	{
+		enabled = false;
+	}
+	
+	void OnShopClose()
+	{
+		enabled = true;
+	}
 }

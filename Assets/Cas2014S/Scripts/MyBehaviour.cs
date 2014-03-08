@@ -68,4 +68,15 @@ public class MyBehaviour : MonoBehaviour {
 		result.AddRange(GetGun (1).GetComponents<T>());
 		return result;
 	}
+
+	protected CameraRayCast CameraRayCast
+	{
+		get
+		{
+			return Player.GetComponent<CameraRayCast>();
+		}
+		set
+		{
+		}
+	}
 }

@@ -58,4 +58,14 @@ public class GunController : MonoBehaviour {
 		Destroy(guns[0].gameObject);
 		guns[0] = gun.GetComponent<PlayerGun>();
 	}
+
+	void OnShopOpen()
+	{
+		enabled = false;
+	}
+	
+	void OnShopClose()
+	{
+		enabled = true;
+	}
 }

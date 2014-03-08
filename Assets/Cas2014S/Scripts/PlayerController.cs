@@ -81,4 +81,14 @@ public class PlayerController : MonoBehaviour {
 		var horizontalSpeed = new Vector2(sideSpeed, forwardSpeed);
 		run = horizontalSpeed.magnitude / movementSpeed;
 	}
+
+	void OnShopOpen()
+	{
+		enabled = false;
+	}
+
+	void OnShopClose()
+	{
+		enabled = true;
+	}
 }
