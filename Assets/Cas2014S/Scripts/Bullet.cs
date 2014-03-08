@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Bullet : MonoBehaviour {
+public class Bullet : MyBehaviour {
 
 	public float bulletDamage = 3.0f;
 
@@ -74,7 +74,7 @@ public class Bullet : MonoBehaviour {
         Explode();
     }
 
-	void Damage(Health health, Vector3 hitPosition)
+	protected void Damage(Health health, Vector3 hitPosition)
 	{
 		if(health == null)
 		{
@@ -98,8 +98,9 @@ public class Bullet : MonoBehaviour {
 		return Mathf.Round(bulletDamage + r);
 	}
 
-    void Explode()
+    protected virtual void Explode()
     {
+		Debug.Log ("Bullet::Explode");
         Destroy(gameObject);
     }
 }
