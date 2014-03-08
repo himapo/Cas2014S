@@ -12,8 +12,6 @@
 
 /Assets/FemaleCharacterPack
 
-/Assets/Gem Shader
-
 /Assets/GoldCoins
 
 /Assets/JMO Assets
@@ -24,18 +22,14 @@
 
 /Assets/PopupAsylum
 
-/Assets/Revolver
-
 /Assets/Robot Kyle
 
 /Assets/SU3DJPFont
 
 /Assets/Sample Assets
 
-/Assets/Square Pack
 /Assets/Standard Assets (Mobile)
 /Assets/Standard Assets
-/Assets/VolumeLight
 
 /Assets/fightBOT (free)
 
@@ -47,19 +41,15 @@
 
 /Assets/Editor.meta
 /Assets/FemaleCharacterPack.meta
-/Assets/Gem Shader.meta
 /Assets/GoldCoins.meta
 /Assets/JMO Assets.meta
 /Assets/Party Pack.meta
 /Assets/PopupAsylum.meta
-/Assets/Revolver.meta
 /Assets/Robot Kyle.meta
 /Assets/SU3DJPFont.meta
 /Assets/Sample Assets.meta
-/Assets/Square Pack.meta
 /Assets/Standard Assets (Mobile).meta
 /Assets/Standard Assets.meta
-/Assets/VolumeLight.meta
 /Assets/fightBOT (free).meta
 
-/obj/Debug
+/obj
