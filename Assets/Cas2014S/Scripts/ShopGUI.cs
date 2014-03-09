@@ -25,26 +25,6 @@ public class ShopGUI : MyBehaviour {
 		}
 	}
 
-	void OnGUI()
-	{
-		if(!isShopOpen)
-		{
-			return;
-		}
-
-		GUI.Box(new Rect(0, 0, Screen.width, Screen.height), " ");
-
-		var screenPosition = Camera.main.ViewportToScreenPoint(
-			new Vector3(0.5f, 0.2f, 0.0f));
-
-		if(GUI.Button(
-			new Rect(screenPosition.x, screenPosition.y, 80.0f, 40.0f),
-	        "Buy"))
-		{
-			Debug.Log("Buy");
-		}
-	}
-
 	public void OpenShop()
 	{
 		if(isShopOpen)
@@ -85,5 +65,38 @@ public class ShopGUI : MyBehaviour {
 		{
 			enemy.SendMessage("OnShopClose", SendMessageOptions.DontRequireReceiver);
 		}
+	}
+
+	void OnGUI()
+	{
+		if(!isShopOpen)
+		{
+			return;
+		}
+		
+		GUI.Box(new Rect(0, 0, Screen.width, Screen.height), " ");
+		
+		var screenPosition = Camera.main.ViewportToScreenPoint(
+			new Vector3(0.5f, 0.2f, 0.0f));
+		
+		if(GUI.Button(
+			new Rect(screenPosition.x, screenPosition.y, 120.0f, 40.0f),
+			"右手武器に追加"))
+		{
+			AddSkill (0);
+		}
+
+		if(GUI.Button(
+			new Rect(screenPosition.x, screenPosition.y + 100.0f, 120.0f, 40.0f),
+			"左手武器に追加"))
+		{
+			AddSkill (1);
+		}
+	}
+
+	void AddSkill(int gunIndex)
+	{
+		GetGun(gunIndex).AddSkill(
+			(SkillType)Random.Range(0, (int)SkillType.Max));
 	}
 }

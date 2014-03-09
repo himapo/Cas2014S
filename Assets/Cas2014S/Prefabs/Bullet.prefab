@@ -43,7 +43,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: 4a0a1ea5115e486449ae9f6394a1603b, type: 2}
+  - {fileID: 2100000, guid: 6b885211b732ab246aa4a3a731f569b1, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -90,6 +90,7 @@ MonoBehaviour:
   raycastBullet: 1
   direction: {x: 0, y: 0, z: 0}
   shooter: {fileID: 0}
+  scatterDamage: .200000003
 --- !u!135 &13500000
 SphereCollider:
   m_ObjectHideFlags: 1

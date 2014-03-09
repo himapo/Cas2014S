@@ -690,7 +690,7 @@ MonoBehaviour:
   raycastBullet: 1
   muzzle: {fileID: 400016}
   skills: []
-  maxSkillSlot: 10
+  maxSkillSlot: 4
   bulletDamage: 3
   standRecoil: 2
   runRecoil: 4

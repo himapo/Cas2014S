@@ -1,16 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Crosshair : MonoBehaviour {
+public class Crosshair : MyBehaviour {
 
 	public Texture[] textures;
 
-	GunController gunController;
-
 	// Use this for initialization
 	void Start () {
-		var player = GameObject.FindWithTag("Player");
-		gunController = player.GetComponent<GunController>();
+
 	}
 	
 	// Update is called once per frame
@@ -51,7 +48,7 @@ public class Crosshair : MonoBehaviour {
 
 	float GetRecoil(int gunIndex)
 	{
-		var gun = gunController.guns[gunIndex] as PlayerGun;
+		var gun = GetGun (gunIndex) as PlayerGun;
 		return gun.GetRecoil();
 	}
 }

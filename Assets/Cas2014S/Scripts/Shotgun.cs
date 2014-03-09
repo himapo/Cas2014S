@@ -7,19 +7,6 @@ public class Shotgun : PlayerGun {
 
 	public float scatterAngle = 10.0f;
 
-	void Start()
-	{
-		magazineRemaining = magazineSize;
-
-		AddSkill("GS_ReloadUp");
-		AddSkill("GS_DamageUp");
-		AddSkill("GS_ReloadUp");
-		AddSkill("PS_AutoHeal");
-		AddSkill("PS_AutoHeal");
-		AddSkill("PS_AutoHeal");
-		AddSkill("PS_AutoHeal");
-	}
-
 	protected override void Fire(Vector3 targetPosition)
 	{
 		for(var i=0; i<bulletNumber; ++i)

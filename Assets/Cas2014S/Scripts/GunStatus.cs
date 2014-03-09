@@ -21,7 +21,7 @@ public class GunStatus : MyBehaviour {
 				break;
 			}
 
-			var gun = GunController.guns[i];
+			var gun = GetGun (i);
 
 			if(gun.IsReloading())
 			{

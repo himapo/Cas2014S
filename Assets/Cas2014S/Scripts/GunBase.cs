@@ -2,11 +2,11 @@
 using System.Collections;
 using System.Collections.Generic;
 
-public class GunBase : MonoBehaviour
+public class GunBase : MyBehaviour
 {
     public GameObject bulletPrefab;
 
-    public float bulletImpulse = 300.0f;
+    public float bulletImpulse;
 
 	public bool raycastBullet;
 
@@ -15,9 +15,9 @@ public class GunBase : MonoBehaviour
 	[HideInInspector]
 	public List<Skill> skills = new List<Skill>();
 
-	public int maxSkillSlot = 5;
+	public int maxSkillSlot;
 
-	public float bulletDamage = 3.0f;
+	public float bulletDamage;
 
 	protected Vector3 GetCameraTarget()
 	{
@@ -118,6 +118,11 @@ public class GunBase : MonoBehaviour
 		}
 
 		light.intensity = 0.0f;
+	}
+
+	public void AddSkill(SkillType type)
+	{
+		AddSkill(Skill.GetSkillName(type));
 	}
 
 	public void AddSkill(string skillName)

@@ -1,9 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class GunController : MonoBehaviour {
+public class GunController : MyBehaviour {
 
-	public PlayerGun[] guns;
+	PlayerGun[] guns = new PlayerGun[2];
 
 	public GameObject[] weaponSlots;
 
@@ -24,7 +24,7 @@ public class GunController : MonoBehaviour {
 		{
 			if(Input.GetButtonDown(reloadButtonNames[i]))
 			{
-				guns[i].Reload();
+				GetGun(i).Reload();
 			}
 		}
 
@@ -32,7 +32,7 @@ public class GunController : MonoBehaviour {
 		{
 			if(Input.GetButtonDown(fireButtonNames[i]))
 			{
-				guns[i].Shoot();
+				GetGun(i).Shoot();
 			}
 		}
 
@@ -47,6 +47,16 @@ public class GunController : MonoBehaviour {
 			Debug.Log("change shotgun");
 			ChangeGun(1);
 		}
+	}
+
+	public PlayerGun GetGunSafety(int index)
+	{
+		if(!guns[index])
+		{
+			guns[index] = weaponSlots[index].GetComponentInChildren<PlayerGun>();
+		}
+
+		return guns[index];
 	}
 
 	void ChangeGun(int type)

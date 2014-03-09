@@ -55,9 +55,9 @@ public class MyBehaviour : MonoBehaviour {
 		}
 	}
 
-	protected GunBase GetGun(int index)
+	protected PlayerGun GetGun(int index)
 	{
-		return GunController.guns[index];
+		return GunController.GetGunSafety(index);
 	}
 
 	protected IEnumerable<T> GetGunComponents<T>()

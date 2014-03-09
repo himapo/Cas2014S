@@ -689,7 +689,8 @@ MonoBehaviour:
   bulletImpulse: 300
   raycastBullet: 1
   muzzle: {fileID: 400016}
-  maxSkillSlot: 5
+  skills: []
+  maxSkillSlot: 6
   bulletDamage: 3
   standRecoil: 2
   runRecoil: 4
