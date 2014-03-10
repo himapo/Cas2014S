@@ -35,18 +35,6 @@ public class GunController : MyBehaviour {
 				GetGun(i).Shoot();
 			}
 		}
-
-		if(Input.GetKeyDown(KeyCode.Alpha1))
-		{
-			Debug.Log("change gun");
-			ChangeGun(0);
-		}
-
-		if(Input.GetKeyDown(KeyCode.Alpha2))
-		{
-			Debug.Log("change shotgun");
-			ChangeGun(1);
-		}
 	}
 
 	public PlayerGun GetGunSafety(int index)
@@ -59,14 +47,14 @@ public class GunController : MyBehaviour {
 		return guns[index];
 	}
 
-	void ChangeGun(int type)
+	public void ChangeGun(int gunIndex, PlayerGunType type)
 	{
-		var gun = Instantiate(gunPrefabs[type]) as GameObject;
-		gun.transform.parent = weaponSlots[0].transform;
+		var gun = Instantiate(gunPrefabs[(int)type]) as GameObject;
+		gun.transform.parent = weaponSlots[gunIndex].transform;
 		gun.transform.localPosition = Vector3.zero;
 		gun.transform.localRotation = Quaternion.identity;
-		Destroy(guns[0].gameObject);
-		guns[0] = gun.GetComponent<PlayerGun>();
+		Destroy(guns[gunIndex].gameObject);
+		guns[gunIndex] = gun.GetComponent<PlayerGun>();
 	}
 
 	void OnShopOpen()

@@ -9,6 +9,12 @@ public class Pistol : PlayerGun {
 		}
 	}
 
+	public override string Name {
+		get {
+			return "ピストル";
+		}
+	}
+
 	protected override void Fire(Vector3 targetPosition)
 	{
 		var bulletDirection = targetPosition - muzzle.transform.position;

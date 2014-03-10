@@ -14,6 +14,10 @@ public abstract class PlayerGun : GunBase
 {
 	public abstract PlayerGunType Type { get; }
 
+	public abstract string Name{get;}
+	
+	public int rare;
+
 	public float standRecoil = 2.0f;
 	public float runRecoil = 4.0f;
 	public float crouchRecoil = 1.0f;

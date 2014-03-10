@@ -227,7 +227,11 @@ public class ShopGUI : MyBehaviour {
 			{
 				attachIndex = item.index;
 
-				if(item.val.type == ItemType.Skill)
+				if(item.val.type == ItemType.Gun)
+				{
+					ChangeGun(0, item.val.gun.Type);
+				}
+				else if(item.val.type == ItemType.Skill)
 				{
 					AddSkill(0, item.val.skill.Type);
 				}
@@ -235,7 +239,11 @@ public class ShopGUI : MyBehaviour {
 
 			GUILayout.FlexibleSpace();
 
-			if(item.val.type == ItemType.Skill)
+			if(item.val.type == ItemType.Gun)
+			{
+				IconDrawer.Instance.DrawGun(item.val.gun);
+			}
+			else if(item.val.type == ItemType.Skill)
 			{
 				IconDrawer.Instance.DrawShopSkill(item.val.skill, Vector3.zero, true);
 			}
@@ -246,7 +254,11 @@ public class ShopGUI : MyBehaviour {
 			{
 				attachIndex = item.index;
 
-				if(item.val.type == ItemType.Skill)
+				if(item.val.type == ItemType.Gun)
+				{
+					ChangeGun(1, item.val.gun.Type);
+				}
+				else if(item.val.type == ItemType.Skill)
 				{
 					AddSkill(1, item.val.skill.Type);
 				}
@@ -261,6 +273,11 @@ public class ShopGUI : MyBehaviour {
 		{
 			gacha.drawnItems.RemoveAt(attachIndex);
 		}
+	}
+
+	void ChangeGun(int gunIndex, PlayerGunType type)
+	{
+		GunController.ChangeGun(gunIndex, type);
 	}
 
 	void AddSkill(int gunIndex, SkillType type)

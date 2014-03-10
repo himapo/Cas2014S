@@ -28,6 +28,15 @@ public class IconDrawer : MyBehaviour {
 	
 	}
 
+	public void DrawGun(PlayerGun gun)
+	{
+		DrawShopIcon(
+			gun.Name,
+			contentColors[gun.rare],
+			gunBackColors[0],
+			Vector3.zero, true);
+	}
+
 	public void DrawStatusSkill(Skill skill, Vector3 viewportPosition, bool layout)
 	{
 		DrawStatusIcon(

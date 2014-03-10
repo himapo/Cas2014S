@@ -9,4 +9,10 @@ public class GranadeLauncher : Pistol {
 		}
 	}
 
+	public override string Name {
+		get {
+			return "グレネードランチャー";
+		}
+	}
+
 }
