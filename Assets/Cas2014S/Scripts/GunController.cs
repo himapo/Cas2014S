@@ -53,8 +53,17 @@ public class GunController : MyBehaviour {
 		gun.transform.parent = weaponSlots[gunIndex].transform;
 		gun.transform.localPosition = Vector3.zero;
 		gun.transform.localRotation = Quaternion.identity;
+
+		var oldGun = guns[gunIndex];
+		var newGun = gun.GetComponent<PlayerGun>();
+
+		foreach(var skill in oldGun.skills)
+		{
+			newGun.AddSkill(skill.Type);
+		}
+
 		Destroy(guns[gunIndex].gameObject);
-		guns[gunIndex] = gun.GetComponent<PlayerGun>();
+		guns[gunIndex] = newGun;
 	}
 
 	void OnShopOpen()
