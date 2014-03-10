@@ -104,12 +104,12 @@ Material:
         second: .00999999978
       data:
         first:
-          name: _InvFade
-        second: 1
-      data:
-        first:
           name: _Shininess
         second: .524208724
+      data:
+        first:
+          name: _InvFade
+        second: 1
       data:
         first:
           name: _Outline

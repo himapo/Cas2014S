@@ -5,13 +5,6 @@ using System.Linq;
 
 public class SkillStatus : MyBehaviour {
 
-	IconDrawer iconDrawer;
-
-	void Awake()
-	{
-		iconDrawer = GetComponent<IconDrawer>();
-	}
-
 	// Use this for initialization
 	void Start () {
 
@@ -30,10 +23,10 @@ public class SkillStatus : MyBehaviour {
 			
 			foreach(var item in gun.skills.Select((val, index)=>{ return new {val, index};}))
 			{
-				var x = (i==0) ? 0.7f : 0.3f;
+				var x = (i==0) ? 0.3f : 0.7f;
 				if(item.index >=5)
 				{
-					x += ((i==0) ? -0.08f : 0.08f);
+					x += ((i==0) ? 0.08f : -0.08f);
 				}
 
 				var y = 0.75f + 0.05f * item.index;
@@ -42,7 +35,7 @@ public class SkillStatus : MyBehaviour {
 					y -= 0.25f;
 				}
 
-				iconDrawer.DrawSkill(item.val, new Vector3(x, y, 0.0f));
+				IconDrawer.Instance.DrawStatusSkill(item.val, new Vector3(x, y, 0.0f), false);
 			}
 
 		}

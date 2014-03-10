@@ -5,6 +5,18 @@ public class Crosshair : MyBehaviour {
 
 	public Texture[] textures;
 
+	static Crosshair instance;
+	public static Crosshair Instance { get { return instance; } set { } }
+
+	void Awake()
+	{
+		if(instance != null)
+		{
+			Debug.LogError("Crosshair instance already exist");
+		}
+		instance = this;
+	}
+
 	// Use this for initialization
 	void Start () {
 
@@ -50,5 +62,15 @@ public class Crosshair : MyBehaviour {
 	{
 		var gun = GetGun (gunIndex) as PlayerGun;
 		return gun.GetRecoil();
+	}
+
+	public void OnShopOpen()
+	{
+		enabled = false;
+	}
+
+	public void OnShopClose()
+	{
+		enabled = true;
 	}
 }

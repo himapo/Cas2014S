@@ -1,8 +1,19 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class PlayerGun : GunBase
+public enum PlayerGunType
 {
+	Pistol,
+	Shotgun,
+	GranadeLauncher,
+
+	Max,
+}
+
+public abstract class PlayerGun : GunBase
+{
+	public abstract PlayerGunType Type { get; }
+
 	public float standRecoil = 2.0f;
 	public float runRecoil = 4.0f;
 	public float crouchRecoil = 1.0f;

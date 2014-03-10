@@ -10,7 +10,6 @@ GameObject:
   - 4: {fileID: 400000}
   - 114: {fileID: 11400000}
   - 114: {fileID: 11400002}
-  - 114: {fileID: 11400004}
   m_Layer: 0
   m_Name: GunStatus
   m_TagString: Untagged
@@ -97,8 +96,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   guiTexts:
-  - {fileID: 13200002}
   - {fileID: 13200000}
+  - {fileID: 13200002}
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -110,27 +109,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ead67a491eeaf8646acd3fe8bc44a634, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &11400004
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100000}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dddc75a47ea6b6c4d8e1e1e3e539bbf0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  contentColors:
-  - {r: 1, g: 1, b: 1, a: 1}
-  - {r: .991582155, g: 1, b: .389705896, a: 1}
-  - {r: 1, g: .647058845, b: .647058845, a: 1}
-  - {r: .683569968, g: 1, b: .558823526, a: 1}
-  skillBackColors:
-  - {r: 0, g: 0, b: 0, a: 1}
-  - {r: .0661764741, g: 1, b: .961358905, a: 1}
-  gunBackColors:
-  - {r: 1, g: 0, b: 0, a: 0}
 --- !u!132 &13200000
 GUIText:
   m_ObjectHideFlags: 1

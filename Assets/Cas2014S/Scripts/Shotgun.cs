@@ -3,6 +3,12 @@ using System.Collections;
 
 public class Shotgun : PlayerGun {
 
+	public override PlayerGunType Type {
+		get {
+			return PlayerGunType.Shotgun;
+		}
+	}
+
 	public int bulletNumber = 8;
 
 	public float scatterAngle = 10.0f;
