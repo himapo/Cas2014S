@@ -166,20 +166,34 @@ public class ShopGUI : MyBehaviour {
 		
 		if(GUILayout.Button("レア1回\n(最大HP 10)", GUILayout.MinWidth(120), GUILayout.MinHeight(60)))
 		{
-			PlayerHealth.AddMaxHealth(-10);
-			rareGacha.Draw(1);
-			gacha = rareGacha;
-			guiState = StateGacha;
+			if(PlayerHealth.maxHealth >= 10)
+			{
+				PlayerHealth.AddMaxHealth(-10);
+				rareGacha.Draw(1);
+				gacha = rareGacha;
+				guiState = StateGacha;
+			}
+			else
+			{
+				guiState = StateLack;
+			}
 		}
 		
 		GUILayout.FlexibleSpace();
 		
 		if(GUILayout.Button("レア11連\n(最大HP 100)", GUILayout.MinWidth(120), GUILayout.MinHeight(60)))
 		{
-			PlayerHealth.AddMaxHealth(-100);
-			rareGacha.Draw(11);
-			gacha = rareGacha;
-			guiState = StateGacha11;
+			if(PlayerHealth.maxHealth >= 100)
+			{
+				PlayerHealth.AddMaxHealth(-100);
+				rareGacha.Draw(11);
+				gacha = rareGacha;
+				guiState = StateGacha11;
+			}
+			else
+			{
+				guiState = StateLack;
+			}
 		}
 		
 		GUILayout.FlexibleSpace();
@@ -225,20 +239,34 @@ public class ShopGUI : MyBehaviour {
 		
 		if(GUILayout.Button("ノーマル1回\n(HP 10)", GUILayout.MinWidth(120), GUILayout.MinHeight(40)))
 		{
-			PlayerHealth.AddHealth(-10);
-			normalGacha.Draw(1);
-			gacha = normalGacha;
-			guiState = StateGacha;
+			if(PlayerHealth.health > 10)
+			{
+				PlayerHealth.AddHealth(-10);
+				normalGacha.Draw(1);
+				gacha = normalGacha;
+				guiState = StateGacha;
+			}
+			else
+			{
+				guiState = StateLack;
+			}
 		}
 		
 		GUILayout.FlexibleSpace();
 		
 		if(GUILayout.Button("ノーマル11連\n(HP 100)", GUILayout.MinWidth(120), GUILayout.MinHeight(40)))
 		{
-			PlayerHealth.AddHealth(-100);
-			normalGacha.Draw(11);
-			gacha = normalGacha;
-			guiState = StateGacha11;
+			if(PlayerHealth.health > 100)
+			{
+				PlayerHealth.AddHealth(-100);
+				normalGacha.Draw(11);
+				gacha = normalGacha;
+				guiState = StateGacha11;
+			}
+			else
+			{
+				guiState = StateLack;
+			}
 		}
 		
 		GUILayout.FlexibleSpace();
@@ -250,6 +278,30 @@ public class ShopGUI : MyBehaviour {
 		GUILayout.EndArea();
 	}
 
+	void StateLack()
+	{
+		var guiStyle = new GUIStyle(GUI.skin.GetStyle("label"));
+		guiStyle.alignment = TextAnchor.MiddleCenter;
+		guiStyle.fontSize = 30;
+		
+		var windowRect = new Rect(0, 0, Screen.width, Screen.height * 0.7f);
+		
+		GUILayout.BeginArea(windowRect);
+		GUILayout.FlexibleSpace();
+		
+		GUILayout.Label(
+			"命は大事にしましょう！",
+			guiStyle);
+		
+		GUILayout.FlexibleSpace();
+		GUILayout.EndArea();
+
+		BackButton("戻る", ()=> {
+			guiState = StateRoot;
+			return;
+		},
+		"");
+	}
 
 	void StateGacha()
 	{

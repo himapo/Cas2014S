@@ -93,7 +93,10 @@ public class Health : MyBehaviour {
 	public void AddHealth(int amount)
 	{
 		health += amount;
-		health = Mathf.Clamp(health, 0, maxHealth); 
+		if(health < maxHealth)
+		{
+			health = Mathf.Clamp(health, 0, maxHealth); 
+		}
 		innerHealth = health;
 	}
 
