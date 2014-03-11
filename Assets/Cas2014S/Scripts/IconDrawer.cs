@@ -115,7 +115,7 @@ public class IconDrawer : MyBehaviour {
 				content
 			    ,guiStyle
 				,GUILayout.MinWidth(150)
-				//,GUILayout.MinHeight(30)
+				,GUILayout.MaxHeight(30)
 				);
 		}
 		else

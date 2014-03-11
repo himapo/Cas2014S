@@ -12,15 +12,21 @@ public class ShopGUI : MyBehaviour {
 
 	System.Action guiState;
 
-	Gacha gacha;
+	public GameObject normalGachaPrefab;
 
-	void Awake()
-	{
-		gacha = GetComponent<Gacha>();
-	}
+	public GameObject rareGachaPrefab;
+
+	Gacha normalGacha;
+
+	Gacha rareGacha;
+
+	Gacha gacha;
 
 	// Use this for initialization
 	void Start () {
+		normalGacha = (Instantiate(normalGachaPrefab) as GameObject).GetComponent<Gacha>();
+		rareGacha = (Instantiate(rareGachaPrefab) as GameObject).GetComponent<Gacha>();
+
 		guiState = StateRoot;
 	}
 	
@@ -101,53 +107,145 @@ public class ShopGUI : MyBehaviour {
 
 	void StateRoot()
 	{
-		BackButton("店を出る", ()=>
-		{
+		RareGacha();
+
+		NormalGacha();
+
+		BackButton("店を出る", ()=> {
 			closeFlag = true;
 			return;
 		},
 		"");
+	}
 
-		var guiStyle = new GUIStyle(GUI.skin.GetStyle("button"));
+	void RareGacha()
+	{
+		var backupColor = GUI.color;
 
-		guiStyle.alignment = TextAnchor.MiddleCenter;
+		GUI.color = Color.yellow;
 
-		var buttonSize = new Vector2(120.0f, 40.0f);
-
-		var screenPosition = Camera.main.ViewportToScreenPoint(
-			new Vector3(0.4f, 0.2f, 0.0f));
+		var topleft = Camera.main.ViewportToScreenPoint(
+			new Vector3(0.3f, 0.1f, 0.0f));
 		
-		if(GUI.Button(
-			new Rect(
-				screenPosition.x - buttonSize.x * 0.5f,
-				screenPosition.y - buttonSize.y * 0.5f,
-				buttonSize.x,
-				buttonSize.y),
-			"ガチャを回す"))
+		var size = Camera.main.ViewportToScreenPoint(
+			new Vector3(0.4f, 0.35f, 0.0f));
+		
+		var area = new Rect(
+			topleft.x, topleft.y,
+			size.x, size.y);
+		
+		GUILayout.BeginArea(area);
+		
+		GUILayout.FlexibleSpace();
+		
+		var guiStyle = new GUIStyle(GUI.skin.GetStyle("label"));
+		guiStyle.alignment = TextAnchor.MiddleCenter;
+		guiStyle.fontSize = 30;
+		
+		GUILayout.Label(
+			"☆☆☆レアガチャ☆☆☆",
+			guiStyle,
+			GUILayout.MinHeight(60));
+		
+		//GUILayout.FlexibleSpace();
+
+		GUI.color = Color.red;
+		guiStyle.fontSize = 20;
+		
+		GUILayout.Label(
+			"11連でSR1枚確定キャンペーン中！！！",
+			guiStyle);
+
+		GUI.color = Color.yellow;
+		
+		//GUILayout.FlexibleSpace();
+		
+		GUILayout.BeginHorizontal();
+		
+		GUILayout.FlexibleSpace();
+		
+		if(GUILayout.Button("レア1回\n(最大HP 10)", GUILayout.MinWidth(120), GUILayout.MinHeight(60)))
 		{
-			gacha.Draw(1);
+			rareGacha.Draw(1);
+			gacha = rareGacha;
 			guiState = StateGacha;
 		}
-
-		screenPosition = Camera.main.ViewportToScreenPoint(
-			new Vector3(0.6f, 0.2f, 0.0f));
-
-		if(GUI.Button(
-			new Rect(
-				screenPosition.x - buttonSize.x * 0.5f,
-				screenPosition.y - buttonSize.y * 0.5f,
-				buttonSize.x,
-				buttonSize.y),
-			"11連ガチャ"))
+		
+		GUILayout.FlexibleSpace();
+		
+		if(GUILayout.Button("レア11連\n(最大HP 100)", GUILayout.MinWidth(120), GUILayout.MinHeight(60)))
 		{
-			gacha.Draw(11);
+			rareGacha.Draw(11);
+			gacha = rareGacha;
 			guiState = StateGacha11;
 		}
+		
+		GUILayout.FlexibleSpace();
+		
+		GUILayout.EndHorizontal();
+		
+		GUILayout.FlexibleSpace();
+		
+		GUILayout.EndArea();
+	
+		GUI.color = backupColor;
 	}
 
-	void StateBuy()
+	void NormalGacha()
 	{
+		var topleft = Camera.main.ViewportToScreenPoint(
+			new Vector3(0.3f, 0.5f, 0.0f));
+		
+		var size = Camera.main.ViewportToScreenPoint(
+			new Vector3(0.4f, 0.2f, 0.0f));
+		
+		var area = new Rect(
+			topleft.x, topleft.y,
+			size.x, size.y);
+		
+		GUILayout.BeginArea(area);
+		
+		GUILayout.FlexibleSpace();
+		
+		var guiStyle = new GUIStyle(GUI.skin.GetStyle("label"));
+		guiStyle.alignment = TextAnchor.MiddleCenter;
+		guiStyle.fontSize = 20;
+		
+		GUILayout.Label(
+			"ノーマルガチャ",
+			guiStyle);
+		
+		GUILayout.FlexibleSpace();
+		
+		GUILayout.BeginHorizontal();
+		
+		GUILayout.FlexibleSpace();
+		
+		if(GUILayout.Button("ノーマル1回\n(HP 10)", GUILayout.MinWidth(120), GUILayout.MinHeight(40)))
+		{
+			normalGacha.Draw(1);
+			gacha = normalGacha;
+			guiState = StateGacha;
+		}
+		
+		GUILayout.FlexibleSpace();
+		
+		if(GUILayout.Button("ノーマル11連\n(HP 100)", GUILayout.MinWidth(120), GUILayout.MinHeight(40)))
+		{
+			normalGacha.Draw(11);
+			gacha = normalGacha;
+			guiState = StateGacha11;
+		}
+		
+		GUILayout.FlexibleSpace();
+		
+		GUILayout.EndHorizontal();
+		
+		GUILayout.FlexibleSpace();
+		
+		GUILayout.EndArea();
 	}
+
 
 	void StateGacha()
 	{
@@ -155,8 +253,7 @@ public class ShopGUI : MyBehaviour {
 
 		ItemButton();
 		
-		BackButton("戻る", ()=>
-		{
+		BackButton("戻る", ()=> {
 			guiState = StateRoot;
 			return;
 		},
@@ -169,8 +266,7 @@ public class ShopGUI : MyBehaviour {
 
 		ItemButton();
 
-		BackButton("戻る", ()=>
-		           {
+		BackButton("戻る", ()=> {
 			guiState = StateRoot;
 			return;
 		},
@@ -208,8 +304,6 @@ public class ShopGUI : MyBehaviour {
 			topleft.x, topleft.y,
 			size.x, size.y);
 
-		var guiStyle = new GUIStyle(GUI.skin.GetStyle("button"));
-
 		var attachIndex = -1;
 
 		GUILayout.BeginArea(area);
@@ -221,9 +315,13 @@ public class ShopGUI : MyBehaviour {
 				//GUILayout.FlexibleSpace();
 			}
 
-			GUILayout.BeginHorizontal("box");
+			GUILayout.BeginHorizontal("box", GUILayout.MaxHeight(40));
 
-			if(GUILayout.Button("左手に装備", guiStyle))
+			GUILayout.BeginVertical();
+
+			GUILayout.FlexibleSpace();
+
+			if(GUILayout.Button("左手に装備"))
 			{
 				attachIndex = item.index;
 
@@ -239,6 +337,10 @@ public class ShopGUI : MyBehaviour {
 
 			GUILayout.FlexibleSpace();
 
+			GUILayout.EndVertical();
+
+			GUILayout.FlexibleSpace();
+
 			if(item.val.type == ItemType.Gun)
 			{
 				IconDrawer.Instance.DrawGun(item.val.gun);
@@ -249,8 +351,12 @@ public class ShopGUI : MyBehaviour {
 			}
 
 			GUILayout.FlexibleSpace();
+
+			GUILayout.BeginVertical();
 			
-			if(GUILayout.Button("右手に装備", guiStyle))
+			GUILayout.FlexibleSpace();
+			
+			if(GUILayout.Button("右手に装備"))
 			{
 				attachIndex = item.index;
 
@@ -263,6 +369,10 @@ public class ShopGUI : MyBehaviour {
 					AddSkill(1, item.val.skill.Type);
 				}
 			}
+
+			GUILayout.FlexibleSpace();
+			
+			GUILayout.EndVertical();
 			
 			GUILayout.EndHorizontal();
 		}
@@ -298,13 +408,17 @@ public class ShopGUI : MyBehaviour {
 			size.x, size.y);
 		
 		GUILayout.BeginArea(area);
-		
+
+		GUILayout.FlexibleSpace();
+
 		if(GUILayout.Button(label, GUILayout.MinHeight(40.0f)))
 		{
 			action();
 		}
 		
 		GUILayout.Label(notice);
+
+		GUILayout.FlexibleSpace();
 		
 		GUILayout.EndArea();
 	}
