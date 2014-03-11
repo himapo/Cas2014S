@@ -39,9 +39,11 @@ public class Health : MyBehaviour {
 
         if (health > 0)
         {
-            innerHealth += (GetHealingSpeed() * Time.deltaTime);
-
-            health = Mathf.FloorToInt(Mathf.Clamp(innerHealth, 0, (float)maxHealth));
+			if(health < maxHealth)
+			{
+	            innerHealth += (GetHealingSpeed() * Time.deltaTime);
+           		health = Mathf.FloorToInt(Mathf.Clamp(innerHealth, 0, (float)maxHealth));
+			}
         }
         else
         {
@@ -58,7 +60,11 @@ public class Health : MyBehaviour {
 		var damageInt = Mathf.FloorToInt(info.Damage);
 
         health -= damageInt;
-        health = Mathf.Clamp(health, 0, maxHealth); 
+
+		if(health < maxHealth)
+		{
+        	health = Mathf.Clamp(health, 0, maxHealth); 
+		}
 		innerHealth = health;
 
 		worldGUI.SendMessage(
@@ -82,5 +88,18 @@ public class Health : MyBehaviour {
 		}
 
 		return result;
+	}
+
+	public void AddHealth(int amount)
+	{
+		health += amount;
+		health = Mathf.Clamp(health, 0, maxHealth); 
+		innerHealth = health;
+	}
+
+	public void AddMaxHealth(int amount)
+	{
+		maxHealth += amount;
+		maxHealth = Mathf.Clamp(maxHealth, 0, int.MaxValue); 
 	}
 }

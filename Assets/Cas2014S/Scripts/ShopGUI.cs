@@ -166,6 +166,7 @@ public class ShopGUI : MyBehaviour {
 		
 		if(GUILayout.Button("レア1回\n(最大HP 10)", GUILayout.MinWidth(120), GUILayout.MinHeight(60)))
 		{
+			PlayerHealth.AddMaxHealth(-10);
 			rareGacha.Draw(1);
 			gacha = rareGacha;
 			guiState = StateGacha;
@@ -175,6 +176,7 @@ public class ShopGUI : MyBehaviour {
 		
 		if(GUILayout.Button("レア11連\n(最大HP 100)", GUILayout.MinWidth(120), GUILayout.MinHeight(60)))
 		{
+			PlayerHealth.AddMaxHealth(-100);
 			rareGacha.Draw(11);
 			gacha = rareGacha;
 			guiState = StateGacha11;
@@ -223,6 +225,7 @@ public class ShopGUI : MyBehaviour {
 		
 		if(GUILayout.Button("ノーマル1回\n(HP 10)", GUILayout.MinWidth(120), GUILayout.MinHeight(40)))
 		{
+			PlayerHealth.AddHealth(-10);
 			normalGacha.Draw(1);
 			gacha = normalGacha;
 			guiState = StateGacha;
@@ -232,6 +235,7 @@ public class ShopGUI : MyBehaviour {
 		
 		if(GUILayout.Button("ノーマル11連\n(HP 100)", GUILayout.MinWidth(120), GUILayout.MinHeight(40)))
 		{
+			PlayerHealth.AddHealth(-100);
 			normalGacha.Draw(11);
 			gacha = normalGacha;
 			guiState = StateGacha11;
