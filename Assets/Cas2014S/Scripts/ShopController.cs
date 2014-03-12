@@ -5,21 +5,36 @@ public class ShopController : MyBehaviour {
 	
 	public float useDistance = 1.5f;
 
-	public GUIText openText;
+	public Vector3 helpPosition;
 
-	bool isShowOpen;
+	public Vector3 helpSize;
+	
+	bool isShowHelp = false;
+
+	Rect helpArea;
+
+	GUIStyle buttonStyle;
+
+	GUIStyle labelStyle;
 
 	// Use this for initialization
 	void Start () {
-
+		var topleft = Camera.main.ViewportToScreenPoint(helpPosition);
+		
+		var size = Camera.main.ViewportToScreenPoint(helpSize);
+		
+		helpArea = new Rect(
+			topleft.x, topleft.y,
+			size.x, size.y);
 	}
 	
 	// Update is called once per frame
 	void Update () {
 
+		isShowHelp = false;
+
 		if(!CameraRayCast.isHit || CameraRayCast.hit.distance > useDistance)
 		{
-			HideOpen();
 			return;
 		}
 
@@ -27,13 +42,11 @@ public class ShopController : MyBehaviour {
 
 		if(shopGUI == null)
 		{
-			HideOpen();
 			return;
 		}
 
 		if(shopGUI.isShopOpen)
 		{
-			HideOpen();
 			return;
 		}
 
@@ -43,24 +56,58 @@ public class ShopController : MyBehaviour {
 			return;
 		}
 
-		ShowOpen();
+		isShowHelp = true;
 	}
 
-	void ShowOpen()
+	void OnGUI()
 	{
-		if(!isShowOpen)
+		if(!isShowHelp)
 		{
-			isShowOpen = true;
-			openText.text = "[E] Shop";
+			return;
 		}
-	}
 
-	void HideOpen()
-	{
-		if(isShowOpen)
+		if(buttonStyle == null)
 		{
-			isShowOpen = false;
-			openText.text = "";
+			buttonStyle = new GUIStyle(GUI.skin.GetStyle("button"));
+			buttonStyle.fontSize = 20;
 		}
+
+		if(labelStyle == null)
+		{
+			labelStyle = new GUIStyle(GUI.skin.GetStyle("label"));
+			labelStyle.fontSize = 30;
+		}
+
+		GUILayout.BeginArea(helpArea);
+
+		GUILayout.FlexibleSpace();
+		
+		GUILayout.BeginHorizontal();
+
+		GUILayout.BeginVertical();
+		
+		GUILayout.FlexibleSpace();
+
+		GUILayout.Button("E", buttonStyle, GUILayout.MaxWidth(50), GUILayout.MinHeight(50));
+
+		GUILayout.FlexibleSpace();
+		
+		GUILayout.EndVertical();
+
+		GUILayout.BeginVertical();
+
+		GUILayout.FlexibleSpace();
+
+		GUILayout.Label("ショップ", labelStyle);
+
+		GUILayout.FlexibleSpace();
+
+		GUILayout.EndVertical();
+
+		GUILayout.EndHorizontal();
+
+		GUILayout.FlexibleSpace();
+		
+		GUILayout.EndArea();
 	}
 }

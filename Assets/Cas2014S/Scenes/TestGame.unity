@@ -1537,6 +1537,26 @@ Prefab:
       propertyPath: gunPrefabs.Array.data[2]
       value: 
       objectReference: {fileID: 100012, guid: 0b0caed4a0df04c448bd509db239a3cf, type: 2}
+    - target: {fileID: 11400010, guid: 07485e6211b431147a6423184d7cd5fe, type: 2}
+      propertyPath: labelStyle.m_Name
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400010, guid: 07485e6211b431147a6423184d7cd5fe, type: 2}
+      propertyPath: helpPosition.x
+      value: .550000012
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400010, guid: 07485e6211b431147a6423184d7cd5fe, type: 2}
+      propertyPath: helpPosition.y
+      value: .550000012
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400010, guid: 07485e6211b431147a6423184d7cd5fe, type: 2}
+      propertyPath: helpSize.x
+      value: .180000007
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400010, guid: 07485e6211b431147a6423184d7cd5fe, type: 2}
+      propertyPath: helpSize.y
+      value: .119999997
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 07485e6211b431147a6423184d7cd5fe, type: 2}
   m_RootGameObject: {fileID: 945214521}
@@ -3848,7 +3868,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   useDistance: 1.5
-  openText: {fileID: 1489252897}
+  helpPosition: {x: .550000012, y: .550000012, z: 0}
+  helpSize: {x: .180000007, y: .119999997, z: 0}
 --- !u!1 &956472355
 GameObject:
   m_ObjectHideFlags: 0
