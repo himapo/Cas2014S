@@ -1,33 +1,62 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
 
-public class ButtonHelp : MonoBehaviour {
+[System.Serializable]
+public class ButtonHelpInfo
+{
+	public string helpName;
+
+	public Vector3 position;
+
+	public Vector3 size;
+
+	public string buttonString;
 	
-	public Vector3 helpSize;
+	public float buttonSize;
+	
+	public int buttonFontSize;
+	
+	public string labelString;
+	
+	public int labelFontSize;
 
-	public Vector3 shopPosition;
+	public bool swap;
+	
+	public Rect area{get;set;}
+	
+	public bool isShow{get;set;}
+	
+	public void CalcRect()
+	{
+		var topleft = Camera.main.ViewportToScreenPoint(position);
+		
+		var screenSize = Camera.main.ViewportToScreenPoint(size);
+		
+		area = new Rect(
+			topleft.x, topleft.y,
+			screenSize.x, screenSize.y);
+	}
+}
 
-	public Vector3 leftReloadPosition;
+public class ButtonHelp : MyBehaviour {
 
-	public Vector3 rightReloadPosition;
+	public List<ButtonHelpInfo> helpInfos;
 
 	GUIStyle buttonStyle;
 
 	GUIStyle labelStyle;
 
-	bool isShowShop = false;
-
-	Rect shopArea;
-
 	// Use this for initialization
 	void Start () {
-		var topleft = Camera.main.ViewportToScreenPoint(shopPosition);
-		
-		var size = Camera.main.ViewportToScreenPoint(helpSize);
-		
-		shopArea = new Rect(
-			topleft.x, topleft.y,
-			size.x, size.y);
+		foreach(var info in helpInfos)
+		{
+			info.CalcRect();
+		}
+
+		SetShow("leftReload", true);
+		SetShow("rightReload", true);
 	}
 	
 	// Update is called once per frame
@@ -35,14 +64,11 @@ public class ButtonHelp : MonoBehaviour {
 	
 	}
 
-	public void ShowShop()
+	public void SetShow(string name, bool isShow)
 	{
-		isShowShop = true;
-	}
-
-	public void HideShop()
-	{
-		isShowShop = false;
+		helpInfos.FirstOrDefault((info)=>{
+			return info.helpName == name;
+		}).isShow = isShow;
 	}
 
 	void OnGUI()
@@ -50,35 +76,53 @@ public class ButtonHelp : MonoBehaviour {
 		if(buttonStyle == null)
 		{
 			buttonStyle = new GUIStyle(GUI.skin.GetStyle("button"));
-			buttonStyle.fontSize = 20;
 		}
-		
+
 		if(labelStyle == null)
 		{
 			labelStyle = new GUIStyle(GUI.skin.GetStyle("label"));
-			labelStyle.fontSize = 30;
 		}
 
-		if(isShowShop)
+		foreach(var info in helpInfos)
 		{
-			ShowGUI("E", "ショップ");
+			if(!info.isShow)
+			{
+				continue;
+			}
+
+			buttonStyle.fontSize = info.buttonFontSize;
+			labelStyle.fontSize = info.labelFontSize;
+
+			ShowGUI(
+				info.area,
+				info.buttonString,
+				info.buttonSize,
+				info.labelString,
+				info.swap);
 		}
 	}
 
-	void ShowGUI(string button, string label)
-	{
-		GUILayout.BeginArea(shopArea);
+	void ShowGUI(Rect area, string button, float buttonSize, string label, bool swap)
+	{		
+		GUILayout.BeginArea(area);
 		
 		GUILayout.FlexibleSpace();
 		
 		GUILayout.BeginHorizontal();
 		
 		GUILayout.BeginVertical();
-		
+
 		GUILayout.FlexibleSpace();
-		
-		GUILayout.Button(button, buttonStyle, GUILayout.MaxWidth(50), GUILayout.MinHeight(50));
-		
+
+		if(swap)
+		{
+			ShowLabel(label);
+		}
+		else
+		{
+			ShowButton(button, buttonSize);
+		}
+
 		GUILayout.FlexibleSpace();
 		
 		GUILayout.EndVertical();
@@ -87,7 +131,14 @@ public class ButtonHelp : MonoBehaviour {
 		
 		GUILayout.FlexibleSpace();
 		
-		GUILayout.Label(label, labelStyle);
+		if(swap)
+		{
+			ShowButton(button, buttonSize);
+		}
+		else
+		{
+			ShowLabel(label);
+		}
 		
 		GUILayout.FlexibleSpace();
 		
@@ -98,5 +149,15 @@ public class ButtonHelp : MonoBehaviour {
 		GUILayout.FlexibleSpace();
 		
 		GUILayout.EndArea();
+	}
+
+	void ShowButton(string button, float buttonSize)
+	{
+		GUILayout.Button(button, buttonStyle, GUILayout.MaxWidth(buttonSize), GUILayout.MinHeight(buttonSize));
+	}
+
+	void ShowLabel(string label)
+	{
+		GUILayout.Label(label, labelStyle);
 	}
 }

@@ -38,10 +38,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29aa05acb3a393540b95f1540b614f6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  helpSize: {x: .180000007, y: .119999997, z: 0}
-  shopPosition: {x: .550000012, y: .550000012, z: 0}
-  leftReloadPosition: {x: 0, y: 0, z: 0}
-  rightReloadPosition: {x: 0, y: 0, z: 0}
+  helpInfos:
+  - helpName: shop
+    position: {x: .550000012, y: .550000012, z: 0}
+    size: {x: .180000007, y: .119999997, z: 0}
+    buttonString: E
+    buttonSize: 50
+    buttonFontSize: 20
+    labelString: "\u30B7\u30E7\u30C3\u30D7"
+    labelFontSize: 30
+    swap: 0
+  - helpName: leftReload
+    position: {x: .0199999996, y: .649999976, z: 0}
+    size: {x: .100000001, y: .119999997, z: 0}
+    buttonString: R
+    buttonSize: 40
+    buttonFontSize: 16
+    labelString: "\u30EA\u30ED\u30FC\u30C9"
+    labelFontSize: 16
+    swap: 0
+  - helpName: rightReload
+    position: {x: .879999995, y: .649999976, z: 0}
+    size: {x: .100000001, y: .119999997, z: 0}
+    buttonString: F
+    buttonSize: 40
+    buttonFontSize: 16
+    labelString: "\u30EA\u30ED\u30FC\u30C9"
+    labelFontSize: 16
+    swap: 1
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

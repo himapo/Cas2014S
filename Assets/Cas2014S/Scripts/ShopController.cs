@@ -15,7 +15,7 @@ public class ShopController : MyBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		buttonHelp.HideShop();
+		buttonHelp.SetShow("shop", false);
 
 		if(!CameraRayCast.isHit || CameraRayCast.hit.distance > useDistance)
 		{
@@ -40,6 +40,6 @@ public class ShopController : MyBehaviour {
 			return;
 		}
 
-		buttonHelp.ShowShop();
+		buttonHelp.SetShow("shop", true);
 	}
 }
