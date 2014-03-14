@@ -15,6 +15,7 @@ public class GunController : MyBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		enabled = false;
 	}
 	
 	// Update is called once per frame
@@ -72,6 +73,26 @@ public class GunController : MyBehaviour {
 	}
 	
 	void OnShopClose()
+	{
+		enabled = true;
+	}
+
+	void OnPauseMenuOpen()
+	{
+		enabled = false;
+	}
+	
+	void OnPauseMenuClose()
+	{
+		enabled = true;
+	}
+
+	void OnBeginFloorMove()
+	{
+		enabled = false;
+	}
+
+	void OnEndFloorMove()
 	{
 		enabled = true;
 	}

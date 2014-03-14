@@ -26,11 +26,12 @@ public class PlayerController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		enabled = false;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		Screen.lockCursor = true;
+		//Screen.lockCursor = true;
 
         var characterController = GetComponent<CharacterController>();
 
@@ -85,10 +86,51 @@ public class PlayerController : MonoBehaviour {
 	void OnShopOpen()
 	{
 		enabled = false;
+		Screen.lockCursor = false;
+		Screen.showCursor = true;
 	}
 
 	void OnShopClose()
 	{
 		enabled = true;
+		Screen.lockCursor = true;
+		Screen.showCursor = false;
+	}
+
+	void OnPauseMenuOpen()
+	{
+		enabled = false;
+		Screen.lockCursor = false;
+		Screen.showCursor = true;
+	}
+
+	void OnPauseMenuClose()
+	{
+		enabled = true;
+		Screen.lockCursor = true;
+		Screen.showCursor = false;
+	}
+
+	void OnBeginFloorMove()
+	{
+		enabled = false;
+	}
+
+	void OnEndFloorMove()
+	{
+		enabled = true;
+	}
+
+	void OnRestart()
+	{
+		Screen.lockCursor = true;
+		Screen.showCursor = false;
+	}
+
+	void OnGotoTitle()
+	{
+		enabled = false;
+		Screen.lockCursor = false;
+		Screen.showCursor = true;
 	}
 }

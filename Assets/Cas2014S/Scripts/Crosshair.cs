@@ -19,7 +19,7 @@ public class Crosshair : MyBehaviour {
 
 	// Use this for initialization
 	void Start () {
-
+		enabled = false;
 	}
 	
 	// Update is called once per frame
@@ -72,5 +72,20 @@ public class Crosshair : MyBehaviour {
 	public void OnShopClose()
 	{
 		enabled = true;
+	}
+
+	void OnBeginFloorMove()
+	{
+		enabled = false;
+	}
+	
+	void OnEndFloorMove()
+	{
+		enabled = true;
+	}
+
+	void OnGotoTitle()
+	{
+		enabled = false;
 	}
 }

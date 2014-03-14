@@ -1,11 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class ExitCollision : MonoBehaviour {
+public class ExitCollision : MyBehaviour {
 
 	public float stayTime = 3.0f;
-
-	public GameObject gameController;
 
 	float elapsed;
 
@@ -13,7 +11,6 @@ public class ExitCollision : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		gameController = GameObject.FindWithTag("GameController");
 		elapsed = 0;
 		enter = false;
 	}
@@ -38,7 +35,7 @@ public class ExitCollision : MonoBehaviour {
 		if(enter && elapsed >= stayTime)
 		{
 			Debug.Log("Go to Next Floor");
-			gameController.SendMessage("GotoNextFloor");
+			GameController.SendMessage("GotoNextFloor");
 			enter = false;
 		}
 	}

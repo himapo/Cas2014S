@@ -10,12 +10,12 @@ PlayerSettings:
   targetGlesGraphics: 1
   targetResolution: 0
   accelerometerFrequency: 60
-  companyName: Unity
+  companyName: himalab
   productName: Sample Assets
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
-  defaultScreenWidth: 1024
-  defaultScreenHeight: 768
+  defaultScreenWidth: 1280
+  defaultScreenHeight: 720
   defaultScreenWidthWeb: 1024
   defaultScreenHeightWeb: 576
   m_RenderingPath: 1
@@ -116,6 +116,9 @@ PlayerSettings:
       m_Size: 128
   m_BuildTargetBatching:
   - m_BuildTarget: Web
+    m_StaticBatching: 1
+    m_DynamicBatching: 1
+  - m_BuildTarget: Standalone
     m_StaticBatching: 1
     m_DynamicBatching: 1
   webPlayerTemplate: APPLICATION:Black Background

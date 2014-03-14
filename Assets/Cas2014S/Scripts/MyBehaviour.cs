@@ -4,6 +4,24 @@ using System.Collections.Generic;
 
 public class MyBehaviour : MonoBehaviour {
 
+	GameObject gameController;
+
+	protected GameObject GameController
+	{
+		get
+		{
+			if(gameController == null)
+			{
+				gameController = GameObject.FindWithTag("GameController");
+			}
+
+			return gameController;
+		}
+		set
+		{
+		}
+	}
+
 	GameObject player;
 
 	protected GameObject Player
@@ -77,6 +95,17 @@ public class MyBehaviour : MonoBehaviour {
 		}
 		set
 		{
+		}
+	}
+
+	protected void BroadcastAll(string methodName)
+	{
+		foreach(var gameObject in GameObject.FindObjectsOfType(typeof(GameObject)) as GameObject[])
+		{
+			if(gameObject != null && gameObject.transform.parent == null)
+			{
+				gameObject.gameObject.BroadcastMessage(methodName, null, SendMessageOptions.DontRequireReceiver);
+			}
 		}
 	}
 }

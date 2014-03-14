@@ -153,7 +153,7 @@ public class ButtonHelp : MyBehaviour {
 
 	void ShowButton(string button, float buttonSize)
 	{
-		GUILayout.Button(button, buttonStyle, GUILayout.MaxWidth(buttonSize), GUILayout.MinHeight(buttonSize));
+		GUILayout.Label(button, buttonStyle, GUILayout.MaxWidth(buttonSize), GUILayout.MinHeight(buttonSize));
 	}
 
 	void ShowLabel(string label)

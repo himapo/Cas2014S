@@ -54,9 +54,6 @@ public class ShopGUI : MyBehaviour {
 
 		isShopOpen = true;
 
-		Screen.lockCursor = false;
-		Screen.showCursor = true;
-
 		Player.SendMessage("OnShopOpen", SendMessageOptions.DontRequireReceiver);
 
 		var enemys = GameObject.FindGameObjectsWithTag("Enemy");
@@ -76,9 +73,6 @@ public class ShopGUI : MyBehaviour {
 		}
 
 		isShopOpen = false;
-
-		Screen.lockCursor = true;
-		Screen.showCursor = false;
 
 		Player.SendMessage("OnShopClose", SendMessageOptions.DontRequireReceiver);
 		
