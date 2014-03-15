@@ -4,19 +4,19 @@ using System.Collections.Generic;
 
 public class PlayerController : MonoBehaviour {
 
-    public float movementSpeed = 10.0f;
+    public float movementSpeed;
 
-    public float mouseSensitivity = 5.0f;
+    public float mouseSensitivity;
 
-    public float jumpSpeed = 4.5f;
+    public float jumpSpeed;
 
-    public float upDownRange = 60.0f;
+    public float upDownRange;
 
     float verticalRotation;
 
     float verticalVelocity;
 
-	public float crouchSpeed = 4.0f;
+	public float crouchSpeed;
 
 	[HideInInspector]
 	public float crouch { get; set; }	// 0.0 - 1.0

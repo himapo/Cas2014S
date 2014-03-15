@@ -17,6 +17,8 @@ public class SkillStatus : MyBehaviour {
 
 	void OnGUI()
 	{
+		GUI.depth = 3;
+
 		for(var i=0; i<2; ++i)
 		{
 			var gun = GetGun(i);

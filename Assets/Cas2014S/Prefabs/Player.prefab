@@ -1595,11 +1595,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fca9f403a746f94da78a7c6e1bebeec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 10
+  movementSpeed: 8
   mouseSensitivity: 5
   jumpSpeed: 4.5
   upDownRange: 60
-  crouchSpeed: 3
+  crouchSpeed: 2
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1618,6 +1618,7 @@ MonoBehaviour:
   skills: []
   maxSkillSlot: 6
   bulletDamage: 3
+  rare: 0
   standRecoil: 2
   runRecoil: 4
   crouchRecoil: 1
@@ -1685,7 +1686,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   useDistance: 1.5
-  openText: {fileID: 0}
+  buttonHelp: {fileID: 0}
 --- !u!114 &11400012
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1704,6 +1705,7 @@ MonoBehaviour:
   skills: []
   maxSkillSlot: 3
   bulletDamage: 20
+  rare: 0
   standRecoil: 2
   runRecoil: 4
   crouchRecoil: 1
