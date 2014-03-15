@@ -126,6 +126,8 @@ public class GameController : MyBehaviour {
 	{
 		BroadcastAll("OnBeginFloorMove");
 
+		FloorGenerator.Instance.Generate();
+
 		updateFunc = StateFloorMove;
 		guiFunc = GUIFloorMove;
 
@@ -140,8 +142,6 @@ public class GameController : MyBehaviour {
 
 	void GUIFloorMove()
 	{
-		// TODO : Fade
-
 		var topleft = Camera.main.ViewportToScreenPoint(new Vector3(0, 0, 0));
 		
 		var size = Camera.main.ViewportToScreenPoint(new Vector3(1.0f, 1.0f, 0.0f));
@@ -169,14 +169,14 @@ public class GameController : MyBehaviour {
 	{
 		var startTime = Time.time;
 		
-		while(Time.time - startTime < 3.0f)
+		while(!abortMoveFloor && Time.time - startTime < 3.0f)
 		{
-			if(abortMoveFloor)
-			{
-				yield break;
-			}
-
 			yield return null;
+		}
+
+		if(abortMoveFloor)
+		{
+			yield break;
 		}
 		
 		Debug.Log ("Start next floor");

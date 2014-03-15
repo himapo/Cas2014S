@@ -45,6 +45,20 @@ public class ShopGUI : MyBehaviour {
 		}
 	}
 
+	void OnBeginFloorMove()
+	{
+		Destroy(gameObject);
+	}
+	
+	void OnGotoNextFloor()
+	{
+	}
+	
+	void OnGotoTitle()
+	{
+		Destroy(gameObject);
+	}
+
 	public void OpenShop()
 	{
 		if(isShopOpen)

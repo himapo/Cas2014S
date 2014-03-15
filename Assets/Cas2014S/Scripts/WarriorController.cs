@@ -1,9 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class WarriorController : MonoBehaviour {
-
-	public GameObject player;
+public class WarriorController : MyBehaviour {
 
 	public float rotationRatio = 0.5f;
 
@@ -15,9 +13,9 @@ public class WarriorController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		var characterController = player.GetComponent<CharacterController>();
+		var characterController = Player.GetComponent<CharacterController>();
 
-		var playerTarget = player.transform.position;
+		var playerTarget = Player.transform.position;
 		playerTarget.y += characterController.height * 0.5f;
 
 		var direction = playerTarget - gameObject.transform.position;

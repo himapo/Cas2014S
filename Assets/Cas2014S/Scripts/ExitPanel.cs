@@ -22,4 +22,18 @@ public class ExitPanel : MonoBehaviour {
 
 		transform.rotation = Quaternion.Euler(0, rotation, 0);
 	}
+
+	void OnBeginFloorMove()
+	{
+		Destroy(gameObject);
+	}
+	
+	void OnGotoNextFloor()
+	{
+	}
+	
+	void OnGotoTitle()
+	{
+		Destroy(gameObject);
+	}
 }
