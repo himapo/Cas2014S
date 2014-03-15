@@ -15,6 +15,8 @@ public class FloorGenerator : MyBehaviour {
 
 	public GameObject shopPrefab;
 
+	public GameObject wallPrefab;
+
 	public float gridSize = 3.0f;
 
 	public int[] gridNum = new int[2]{ 10, 10 };
@@ -50,6 +52,8 @@ public class FloorGenerator : MyBehaviour {
 		usedGridNumbers.Clear();
 
 		SetPlayerPosition();
+
+		GenerateWall();
 
 		SpawnExit();
 
@@ -122,5 +126,56 @@ public class FloorGenerator : MyBehaviour {
 
 	void SpawnItem()
 	{
+	}
+
+	void GenerateWall()
+	{
+		for(var x=0; x<gridNum[0] - 1; ++x)
+		{
+			if(Random.value < 0.2f)
+			{
+				var length = Random.Range(1, 10);
+
+				var wallStart = Random.Range(0, gridNum[1] - length);
+
+				for(var y=wallStart; y<wallStart+length; ++y)
+				{
+					SpawnWall(CalcGridIndex(x, y), true);
+				}
+			}
+		}
+
+		for(var y=0; y<gridNum[1] - 1; ++y)
+		{
+			if(Random.value < 0.2f)
+			{
+				var length = Random.Range(1, 10);
+				
+				var wallStart = Random.Range(0, gridNum[0] - length);
+				
+				for(var x=wallStart; x<wallStart+length; ++x)
+				{
+					SpawnWall(CalcGridIndex(x, y), false);
+				}
+			}
+		}
+	}
+
+	int CalcGridIndex(int x, int y)
+	{
+		return gridNum[0] * y + x;
+	}
+
+	void SpawnWall(int grid, bool vertical)
+	{
+		var position = GetGridPosition(grid);
+
+		Instantiate(
+			wallPrefab,
+			new Vector3(
+				position.x + gridSize * (vertical ? 0.5f : 0.0f),
+				wallPrefab.transform.position.y,
+				position.z + gridSize * (vertical ? 0.0f : 0.5f)),
+			Quaternion.AngleAxis(vertical ? 90.0f : 0.0f, Vector3.up));
 	}
 }
