@@ -90,6 +90,20 @@ public class Health : MyBehaviour {
 		return result;
 	}
 
+	public int Heal(float percentage)
+	{
+		if(health < maxHealth)
+		{
+			var heal = Mathf.FloorToInt(percentage * maxHealth / 100.0f);
+			heal = Mathf.Min (heal, maxHealth - health);
+			health += heal;
+			health = Mathf.Clamp(health, 0, maxHealth);
+			innerHealth = health;
+			return heal;
+		}
+		return 0;
+	}
+
 	public void AddHealth(int amount)
 	{
 		health += amount;

@@ -42,11 +42,19 @@ public class ButtonHelpInfo
 
 public class ButtonHelp : MyBehaviour {
 
+	static ButtonHelp instance;
+	public static ButtonHelp Instance{get{return instance;}set{}}
+
 	public List<ButtonHelpInfo> helpInfos;
 
 	GUIStyle buttonStyle;
 
 	GUIStyle labelStyle;
+
+	void Awake()
+	{
+		instance = this;
+	}
 
 	// Use this for initialization
 	void Start () {

@@ -51,4 +51,9 @@ public class Gacha : MyBehaviour {
 		
 		drawnItems.Add(item);
 	}
+
+	void OnBeginFloorMove()
+	{
+		Destroy(gameObject);
+	}
 }

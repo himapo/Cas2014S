@@ -3,13 +3,23 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 
+[System.Serializable]
+public class FloorItem
+{
+	public GameObject prefab;
+
+	public int probability;
+}
+
 public class FloorGenerator : MyBehaviour {
 
 	static FloorGenerator instance;
 
 	public static FloorGenerator Instance{get{return instance;}set{}}
 
-	//List<GameObject> generatedObjects = new List<GameObject>();
+	public float gridSize = 3.0f;
+	
+	public int[] gridNum = new int[2]{ 10, 10 };
 
 	public GameObject exitPrefab;
 
@@ -17,11 +27,11 @@ public class FloorGenerator : MyBehaviour {
 
 	public GameObject wallPrefab;
 
-	public float gridSize = 3.0f;
+	public int minItem;
+	
+	public int maxItem;
 
-	public int[] gridNum = new int[2]{ 10, 10 };
-
-	//List<bool> gridEmptyFlags = new List<bool>();
+	public List<FloorItem> itemTable;
 
 	List<int> emptyGridNumbers = new List<int>();
 
@@ -58,6 +68,8 @@ public class FloorGenerator : MyBehaviour {
 		SpawnExit();
 
 		SpawnShop();
+
+		SpawnItems ();
 	}
 
 	int SampleRandomEmptyGrid()
@@ -68,6 +80,10 @@ public class FloorGenerator : MyBehaviour {
 
 	void MarkGridUsed(int gridIndex)
 	{
+		if(!emptyGridNumbers.Contains(gridIndex))
+		{
+			return;
+		}
 		emptyGridNumbers.Remove(gridIndex);
 		usedGridNumbers.Add(gridIndex);
 	}
@@ -83,6 +99,8 @@ public class FloorGenerator : MyBehaviour {
 				prefab.transform.position.y,
 				position.z),
 			rotation);
+
+		MarkGridUsed(gridIndex);
 	}
 
 	Vector3 GetGridPosition(int gridIndex)
@@ -108,31 +126,50 @@ public class FloorGenerator : MyBehaviour {
 
 	void SpawnExit()
 	{
-		var grid = SampleRandomEmptyGrid();
-		SpawnObject(exitPrefab, grid, 0, Quaternion.identity);
-		MarkGridUsed(grid);
+		SpawnObject(exitPrefab, SampleRandomEmptyGrid(), 0, Quaternion.identity);
 	}
 
 	void SpawnShop()
 	{
-		var grid = SampleRandomEmptyGrid();
-		SpawnObject(shopPrefab, grid, 0, Quaternion.AngleAxis(Random.value * 360.0f, Vector3.up));
-		MarkGridUsed(grid);
+		SpawnObject(shopPrefab, SampleRandomEmptyGrid(), 0, Quaternion.AngleAxis(Random.value * 360.0f, Vector3.up));
 	}
 
 	void SpawnEnemy()
 	{
 	}
 
-	void SpawnItem()
+	void SpawnItems()
 	{
+		var n = Random.Range(minItem, maxItem);
+
+		var probSum = itemTable.Sum((item)=>{
+			return item.probability;
+		});
+
+		for(var i=0; i<n; ++i)
+		{
+			SpawnItem(probSum);
+		}
+	}
+
+	void SpawnItem(int probSum)
+	{
+		var sample = Random.Range(0, probSum);
+		
+		var border = 0;
+		var item = itemTable.First((param)=>{
+			border += param.probability;
+			return border > sample;
+		});
+
+		SpawnObject(item.prefab, SampleRandomEmptyGrid(), 0, Quaternion.identity);
 	}
 
 	void GenerateWall()
 	{
 		for(var x=0; x<gridNum[0] - 1; ++x)
 		{
-			if(Random.value < 0.2f)
+			if(Random.value < 0)
 			{
 				var length = Random.Range(1, 10);
 
@@ -147,7 +184,7 @@ public class FloorGenerator : MyBehaviour {
 
 		for(var y=0; y<gridNum[1] - 1; ++y)
 		{
-			if(Random.value < 0.2f)
+			if(Random.value < 0)
 			{
 				var length = Random.Range(1, 10);
 				

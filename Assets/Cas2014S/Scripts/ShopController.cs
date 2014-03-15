@@ -5,8 +5,6 @@ public class ShopController : MyBehaviour {
 	
 	public float useDistance = 1.5f;
 
-	public ButtonHelp buttonHelp;
-
 	// Use this for initialization
 	void Start () {
 
@@ -15,7 +13,7 @@ public class ShopController : MyBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		buttonHelp.SetShow("shop", false);
+		ButtonHelp.Instance.SetShow("shop", false);
 
 		if(!CameraRayCast.isHit || CameraRayCast.hit.distance > useDistance)
 		{
@@ -40,6 +38,6 @@ public class ShopController : MyBehaviour {
 			return;
 		}
 
-		buttonHelp.SetShow("shop", true);
+		ButtonHelp.Instance.SetShow("shop", true);
 	}
 }

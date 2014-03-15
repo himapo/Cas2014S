@@ -34,14 +34,14 @@ public class PauseMenu : MyBehaviour {
 	{
 		isShow = true;
 
-		Player.SendMessage("OnPauseMenuOpen", SendMessageOptions.DontRequireReceiver);
+		BroadcastAll("OnPauseMenuOpen");
 	}
 
 	void Close()
 	{
 		isShow = false;
 
-		Player.SendMessage("OnPauseMenuClose", SendMessageOptions.DontRequireReceiver);
+		BroadcastAll("OnPauseMenuClose");
 	}
 
 	void OnGUI()

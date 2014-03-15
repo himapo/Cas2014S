@@ -140,4 +140,18 @@ public class PlayerController : MonoBehaviour {
 		Screen.lockCursor = false;
 		Screen.showCursor = true;
 	}
+
+	void OnPickWindowOpen()
+	{
+		enabled = false;
+		Screen.lockCursor = false;
+		Screen.showCursor = true;
+	}
+
+	void OnPickWindowClose()
+	{
+		enabled = true;
+		Screen.lockCursor = true;
+		Screen.showCursor = false;
+	}
 }

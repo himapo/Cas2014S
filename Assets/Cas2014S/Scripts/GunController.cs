@@ -106,4 +106,14 @@ public class GunController : MyBehaviour {
 	{
 		enabled = false;
 	}
+
+	void OnPickWindowOpen()
+	{
+		enabled = false;
+	}
+	
+	void OnPickWindowClose()
+	{
+		enabled = true;
+	}
 }

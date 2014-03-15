@@ -103,4 +103,9 @@ public class Bullet : MyBehaviour {
 		Debug.Log ("Bullet::Explode");
         Destroy(gameObject);
     }
+
+	void OnBeginFloorMove()
+	{
+		Destroy(gameObject);
+	}
 }

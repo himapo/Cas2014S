@@ -1,17 +1,18 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class PlayerStatus : MonoBehaviour {
+public class PlayerStatus : MyBehaviour {
 
-	public Health health;
+	static PlayerStatus instance;
+	public static PlayerStatus Instance{get{return instance;}set{}}
+
+	void Awake()
+	{
+		instance = this;
+	}
 
 	// Use this for initialization
 	void Start () {
-		if(health == null)
-		{
-			var player = GameObject.FindWithTag("Player");
-			health = player.GetComponent<Health>();
-		}
 	}
 	
 	// Update is called once per frame
@@ -21,7 +22,7 @@ public class PlayerStatus : MonoBehaviour {
 
 		healthText.text = string.Format(
 			"{0}/{1}",
-			health.health,
-			health.maxHealth);
+			PlayerHealth.health,
+			PlayerHealth.maxHealth);
 	}
 }

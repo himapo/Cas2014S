@@ -38,11 +38,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53d9cf3f18214c940bfe6f94d7109319, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gridSize: 3
+  gridNum: 0a0000000a000000
   exitPrefab: {fileID: 100008, guid: 9551961b649729a4994e16d2e17aaed8, type: 2}
   shopPrefab: {fileID: 100000, guid: 4d86faffffd57bb44825e160661e9a26, type: 2}
   wallPrefab: {fileID: 100000, guid: f0037facef7702345bc7d3723c767bc9, type: 2}
-  gridSize: 3
-  gridNum: 0a0000000a000000
+  minItem: 0
+  maxItem: 4
+  itemTable:
+  - prefab: {fileID: 100002, guid: 8616d6591907a8d42ae5db38ce2c1281, type: 2}
+    probability: 20
+  - prefab: {fileID: 100002, guid: 8d510516121c2014a81c9ebf2c6e5d20, type: 2}
+    probability: 8
+  - prefab: {fileID: 100002, guid: 631ee82915e28a74d8025d721d2694ee, type: 2}
+    probability: 2
+  - prefab: {fileID: 100002, guid: 421db083c0f1fb240a7f2e95427d349a, type: 2}
+    probability: 8
+  - prefab: {fileID: 100000, guid: fb6d19d0265d412428342551c757a639, type: 2}
+    probability: 8
+  - prefab: {fileID: 100020, guid: 044576b1bd8cd8743b94a0c33df48574, type: 2}
+    probability: 4
+  - prefab: {fileID: 100020, guid: 0f7d6d0a5937b8c46a3b5bc0b6d7b2eb, type: 2}
+    probability: 3
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
