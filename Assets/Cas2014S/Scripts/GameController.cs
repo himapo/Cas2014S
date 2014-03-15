@@ -183,6 +183,8 @@ public class GameController : MyBehaviour {
 
 		BroadcastAll("OnEndFloorMove");
 	
+		Fader.Instance.FadeIn(0.5f);
+		
 		updateFunc = StateGameMain;
 		guiFunc = ()=>{};
 	}
@@ -215,6 +217,8 @@ public class GameController : MyBehaviour {
 		updateFunc = StateBeginFloorMove;
 		guiFunc = ()=>{};
 
+		Fader.Instance.FadeOut(0.0001f);
+
 		BroadcastAll("OnGotoNextFloor");
 	}
 
@@ -224,6 +228,7 @@ public class GameController : MyBehaviour {
 		guiFunc = GUITitle;
 
 		abortMoveFloor = true;
+		Fader.Instance.FadeOut(0.0001f);
 		
 		BroadcastAll("OnGotoTitle");
 	}

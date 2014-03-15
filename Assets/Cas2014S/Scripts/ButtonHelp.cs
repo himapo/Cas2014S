@@ -83,6 +83,8 @@ public class ButtonHelp : MyBehaviour {
 			labelStyle = new GUIStyle(GUI.skin.GetStyle("label"));
 		}
 
+		GUI.depth = 3;
+
 		foreach(var info in helpInfos)
 		{
 			if(!info.isShow)
