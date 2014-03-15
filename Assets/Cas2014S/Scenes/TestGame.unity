@@ -4138,6 +4138,12 @@ MonoBehaviour:
     probability: 4
   - prefab: {fileID: 100020, guid: 0f7d6d0a5937b8c46a3b5bc0b6d7b2eb, type: 2}
     probability: 3
+  - prefab: {fileID: 100002, guid: 91203d7da0b8f714995e95bff61de07e, type: 2}
+    probability: 10
+  - prefab: {fileID: 100002, guid: 077a5d3dca9a89945ba1ebe48e3c6c0e, type: 2}
+    probability: 10
+  - prefab: {fileID: 100002, guid: 3f6a8b33819cbcf4abf19c77b45fd807, type: 2}
+    probability: 10
 --- !u!4 &1211774676
 Transform:
   m_ObjectHideFlags: 0
