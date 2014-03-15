@@ -96,4 +96,9 @@ public class GunController : MyBehaviour {
 	{
 		enabled = true;
 	}
+
+	void OnGotoTitle()
+	{
+		enabled = false;
+	}
 }

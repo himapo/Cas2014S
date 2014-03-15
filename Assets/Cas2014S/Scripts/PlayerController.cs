@@ -31,7 +31,7 @@ public class PlayerController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		//Screen.lockCursor = true;
+		Screen.lockCursor = true;
 
         var characterController = GetComponent<CharacterController>();
 

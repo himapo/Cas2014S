@@ -11,6 +11,8 @@ public class GameController : MyBehaviour {
 	Action guiFunc;
 
 	int floor;
+
+	bool abortMoveFloor;
 	
 	// Use this for initialization
 	void Start () {
@@ -33,8 +35,7 @@ public class GameController : MyBehaviour {
 
 	void StateInit()
 	{
-		updateFunc = StateTitle;
-		guiFunc = GUITitle;
+		GotoTitle();
 	}
 
 	void StateTitle()
@@ -98,7 +99,26 @@ public class GameController : MyBehaviour {
 		GUILayout.EndHorizontal();
 		
 		GUILayout.FlexibleSpace();
+
+		GUILayout.BeginHorizontal();
 		
+		GUILayout.FlexibleSpace();
+		
+		if(GUILayout.Button(
+			"ゲームを終了する",
+			buttonStyle,
+			GUILayout.MaxWidth(200),
+			GUILayout.MinHeight(50)))
+		{
+			Application.Quit();
+		}
+		
+		GUILayout.FlexibleSpace();
+		
+		GUILayout.EndHorizontal();
+
+		GUILayout.FlexibleSpace();
+
 		GUILayout.EndArea();
 	}
 
@@ -108,6 +128,8 @@ public class GameController : MyBehaviour {
 
 		updateFunc = StateFloorMove;
 		guiFunc = GUIFloorMove;
+
+		abortMoveFloor = false;
 
 		StartCoroutine(AsyncFloorMove());
 	}
@@ -149,6 +171,11 @@ public class GameController : MyBehaviour {
 		
 		while(Time.time - startTime < 3.0f)
 		{
+			if(abortMoveFloor)
+			{
+				yield break;
+			}
+
 			yield return null;
 		}
 		
@@ -176,6 +203,7 @@ public class GameController : MyBehaviour {
 	{
 		BroadcastAll("OnRestart");
 
+		abortMoveFloor = true;
 		floor = 0;
 
 		GotoNextFloor();
@@ -193,7 +221,9 @@ public class GameController : MyBehaviour {
 	public void GotoTitle()
 	{
 		updateFunc = StateTitle;
-		guiFunc = ()=>{};
+		guiFunc = GUITitle;
+
+		abortMoveFloor = true;
 		
 		BroadcastAll("OnGotoTitle");
 	}
