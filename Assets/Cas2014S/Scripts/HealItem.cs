@@ -51,4 +51,14 @@ public class HealItem : MyBehaviour {
 
 		Destroy(gameObject);
 	}
+
+	void OnBeginFloorMove()
+	{
+		Destroy(gameObject);
+	}
+	
+	void OnGotoTitle()
+	{
+		Destroy(gameObject);
+	}
 }
