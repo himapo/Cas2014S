@@ -101,4 +101,9 @@ public class GunController : MyBehaviour {
 	{
 		enabled = false;
 	}
+
+	void OnGameClear()
+	{
+		enabled = false;
+	}
 }

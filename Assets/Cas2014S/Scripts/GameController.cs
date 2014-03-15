@@ -6,6 +6,8 @@ public class GameController : MyBehaviour {
 
 	public GUIText floorText;
 
+	public int maxFloor;
+
 	Action updateFunc;
 
 	Action guiFunc;
@@ -13,7 +15,11 @@ public class GameController : MyBehaviour {
 	int floor;
 
 	bool abortMoveFloor;
-	
+
+	float gameStartTime;
+
+	float gameEndTime;
+
 	// Use this for initialization
 	void Start () {
 		updateFunc = StateInit;
@@ -199,10 +205,83 @@ public class GameController : MyBehaviour {
 
 	void StateResult()
 	{
+
+	}
+
+	void GUIResult()
+	{
+		GUILayout.BeginArea(new Rect(0,0,Screen.width, Screen.height));
+		
+		GUILayout.FlexibleSpace();
+		
+		var topleft = Camera.main.ViewportToScreenPoint(new Vector3(0.2f, 0.1f, 0));
+		
+		var size = Camera.main.ViewportToScreenPoint(new Vector3(0.6f, 0.8f));
+		
+		var windowRect = new Rect(
+			topleft.x, topleft.y,
+			size.x, size.y);
+
+		GUILayout.Window(0, windowRect, WindowFunc, "Clear Result");
+		
+		GUILayout.FlexibleSpace();
+		
+		GUILayout.EndArea();
+	}
+
+	void WindowFunc(int windowID)
+	{
+		var labelStyle = new GUIStyle(GUI.skin.GetStyle("label"));
+		labelStyle.fontSize = 50;
+
+		var buttonStyle = new GUIStyle(GUI.skin.GetStyle("button"));
+		buttonStyle.fontSize = 20;
+		
+		var buttonMaxWidth = 200;
+		var buttonMinHeight = 70;
+
+		//GUILayout.FlexibleSpace();
+
+		GUILayout.Label(
+			"伽洲怪島クリア！",
+			labelStyle);
+
+		//GUILayout.FlexibleSpace();
+
+		var finishTime = gameEndTime - gameStartTime;
+		var minutes = Mathf.FloorToInt(finishTime / 60.0f);
+		var seconds = Mathf.FloorToInt(finishTime - Mathf.Floor (finishTime / 60.0f));
+		
+		GUILayout.Label(
+			string.Format("クリア時間 {0}分{1}秒", minutes, seconds),
+			labelStyle);
+		
+		GUILayout.FlexibleSpace();
+
+		GUILayout.BeginHorizontal();
+		
+		GUILayout.FlexibleSpace();
+
+		if(GUILayout.Button(
+			"タイトルに戻る",
+			buttonStyle,
+			GUILayout.MaxWidth(buttonMaxWidth),
+			GUILayout.MinHeight(buttonMinHeight)))
+		{
+			GotoTitle();
+		}
+
+		GUILayout.FlexibleSpace();
+		
+		GUILayout.EndHorizontal();
+		
+		GUILayout.FlexibleSpace();
 	}
 
 	public void Restart()
 	{
+		gameStartTime = Time.time;
+
 		BroadcastAll("OnRestart");
 
 		abortMoveFloor = true;
@@ -214,12 +293,21 @@ public class GameController : MyBehaviour {
 	public void GotoNextFloor()
 	{
 		floor++;
-		updateFunc = StateBeginFloorMove;
-		guiFunc = ()=>{};
 
-		Fader.Instance.FadeOut(0.0001f);
-
-		BroadcastAll("OnGotoNextFloor");
+		if(floor < maxFloor)
+		{
+			Fader.Instance.FadeOut(0.0001f);
+			updateFunc = StateBeginFloorMove;
+			guiFunc = ()=>{};
+			BroadcastAll("OnGotoNextFloor");
+		}
+		else
+		{
+			gameEndTime = Time.time;
+			updateFunc = StateResult;
+			guiFunc = GUIResult;
+			BroadcastAll("OnGameClear");
+		}
 	}
 
 	public void GotoTitle()

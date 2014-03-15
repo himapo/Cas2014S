@@ -151,4 +151,9 @@ public class PauseMenu : MyBehaviour {
 	{
 		enabled = false;
 	}
+
+	void OnGameClear()
+	{
+		enabled = false;
+	}
 }

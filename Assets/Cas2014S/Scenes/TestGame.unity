@@ -4680,6 +4680,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   floorText: {fileID: 1459685253}
+  maxFloor: 2
 --- !u!4 &1635459932
 Transform:
   m_ObjectHideFlags: 0

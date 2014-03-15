@@ -133,4 +133,11 @@ public class PlayerController : MonoBehaviour {
 		Screen.lockCursor = false;
 		Screen.showCursor = true;
 	}
+
+	void OnGameClear()
+	{
+		enabled = false;
+		Screen.lockCursor = false;
+		Screen.showCursor = true;
+	}
 }

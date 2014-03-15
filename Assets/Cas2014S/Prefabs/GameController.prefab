@@ -66,9 +66,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 438a5cf3343a1dd4a9e36665bf4a592d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
   floorText: {fileID: 13200000}
-  gameState: 0
+  maxFloor: 2
 --- !u!132 &13200000
 GUIText:
   m_ObjectHideFlags: 1
