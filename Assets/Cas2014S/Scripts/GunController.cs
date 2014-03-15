@@ -15,7 +15,7 @@ public class GunController : MyBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		enabled = false;
+		//enabled = false;
 	}
 	
 	// Update is called once per frame
@@ -103,6 +103,11 @@ public class GunController : MyBehaviour {
 	}
 
 	void OnGameClear()
+	{
+		enabled = false;
+	}
+
+	void OnGameOver()
 	{
 		enabled = false;
 	}

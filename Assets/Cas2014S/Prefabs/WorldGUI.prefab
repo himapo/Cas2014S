@@ -38,9 +38,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1f605a5cda728f46923de1b5c37d123, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  perspectiveCamera: {fileID: 0}
-  orthoCamera: {fileID: 0}
-  damageTextPrefab: {fileID: 0}
+  damageTextPrefab: {fileID: 100000, guid: 063c4070479c6834daad6dd5cfce31b1, type: 2}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

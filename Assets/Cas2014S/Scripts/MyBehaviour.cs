@@ -108,4 +108,9 @@ public class MyBehaviour : MonoBehaviour {
 			}
 		}
 	}
+
+	protected void ResetPlayer(GameObject player)
+	{
+		this.player = player;
+	}
 }

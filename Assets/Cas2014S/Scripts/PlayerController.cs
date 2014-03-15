@@ -26,7 +26,7 @@ public class PlayerController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		enabled = false;
+		//enabled = false;
 	}
 	
 	// Update is called once per frame
@@ -135,6 +135,13 @@ public class PlayerController : MonoBehaviour {
 	}
 
 	void OnGameClear()
+	{
+		enabled = false;
+		Screen.lockCursor = false;
+		Screen.showCursor = true;
+	}
+
+	void OnGameOver()
 	{
 		enabled = false;
 		Screen.lockCursor = false;

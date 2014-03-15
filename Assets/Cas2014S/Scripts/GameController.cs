@@ -8,6 +8,8 @@ public class GameController : MyBehaviour {
 
 	public int maxFloor;
 
+	public GameObject playerPrefab;
+
 	Action updateFunc;
 
 	Action guiFunc;
@@ -197,6 +199,13 @@ public class GameController : MyBehaviour {
 
 	void StateGameMain()
 	{
+		if(PlayerHealth.health <= 0)
+		{
+			gameEndTime = Time.time;
+			updateFunc = StateResult;
+			guiFunc = GUIGameOverResult;
+			BroadcastAll("OnGameOver");
+		}
 	}
 
 	void StateGameOver()
@@ -208,7 +217,17 @@ public class GameController : MyBehaviour {
 
 	}
 
-	void GUIResult()
+	void GUIClearResult()
+	{
+		GUIResult(ClearWindowFunc, "Clear Result");
+	}
+
+	void GUIGameOverResult()
+	{
+		GUIResult(GameOverWindowFunc, "Game Over");
+	}
+
+	void GUIResult(GUI.WindowFunction windowFunc, string label)
 	{
 		GUILayout.BeginArea(new Rect(0,0,Screen.width, Screen.height));
 		
@@ -222,14 +241,14 @@ public class GameController : MyBehaviour {
 			topleft.x, topleft.y,
 			size.x, size.y);
 
-		GUILayout.Window(0, windowRect, WindowFunc, "Clear Result");
+		GUILayout.Window(0, windowRect, windowFunc, label);
 		
 		GUILayout.FlexibleSpace();
 		
 		GUILayout.EndArea();
 	}
 
-	void WindowFunc(int windowID)
+	void ClearWindowFunc(int windowID)
 	{
 		var labelStyle = new GUIStyle(GUI.skin.GetStyle("label"));
 		labelStyle.fontSize = 50;
@@ -253,9 +272,28 @@ public class GameController : MyBehaviour {
 		var seconds = Mathf.FloorToInt(finishTime - Mathf.Floor (finishTime / 60.0f));
 		
 		GUILayout.Label(
-			string.Format("クリア時間 {0}分{1}秒", minutes, seconds),
+			string.Format("{0}分{1}秒", minutes, seconds),
 			labelStyle);
+
+		GUILayout.FlexibleSpace();
 		
+		GUILayout.BeginHorizontal();
+		
+		GUILayout.FlexibleSpace();
+		
+		if(GUILayout.Button(
+			"1階からやり直す",
+			buttonStyle,
+			GUILayout.MaxWidth(buttonMaxWidth),
+			GUILayout.MinHeight(buttonMinHeight)))
+		{
+			Restart();
+		}
+		
+		GUILayout.FlexibleSpace();
+		
+		GUILayout.EndHorizontal();
+
 		GUILayout.FlexibleSpace();
 
 		GUILayout.BeginHorizontal();
@@ -278,9 +316,83 @@ public class GameController : MyBehaviour {
 		GUILayout.FlexibleSpace();
 	}
 
+	void GameOverWindowFunc(int windowID)
+	{
+		var labelStyle = new GUIStyle(GUI.skin.GetStyle("label"));
+		labelStyle.fontSize = 50;
+		
+		var buttonStyle = new GUIStyle(GUI.skin.GetStyle("button"));
+		buttonStyle.fontSize = 20;
+		
+		var buttonMaxWidth = 200;
+		var buttonMinHeight = 70;
+		
+		//GUILayout.FlexibleSpace();
+		
+		GUILayout.Label(
+			string.Format("{0}階で力尽きた", floor),
+			labelStyle);
+		
+		//GUILayout.FlexibleSpace();
+		
+		var finishTime = gameEndTime - gameStartTime;
+		var minutes = Mathf.FloorToInt(finishTime / 60.0f);
+		var seconds = Mathf.FloorToInt(finishTime - Mathf.Floor (finishTime / 60.0f));
+		
+		GUILayout.Label(
+			string.Format("{0}分{1}秒", minutes, seconds),
+			labelStyle);
+
+		GUILayout.FlexibleSpace();
+		
+		GUILayout.BeginHorizontal();
+		
+		GUILayout.FlexibleSpace();
+		
+		if(GUILayout.Button(
+			"1階からやり直す",
+			buttonStyle,
+			GUILayout.MaxWidth(buttonMaxWidth),
+			GUILayout.MinHeight(buttonMinHeight)))
+		{
+			Restart();
+		}
+		
+		GUILayout.FlexibleSpace();
+		
+		GUILayout.EndHorizontal();
+
+		GUILayout.FlexibleSpace();
+		
+		GUILayout.BeginHorizontal();
+		
+		GUILayout.FlexibleSpace();
+		
+		if(GUILayout.Button(
+			"タイトルに戻る",
+			buttonStyle,
+			GUILayout.MaxWidth(buttonMaxWidth),
+			GUILayout.MinHeight(buttonMinHeight)))
+		{
+			GotoTitle();
+		}
+		
+		GUILayout.FlexibleSpace();
+		
+		GUILayout.EndHorizontal();
+		
+		GUILayout.FlexibleSpace();
+	}
+
 	public void Restart()
 	{
 		gameStartTime = Time.time;
+
+		Destroy(Player);
+
+		var player = Instantiate(playerPrefab) as GameObject;
+
+		ResetPlayer(player);
 
 		BroadcastAll("OnRestart");
 
@@ -305,7 +417,7 @@ public class GameController : MyBehaviour {
 		{
 			gameEndTime = Time.time;
 			updateFunc = StateResult;
-			guiFunc = GUIResult;
+			guiFunc = GUIClearResult;
 			BroadcastAll("OnGameClear");
 		}
 	}
