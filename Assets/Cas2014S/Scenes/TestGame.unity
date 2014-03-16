@@ -4148,6 +4148,8 @@ MonoBehaviour:
   exitPrefab: {fileID: 100008, guid: 9551961b649729a4994e16d2e17aaed8, type: 2}
   shopPrefab: {fileID: 100000, guid: 4d86faffffd57bb44825e160661e9a26, type: 2}
   wallPrefab: {fileID: 100000, guid: f0037facef7702345bc7d3723c767bc9, type: 2}
+  minEnemy: 2
+  maxEnemy: 8
   minItem: 0
   maxItem: 4
   itemTable:
@@ -5118,7 +5120,7 @@ MonoBehaviour:
     gunSpecs:
     - probability: 1
       bulletPrefab: {fileID: 100000, guid: a80b5aabdd8d0204e9fd1cd4d22556c7, type: 2}
-      fireInterval: .200000003
+      fireInterval: 4
   enemyPrefab: {fileID: 100000, guid: f8c35b3ca9b3dd2428b952764880fe7f, type: 2}
 --- !u!4 &1696096495
 Transform:

@@ -57,7 +57,7 @@ MonoBehaviour:
     gunSpecs:
     - probability: 1
       bulletPrefab: {fileID: 100000, guid: a80b5aabdd8d0204e9fd1cd4d22556c7, type: 2}
-      fireInterval: .200000003
+      fireInterval: 4
   enemyPrefab: {fileID: 100000, guid: f8c35b3ca9b3dd2428b952764880fe7f, type: 2}
 --- !u!1001 &100100000
 Prefab:

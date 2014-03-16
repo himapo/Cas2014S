@@ -29,6 +29,10 @@ public class FloorGenerator : MyBehaviour {
 
 	public GameObject wallPrefab;
 
+	public int minEnemy;
+	
+	public int maxEnemy;
+
 	public int minItem;
 	
 	public int maxItem;
@@ -144,7 +148,7 @@ public class FloorGenerator : MyBehaviour {
 
 	void SpawnEnemys()
 	{
-		var n = Random.Range(minItem, maxItem);
+		var n = Random.Range(minEnemy, maxEnemy);
 		
 		for(var i=0; i<n; ++i)
 		{

@@ -38,7 +38,7 @@ public class EnemyController : MyBehaviour {
 			LookAtPlayer();
 			ChasePlayer();
 		}
-		else
+		else if(randomWalk)
 		{
 			RandomWalk();
 		}
@@ -102,6 +102,11 @@ public class EnemyController : MyBehaviour {
 //		}
 
 		speed.y = verticalVelocity;
+
+		if(direction.magnitude < closeDistance)
+		{
+			speed.x = speed.z = 0;
+		}
 
 		characterController.Move(speed * Time.deltaTime);
 	}
