@@ -82,26 +82,92 @@ public class PauseMenu : MyBehaviour {
 
 		GUILayout.FlexibleSpace();
 
+		GUISensitivity();
+
+		GUILayout.FlexibleSpace();
+		
+		GUIRestart(buttonStyle, buttonMaxWidth, buttonMinHeight);
+
+		GUILayout.FlexibleSpace();
+
+		GUITitle(buttonStyle, buttonMaxWidth, buttonMinHeight);
+		
+		GUILayout.FlexibleSpace();
+
+		GUIExit(buttonStyle, buttonMaxWidth, buttonMinHeight);
+		
+		GUILayout.FlexibleSpace();
+	}
+
+	void GUISensitivity()
+	{
 		GUILayout.BeginHorizontal();
 
 		GUILayout.FlexibleSpace();
 		
+		GUILayout.BeginVertical();
+
+		GUILayout.FlexibleSpace();
+		
+		var labelStyle = new GUIStyle(GUI.skin.GetStyle("label"));
+		labelStyle.fontSize = 20;
+
+		GUILayout.Label(
+			"マウス感度",
+			labelStyle,
+			GUILayout.MinWidth(100));
+
+		GUILayout.FlexibleSpace();
+		
+		GUILayout.EndVertical();
+
+		GUILayout.Space(50);
+		
+		GUILayout.BeginVertical();
+
+		GUILayout.FlexibleSpace();
+		
+		var playerController = Player.GetComponent<PlayerController>();
+
+		playerController.mouseSensitivity = 
+			GUILayout.HorizontalSlider(
+				playerController.mouseSensitivity,
+				1.0f,
+				20.0f,
+				GUILayout.MinWidth(200));
+
+		GUILayout.FlexibleSpace();
+		
+		GUILayout.EndVertical();
+
+		GUILayout.FlexibleSpace();
+		
+		GUILayout.EndHorizontal();
+	}
+
+	void GUIRestart(GUIStyle buttonStyle, float buttonMaxWidth, float buttonMinHeight)
+	{
+		GUILayout.BeginHorizontal();
+		
+		GUILayout.FlexibleSpace();
+		
 		if(GUILayout.Button(
 			"1階からやり直す",
-		    buttonStyle,
+			buttonStyle,
 			GUILayout.MaxWidth(buttonMaxWidth),
 			GUILayout.MinHeight(buttonMinHeight)))
 		{
 			Close ();
 			GameController.SendMessage("Restart");
 		}
-
+		
 		GUILayout.FlexibleSpace();
 		
 		GUILayout.EndHorizontal();
+	}
 
-		GUILayout.FlexibleSpace();
-
+	void GUITitle(GUIStyle buttonStyle, float buttonMaxWidth, float buttonMinHeight)
+	{
 		GUILayout.BeginHorizontal();
 		
 		GUILayout.FlexibleSpace();
@@ -119,9 +185,10 @@ public class PauseMenu : MyBehaviour {
 		GUILayout.FlexibleSpace();
 		
 		GUILayout.EndHorizontal();
-		
-		GUILayout.FlexibleSpace();
+	}
 
+	void GUIExit(GUIStyle buttonStyle, float buttonMaxWidth, float buttonMinHeight)
+	{
 		GUILayout.BeginHorizontal();
 		
 		GUILayout.FlexibleSpace();
@@ -134,12 +201,10 @@ public class PauseMenu : MyBehaviour {
 		{
 			Application.Quit();
 		}
-
-		GUILayout.FlexibleSpace();
-
-		GUILayout.EndHorizontal();
 		
 		GUILayout.FlexibleSpace();
+		
+		GUILayout.EndHorizontal();
 	}
 
 	void OnRestart()
