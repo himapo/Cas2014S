@@ -60,7 +60,14 @@ public class EnemyController : MyBehaviour {
 
 		var ray = new Ray(origin, target - origin);
 
-		if(Physics.Raycast(ray, out hit))
+		LayerMask mask = -1;
+		
+		mask &= ~(1 << LayerMask.NameToLayer("Ignore Raycast"));
+		mask &= ~(1 << LayerMask.NameToLayer("Enemy"));
+		mask &= ~(1 << LayerMask.NameToLayer("Item"));
+		mask &= ~(1 << LayerMask.NameToLayer("Shop"));
+		
+		if(Physics.Raycast(ray, out hit, float.MaxValue, mask))
 		{
 			playerFound = (hit.collider.tag == "Player");
 		}
