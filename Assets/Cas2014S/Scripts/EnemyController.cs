@@ -151,4 +151,14 @@ public class EnemyController : MyBehaviour {
 	{
 		enabled = true;
 	}
+
+	void OnPauseMenuOpen()
+	{
+		enabled = false;
+	}
+	
+	void OnPauseMenuClose()
+	{
+		enabled = true;
+	}
 }
