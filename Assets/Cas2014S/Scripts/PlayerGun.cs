@@ -9,6 +9,9 @@ public enum PlayerGunType
 	FlameThrower,
 	Shield,
 	Pachinko,
+	Magnum,
+	AssaultRifle,
+	RocketLauncher,
 
 	Max,
 }

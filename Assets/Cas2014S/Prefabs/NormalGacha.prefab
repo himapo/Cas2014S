@@ -59,7 +59,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 0
   probability: 250
-  gun: {fileID: 11400000, guid: 19104a3dc8ba3414baa47f913bf8a10f, type: 2}
+  gun: {fileID: 11400002, guid: 19104a3dc8ba3414baa47f913bf8a10f, type: 2}
   skill: {fileID: 0}
 --- !u!114 &11400004
 MonoBehaviour:
@@ -89,7 +89,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 0
   probability: 50
-  gun: {fileID: 11400000, guid: 0b0caed4a0df04c448bd509db239a3cf, type: 2}
+  gun: {fileID: 11400002, guid: 0b0caed4a0df04c448bd509db239a3cf, type: 2}
   skill: {fileID: 0}
 --- !u!114 &11400008
 MonoBehaviour:
@@ -149,7 +149,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 0
   probability: 5
-  gun: {fileID: 11400000, guid: ed2dcd1395e6c6444b12f0b0187c1ea3, type: 2}
+  gun: {fileID: 11400000, guid: 2da5559d1eff7eb4e99fd7901966cc27, type: 2}
   skill: {fileID: 0}
 --- !u!1001 &100100000
 Prefab:

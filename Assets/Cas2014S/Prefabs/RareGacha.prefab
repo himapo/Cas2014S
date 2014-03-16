@@ -11,6 +11,10 @@ GameObject:
   - 114: {fileID: 11400000}
   - 114: {fileID: 11400002}
   - 114: {fileID: 11400004}
+  - 114: {fileID: 11400006}
+  - 114: {fileID: 11400008}
+  - 114: {fileID: 11400010}
+  - 114: {fileID: 11400012}
   m_Layer: 0
   m_Name: RareGacha
   m_TagString: Untagged
@@ -69,7 +73,67 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 0
   probability: 10
-  gun: {fileID: 11400000, guid: ed2dcd1395e6c6444b12f0b0187c1ea3, type: 2}
+  gun: {fileID: 11400002, guid: ed2dcd1395e6c6444b12f0b0187c1ea3, type: 2}
+  skill: {fileID: 0}
+--- !u!114 &11400006
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f37bc4690463f2342bce82c42a2ea30c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 0
+  probability: 10
+  gun: {fileID: 11400000, guid: 2da5559d1eff7eb4e99fd7901966cc27, type: 2}
+  skill: {fileID: 0}
+--- !u!114 &11400008
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f37bc4690463f2342bce82c42a2ea30c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 0
+  probability: 10
+  gun: {fileID: 11400000, guid: ffd5b59520a7bd4429bb65035e097b6f, type: 2}
+  skill: {fileID: 0}
+--- !u!114 &11400010
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f37bc4690463f2342bce82c42a2ea30c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 0
+  probability: 10
+  gun: {fileID: 11400000, guid: 82bf89639de94174eb72674a3fc91dd5, type: 2}
+  skill: {fileID: 0}
+--- !u!114 &11400012
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f37bc4690463f2342bce82c42a2ea30c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 0
+  probability: 10
+  gun: {fileID: 11400000, guid: 0054ab1c521d5d54bb16be2335eec479, type: 2}
   skill: {fileID: 0}
 --- !u!1001 &100100000
 Prefab:
