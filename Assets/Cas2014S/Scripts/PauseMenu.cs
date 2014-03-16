@@ -82,8 +82,12 @@ public class PauseMenu : MyBehaviour {
 
 		GUILayout.FlexibleSpace();
 
-		GUISensitivity();
+		GUISoundVolume();
 
+		GUILayout.FlexibleSpace();
+
+		GUISensitivity();
+		
 		GUILayout.FlexibleSpace();
 		
 		GUIRestart(buttonStyle, buttonMaxWidth, buttonMinHeight);
@@ -99,7 +103,7 @@ public class PauseMenu : MyBehaviour {
 		GUILayout.FlexibleSpace();
 	}
 
-	void GUISensitivity()
+	void GUISoundVolume()
 	{
 		GUILayout.BeginHorizontal();
 
@@ -113,9 +117,9 @@ public class PauseMenu : MyBehaviour {
 		labelStyle.fontSize = 20;
 
 		GUILayout.Label(
-			"マウス感度",
+			"サウンド音量",
 			labelStyle,
-			GUILayout.MinWidth(100));
+			GUILayout.MinWidth(140));
 
 		GUILayout.FlexibleSpace();
 		
@@ -126,20 +130,64 @@ public class PauseMenu : MyBehaviour {
 		GUILayout.BeginVertical();
 
 		GUILayout.FlexibleSpace();
-		
-		var playerController = Player.GetComponent<PlayerController>();
 
-		playerController.mouseSensitivity = 
+		AudioListener.volume = 
 			GUILayout.HorizontalSlider(
-				playerController.mouseSensitivity,
+				AudioListener.volume,
+				0.0f,
 				1.0f,
-				20.0f,
 				GUILayout.MinWidth(200));
 
 		GUILayout.FlexibleSpace();
 		
 		GUILayout.EndVertical();
 
+		GUILayout.FlexibleSpace();
+		
+		GUILayout.EndHorizontal();
+	}
+
+	void GUISensitivity()
+	{
+		GUILayout.BeginHorizontal();
+		
+		GUILayout.FlexibleSpace();
+		
+		GUILayout.BeginVertical();
+		
+		GUILayout.FlexibleSpace();
+		
+		var labelStyle = new GUIStyle(GUI.skin.GetStyle("label"));
+		labelStyle.fontSize = 20;
+		
+		GUILayout.Label(
+			"マウス感度",
+			labelStyle,
+			GUILayout.MinWidth(140));
+		
+		GUILayout.FlexibleSpace();
+		
+		GUILayout.EndVertical();
+		
+		GUILayout.Space(50);
+		
+		GUILayout.BeginVertical();
+		
+		GUILayout.FlexibleSpace();
+		
+		var playerController = Player.GetComponent<PlayerController>();
+		
+		playerController.mouseSensitivity = 
+			GUILayout.HorizontalSlider(
+				playerController.mouseSensitivity,
+				1.0f,
+				20.0f,
+				GUILayout.MinWidth(200));
+		
+		GUILayout.FlexibleSpace();
+		
+		GUILayout.EndVertical();
+		
 		GUILayout.FlexibleSpace();
 		
 		GUILayout.EndHorizontal();
