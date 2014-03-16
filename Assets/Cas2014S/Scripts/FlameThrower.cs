@@ -1,18 +1,17 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class GranadeLauncher : PlayerGun {
+public class FlameThrower : PlayerGun {
 
 	public override PlayerGunType Type {
 		get {
-			return PlayerGunType.GranadeLauncher;
+			return PlayerGunType.FlameThrower;
 		}
 	}
-
+	
 	public override string Name {
 		get {
-			return "グレネードランチャー";
+			return "火炎放射器";
 		}
 	}
-
 }

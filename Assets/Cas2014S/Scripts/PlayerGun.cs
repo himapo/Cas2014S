@@ -6,6 +6,9 @@ public enum PlayerGunType
 	Pistol,
 	Shotgun,
 	GranadeLauncher,
+	FlameThrower,
+	Shield,
+	Pachinko,
 
 	Max,
 }
@@ -36,6 +39,8 @@ public abstract class PlayerGun : GunBase
 	public int magazineSize = 10;
 	
 	public int magazineRemaining{ get; protected set; }
+
+	public bool fullAuto;
 
 	// Use this for initialization
 	void Start()
@@ -106,6 +111,14 @@ public abstract class PlayerGun : GunBase
 		Fire (targetPosition);
 		
 		intervalRemaining = intervalTime;
+	}
+
+	public void ShootFullAuto()
+	{
+		if(fullAuto)
+		{
+			Shoot ();
+		}
 	}
 
 	protected Vector3 ApplyScatter(Vector3 targetPosition, float scatterAngle)
@@ -183,5 +196,15 @@ public abstract class PlayerGun : GunBase
 	
 	protected virtual void Fire(Vector3 targetPosition)
 	{
+		var bulletDirection = targetPosition - muzzle.transform.position;
+		bulletDirection.Normalize();
+		
+		SpawnBullet(bulletDirection);
+		
+		--magazineRemaining;
+		
+		PlayFireSound();
+		
+		ActivateMuzzleFlash();
 	}
 }

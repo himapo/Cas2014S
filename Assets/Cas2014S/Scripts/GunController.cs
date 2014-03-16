@@ -34,6 +34,12 @@ public class GunController : MyBehaviour {
 			if(Input.GetButtonDown(fireButtonNames[i]))
 			{
 				GetGun(i).Shoot();
+				//Debug.Log("SemiAutoShoot");
+			}
+			else if(Input.GetButton(fireButtonNames[i]))
+			{
+				GetGun(i).ShootFullAuto();
+				//Debug.Log("FullAutoShoot");
 			}
 		}
 	}

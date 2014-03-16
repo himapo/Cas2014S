@@ -14,18 +14,4 @@ public class Pistol : PlayerGun {
 			return "ピストル";
 		}
 	}
-
-	protected override void Fire(Vector3 targetPosition)
-	{
-		var bulletDirection = targetPosition - muzzle.transform.position;
-		bulletDirection.Normalize();
-		
-		SpawnBullet(bulletDirection);
-		
-		--magazineRemaining;
-		
-		PlayFireSound();
-		
-		ActivateMuzzleFlash();
-	}
 }

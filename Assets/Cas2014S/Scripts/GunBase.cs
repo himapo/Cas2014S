@@ -19,6 +19,10 @@ public class GunBase : MyBehaviour
 
 	public float bulletDamage;
 
+	public float soundInterval;
+
+	float soundTime;
+
 	protected Vector3 GetCameraTarget()
 	{
 		var camera = Camera.main;
@@ -92,6 +96,13 @@ public class GunBase : MyBehaviour
 		{
 			return;
 		}
+
+		if(Time.time - soundTime < soundInterval)
+		{
+			return;
+		}
+
+		soundTime = Time.time;
 
 		audio.Play();
 	}
