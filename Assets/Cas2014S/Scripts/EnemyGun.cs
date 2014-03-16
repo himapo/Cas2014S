@@ -7,6 +7,10 @@ public class EnemyGun : GunBase {
 
 	bool stopFire = false;
 
+	float lastTime;
+
+	float timeRemaining;
+
 	// Use this for initialization
 	void Start () {
 		StartCoroutine(AsyncFire());
@@ -21,7 +25,7 @@ public class EnemyGun : GunBase {
 	{
 		while(true)
 		{
-			var lastTime = Time.time;
+			lastTime = Time.time;
 
 			while(stopFire || Time.time - lastTime < interval)
 			{
@@ -43,13 +47,45 @@ public class EnemyGun : GunBase {
 		PlayFireSound();
 	}
 
-	void OnShopOpen()
+	void StopFire()
 	{
 		stopFire = true;
+		timeRemaining = Time.time - lastTime;
+	}
+
+	void StartFire()
+	{
+		stopFire = false;
+		lastTime = Time.time - timeRemaining;
+	}
+
+	void OnShopOpen()
+	{
+		StopFire();
 	}
 	
 	void OnShopClose()
 	{
-		stopFire = false;
+		StartFire();
+	}
+
+	void OnGameClear()
+	{
+		StopFire();
+	}
+
+	void OnGameOver()
+	{
+		StopFire();
+	}
+
+	void OnPauseMenuOpen()
+	{
+		StopFire();
+	}
+
+	void OnPauseMenuClose()
+	{
+		StartFire();
 	}
 }
