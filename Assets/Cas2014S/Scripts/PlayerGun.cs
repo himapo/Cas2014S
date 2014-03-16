@@ -13,11 +13,11 @@ public enum PlayerGunType
 	Max,
 }
 
-public abstract class PlayerGun : GunBase
+public class PlayerGun : GunBase
 {
-	public abstract PlayerGunType Type { get; }
+	public PlayerGunType Type;
 
-	public abstract string Name{get;}
+	public string Name;
 	
 	public int rare;
 

@@ -101,7 +101,7 @@ public class Bullet : MyBehaviour {
 
     protected virtual void Explode()
     {
-		Debug.Log ("Bullet::Explode");
+		//Debug.Log ("Bullet::Explode");
         Destroy(gameObject);
     }
 

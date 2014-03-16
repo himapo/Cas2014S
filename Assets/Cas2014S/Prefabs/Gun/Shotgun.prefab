@@ -692,6 +692,9 @@ MonoBehaviour:
   skills: []
   maxSkillSlot: 4
   bulletDamage: 3
+  soundInterval: 0
+  Type: 1
+  Name: "\u30B7\u30E7\u30C3\u30C8\u30AC\u30F3"
   rare: 0
   standRecoil: 2
   runRecoil: 4
@@ -699,6 +702,7 @@ MonoBehaviour:
   intervalTime: 1
   reloadSpeed: .5
   magazineSize: 4
+  fullAuto: 0
   bulletNumber: 8
   scatterAngle: 10
 --- !u!1001 &100100000
