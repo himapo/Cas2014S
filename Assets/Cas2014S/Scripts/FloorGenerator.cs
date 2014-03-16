@@ -169,7 +169,7 @@ public class FloorGenerator : MyBehaviour {
 	{
 		for(var x=0; x<gridNum[0] - 1; ++x)
 		{
-			if(Random.value < 0)
+			if(Random.value < 0.2f)
 			{
 				var length = Random.Range(1, 10);
 
@@ -184,7 +184,7 @@ public class FloorGenerator : MyBehaviour {
 
 		for(var y=0; y<gridNum[1] - 1; ++y)
 		{
-			if(Random.value < 0)
+			if(Random.value < 0.2f)
 			{
 				var length = Random.Range(1, 10);
 				
