@@ -17,6 +17,8 @@ public class FloorGenerator : MyBehaviour {
 
 	public static FloorGenerator Instance{get{return instance;}set{}}
 
+	public float wallProbability;
+
 	public float gridSize = 3.0f;
 	
 	public int[] gridNum = new int[2]{ 10, 10 };
@@ -169,7 +171,7 @@ public class FloorGenerator : MyBehaviour {
 	{
 		for(var x=0; x<gridNum[0] - 1; ++x)
 		{
-			if(Random.value < 0.2f)
+			if(Random.value < wallProbability)
 			{
 				var length = Random.Range(1, 10);
 
@@ -184,7 +186,7 @@ public class FloorGenerator : MyBehaviour {
 
 		for(var y=0; y<gridNum[1] - 1; ++y)
 		{
-			if(Random.value < 0.2f)
+			if(Random.value < wallProbability)
 			{
 				var length = Random.Range(1, 10);
 				
