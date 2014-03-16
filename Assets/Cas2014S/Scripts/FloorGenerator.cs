@@ -39,6 +39,8 @@ public class FloorGenerator : MyBehaviour {
 
 	List<int> usedGridNumbers = new List<int>();
 
+	int floor;
+
 	void Awake()
 	{
 		instance = this;
@@ -58,8 +60,10 @@ public class FloorGenerator : MyBehaviour {
 	
 	}
 
-	public void Generate()
+	public void Generate(int floor)
 	{
+		this.floor = floor;
+
 		emptyGridNumbers.AddRange(usedGridNumbers);
 		usedGridNumbers.Clear();
 
@@ -72,6 +76,8 @@ public class FloorGenerator : MyBehaviour {
 		SpawnShop();
 
 		SpawnItems ();
+
+		SpawnEnemys ();
 	}
 
 	int SampleRandomEmptyGrid()
@@ -136,8 +142,21 @@ public class FloorGenerator : MyBehaviour {
 		SpawnObject(shopPrefab, SampleRandomEmptyGrid(), 0, Quaternion.AngleAxis(Random.value * 360.0f, Vector3.up));
 	}
 
+	void SpawnEnemys()
+	{
+		var n = Random.Range(minItem, maxItem);
+		
+		for(var i=0; i<n; ++i)
+		{
+			SpawnEnemy();
+		}
+	}
+
 	void SpawnEnemy()
 	{
+		var gridIndex = SampleRandomEmptyGrid();
+		EnemyGenerator.Instance.Generate(floor, GetGridPosition(gridIndex));
+		MarkGridUsed(gridIndex);
 	}
 
 	void SpawnItems()

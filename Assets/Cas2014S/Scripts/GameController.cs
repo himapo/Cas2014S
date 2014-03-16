@@ -134,7 +134,7 @@ public class GameController : MyBehaviour {
 	{
 		BroadcastAll("OnBeginFloorMove");
 
-		FloorGenerator.Instance.Generate();
+		FloorGenerator.Instance.Generate(floor);
 
 		updateFunc = StateFloorMove;
 		guiFunc = GUIFloorMove;

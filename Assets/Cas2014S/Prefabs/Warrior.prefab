@@ -1007,8 +1007,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eea2b5d348e4c884dbb8afd86574e42d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 2
-  rotationRatio: .00999999978
+  movementSpeed: 3
+  rotationRatio: .200000003
+  chasePlayer: 0
+  closeDistance: 0
+  runAway: 0
+  randomWalk: 0
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1

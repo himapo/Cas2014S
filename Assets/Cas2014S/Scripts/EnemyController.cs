@@ -7,6 +7,14 @@ public class EnemyController : MyBehaviour {
 
 	public float rotationRatio = 0.5f;
 
+	public bool chasePlayer;
+
+	public float closeDistance;
+
+	public bool runAway;
+
+	public bool randomWalk;
+
 	bool playerFound;
 
 	EnemyGun gun;
@@ -115,6 +123,16 @@ public class EnemyController : MyBehaviour {
 	}
 
 	void OnChangeFloor()
+	{
+		Destroy(gameObject);
+	}
+
+	void OnBeginFloorMove()
+	{
+		Destroy(gameObject);
+	}
+	
+	void OnGotoTitle()
 	{
 		Destroy(gameObject);
 	}
