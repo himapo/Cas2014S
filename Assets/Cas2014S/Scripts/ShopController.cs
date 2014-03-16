@@ -3,7 +3,7 @@ using System.Collections;
 
 public class ShopController : MyBehaviour {
 	
-	public float useDistance = 1.5f;
+	public float useDistance = 2.5f;
 
 	// Use this for initialization
 	void Start () {
