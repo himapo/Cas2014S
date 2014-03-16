@@ -46,6 +46,15 @@ public class IconDrawer : MyBehaviour {
 			viewportPosition, layout);
 	}
 
+	public void DrawStatusSkillEmpty(Vector3 viewportPosition, bool layout)
+	{
+		DrawStatusIcon(
+			"空きスロット",
+			Color.gray,
+			Color.black,
+			viewportPosition, layout);
+	}
+
 	public void DrawShopSkill(Skill skill, Vector3 viewportPosition, bool layout)
 	{
 		DrawShopIcon(
