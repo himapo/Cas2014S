@@ -55,9 +55,9 @@ public class PauseMenu : MyBehaviour {
 
 		GUILayout.FlexibleSpace();
 
-		var topleft = Camera.main.ViewportToScreenPoint(new Vector3(0.3f, 0.2f, 0));
+		var topleft = Camera.main.ViewportToScreenPoint(new Vector3(0.35f, 0.1f, 0));
 		
-		var size = Camera.main.ViewportToScreenPoint(new Vector3(0.4f, 0.6f));
+		var size = Camera.main.ViewportToScreenPoint(new Vector3(0.3f, 0.7f));
 		
 		var windowRect = new Rect(
 			topleft.x, topleft.y,
@@ -78,7 +78,7 @@ public class PauseMenu : MyBehaviour {
 		buttonStyle.fontSize = 20;
 
 		var buttonMaxWidth = 200;
-		var buttonMinHeight = 70;
+		var buttonMinHeight = 60;
 
 		GUILayout.FlexibleSpace();
 
@@ -89,7 +89,11 @@ public class PauseMenu : MyBehaviour {
 		GUISensitivity();
 		
 		GUILayout.FlexibleSpace();
+
+		GUISwapTrigger();
 		
+		GUILayout.FlexibleSpace();
+
 		GUIRestart(buttonStyle, buttonMaxWidth, buttonMinHeight);
 
 		GUILayout.FlexibleSpace();
@@ -125,7 +129,7 @@ public class PauseMenu : MyBehaviour {
 		
 		GUILayout.EndVertical();
 
-		GUILayout.Space(50);
+		//GUILayout.Space(50);
 		
 		GUILayout.BeginVertical();
 
@@ -169,7 +173,7 @@ public class PauseMenu : MyBehaviour {
 		
 		GUILayout.EndVertical();
 		
-		GUILayout.Space(50);
+		//GUILayout.Space(50);
 		
 		GUILayout.BeginVertical();
 		
@@ -189,6 +193,34 @@ public class PauseMenu : MyBehaviour {
 		GUILayout.EndVertical();
 		
 		GUILayout.FlexibleSpace();
+		
+		GUILayout.EndHorizontal();
+	}
+
+	void GUISwapTrigger()
+	{
+		GUILayout.BeginHorizontal();
+		
+		//GUILayout.FlexibleSpace();
+
+		GUILayout.BeginVertical();
+		
+		GUILayout.FlexibleSpace();
+
+		var toggleStyle = new GUIStyle(GUI.skin.GetStyle("toggle"));
+		toggleStyle.fontSize = 20;
+
+		GunController.swapTrigger = 
+			GUILayout.Toggle(
+				GunController.swapTrigger,
+				"トリガー左右入れ替え",
+				toggleStyle);
+		
+		GUILayout.FlexibleSpace();
+		
+		GUILayout.EndVertical();
+		
+		//GUILayout.FlexibleSpace();
 		
 		GUILayout.EndHorizontal();
 	}

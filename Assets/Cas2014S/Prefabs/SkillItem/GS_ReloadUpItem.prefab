@@ -27,7 +27,7 @@ GameObject:
   - 4: {fileID: 400002}
   - 114: {fileID: 11400000}
   - 135: {fileID: 13500000}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: GS_ReloadUpItem
   m_TagString: Untagged
   m_Icon: {fileID: 0}

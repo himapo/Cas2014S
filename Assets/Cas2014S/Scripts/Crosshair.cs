@@ -88,4 +88,14 @@ public class Crosshair : MyBehaviour {
 	{
 		enabled = false;
 	}
+
+	void OnPauseMenuOpen()
+	{
+		enabled = false;
+	}
+
+	void OnPauseMenuClose()
+	{
+		enabled = true;
+	}
 }

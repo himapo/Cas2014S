@@ -13,6 +13,8 @@ public class GunController : MyBehaviour {
 
 	public GameObject[] gunPrefabs;
 
+	public bool swapTrigger;
+
 	// Use this for initialization
 	void Start () {
 		//enabled = false;
@@ -33,12 +35,12 @@ public class GunController : MyBehaviour {
 		{
 			if(Input.GetButtonDown(fireButtonNames[i]))
 			{
-				GetGun(i).Shoot();
+				GetGun(swapTrigger ? 1 - i : i).Shoot();
 				//Debug.Log("SemiAutoShoot");
 			}
 			else if(Input.GetButton(fireButtonNames[i]))
 			{
-				GetGun(i).ShootFullAuto();
+				GetGun(swapTrigger ? 1 - i : i).ShootFullAuto();
 				//Debug.Log("FullAutoShoot");
 			}
 		}
