@@ -55,7 +55,7 @@ public class Health : MyBehaviour {
 
     public void OnBulletHit(BulletHitInfo info)
     {
-		Debug.Log(string.Format("{0} Damage", gameObject.name));;
+		//Debug.Log(string.Format("{0} Damage", gameObject.name));;
 
 		var damageInt = Mathf.FloorToInt(info.Damage);
 

@@ -934,7 +934,7 @@ AudioSource:
   serializedVersion: 3
   m_audioClip: {fileID: 8300000, guid: 57b53a6d8651a5f47b62e5faea00c26e, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: .120999999
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -1040,7 +1040,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 100000, guid: a80b5aabdd8d0204e9fd1cd4d22556c7, type: 2}
   bulletImpulse: 50
-  raycastBullet: 0
+  raycastBullet: 1
   muzzle: {fileID: 400066}
   skills: []
   maxSkillSlot: 5

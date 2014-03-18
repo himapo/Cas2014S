@@ -48,10 +48,10 @@ MonoBehaviour:
     gunSpecs:
     - probability: 1
       bulletPrefab: {fileID: 100000, guid: a80b5aabdd8d0204e9fd1cd4d22556c7, type: 2}
-      fireInterval: 5
+      fireInterval: 3
     - probability: 1
       bulletPrefab: {fileID: 100000, guid: a80b5aabdd8d0204e9fd1cd4d22556c7, type: 2}
-      fireInterval: 4
+      fireInterval: 7
   - startFloor: 2
     controllerSpecs: []
     gunSpecs:

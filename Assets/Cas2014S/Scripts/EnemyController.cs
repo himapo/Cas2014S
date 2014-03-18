@@ -66,6 +66,7 @@ public class EnemyController : MyBehaviour {
 		mask &= ~(1 << LayerMask.NameToLayer("Enemy"));
 		mask &= ~(1 << LayerMask.NameToLayer("Item"));
 		mask &= ~(1 << LayerMask.NameToLayer("Shop"));
+		mask &= ~(1 << LayerMask.NameToLayer("Shield"));
 		
 		if(Physics.Raycast(ray, out hit, float.MaxValue, mask))
 		{

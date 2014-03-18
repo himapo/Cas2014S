@@ -52,7 +52,7 @@ public class PlayerGun : GunBase
 	}
 	
 	// Update is called once per frame
-	void Update()
+	protected virtual void Update()
 	{
 		if(IsReloading())
 		{
@@ -170,7 +170,7 @@ public class PlayerGun : GunBase
 		return player.GetComponent<PlayerController>();
 	}
 	
-	public void Reload()
+	public virtual void Reload()
 	{
 		if(magazineRemaining == magazineSize)
 		{

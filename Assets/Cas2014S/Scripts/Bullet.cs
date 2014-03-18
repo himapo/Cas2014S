@@ -52,7 +52,15 @@ public class Bullet : MyBehaviour {
 
 		if(hit.transform.root.gameObject == shooter)
 		{
-			Debug.Log("Self shoot");
+			Debug.Log("Self raycast shoot");
+			return;
+		}
+
+		Debug.Log(string.Format("layer = {0}", hit.transform.gameObject.layer));
+
+		if(hit.transform.gameObject.layer == LayerMask.NameToLayer("Shield"))
+		{
+			//Debug.Log("Shield hit");
 			return;
 		}
 
@@ -63,7 +71,7 @@ public class Bullet : MyBehaviour {
     {
 		if(collision.transform.root.gameObject == shooter)
 		{
-			Debug.Log("Self shoot");
+			//Debug.Log("Self collider shoot");
 			return;
 		}
 
