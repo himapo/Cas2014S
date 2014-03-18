@@ -192,6 +192,137 @@ public class FloorGenerator : MyBehaviour {
 
 	void GenerateWall()
 	{
+		// 壁から隣接している部屋リストへのマップ
+		var wallChamberMap = new Dictionary<int, List<int>>();
+		// 部屋から壁リストへのマップ
+		var chamberWallMap = new Dictionary<int, List<int>>();
+
+		// 垂直方向の壁
+		for(var y=0; y<gridNum[1]; ++y)
+		{
+			for(var x=0; x<gridNum[0]-1; ++x)
+			{
+				var wall = y * (gridNum[0] - 1) + x;
+
+				var chamberList = new List<int>();
+				var chamberA = wall + y;
+				var chamberB = wall + 1 + y;
+				chamberList.Add(chamberA);
+				chamberList.Add(chamberB);
+
+				wallChamberMap.Add(wall, chamberList);
+
+				if(!chamberWallMap.ContainsKey(chamberA))
+				{
+					chamberWallMap.Add(chamberA, new List<int>());
+				}
+				if(!chamberWallMap.ContainsKey(chamberB))
+				{
+					chamberWallMap.Add(chamberB, new List<int>());
+				}
+				chamberWallMap[chamberA].Add(wall);
+				chamberWallMap[chamberB].Add(wall);
+			}
+		}
+
+		var verticalWallNum = wallChamberMap.Count;
+
+		// 水平方向の壁
+		for(var y=0; y<gridNum[1]-1; ++y)
+		{
+			for(var x=0; x<gridNum[0]; ++x)
+			{
+				var wall = y * gridNum[0] + x + verticalWallNum;
+				
+				var chamberList = new List<int>();
+				var chamberA = y * gridNum[0] + x;
+				var chamberB = (y+1) * gridNum[0] + x;
+				chamberList.Add(chamberA);
+				chamberList.Add(chamberB);
+				
+				wallChamberMap.Add(wall, chamberList);
+				
+				if(!chamberWallMap.ContainsKey(chamberA))
+				{
+					chamberWallMap.Add(chamberA, new List<int>());
+				}
+				if(!chamberWallMap.ContainsKey(chamberB))
+				{
+					chamberWallMap.Add(chamberB, new List<int>());
+				}
+				chamberWallMap[chamberA].Add(wall);
+				chamberWallMap[chamberB].Add(wall);
+			}
+		}
+
+		while(chamberWallMap.Count > 1)
+		{
+			var wallIndex = Random.Range(0, wallChamberMap.Count);
+
+			var wall = wallChamberMap.Keys.ElementAt(wallIndex);
+
+			if(wallChamberMap[wall].Count == 1)
+			{
+				var chamber = wallChamberMap[wall][0];
+
+				chamberWallMap[chamber].Remove(wall);
+				
+				wallChamberMap.Remove(wall);
+			}
+			else if(wallChamberMap[wall].Count == 2)
+			{
+				var chamberA = wallChamberMap[wall][0];
+				var chamberB = wallChamberMap[wall][1];
+
+				chamberWallMap[chamberA].Remove(wall);
+				chamberWallMap[chamberB].Remove(wall);
+				chamberWallMap[chamberA].AddRange(chamberWallMap[chamberB]);
+				chamberWallMap[chamberA] = chamberWallMap[chamberA].Distinct().ToList();
+
+				foreach(var wallB in chamberWallMap[chamberB])
+				{
+					var wallBChambers = wallChamberMap[wallB];
+
+					wallBChambers.Remove(chamberB);
+
+					if(!wallBChambers.Contains(chamberA))
+					{
+						wallBChambers.Add(chamberA);
+					}
+				}
+
+				chamberWallMap.Remove(chamberB);
+				wallChamberMap.Remove(wall);
+			}
+		}
+
+		foreach(var wall in wallChamberMap.Keys)
+		{
+			var gridIndex = 0;
+			var vertical = true;
+
+			if(wall < (gridNum[0] - 1) * gridNum[1])
+			{
+				// 垂直壁
+				var y = wall / (gridNum[0] - 1);
+				gridIndex = wall + y;
+
+				vertical = true;
+			}
+			else
+			{
+				// 水平壁
+				gridIndex = wall - (gridNum[0] - 1) * gridNum[1];
+
+				vertical = false;
+			}
+
+			SpawnWall(gridIndex, vertical);
+		}
+	}
+
+	void GenerateWallOld()
+	{
 		for(var x=0; x<gridNum[0] - 1; ++x)
 		{
 			if(Random.value < wallProbability)
