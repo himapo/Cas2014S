@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 
-public class PlayerController : MonoBehaviour {
+public class PlayerController : MyBehaviour {
 
     public float movementSpeed;
 
@@ -60,7 +60,7 @@ public class PlayerController : MonoBehaviour {
         else if (characterController.isGrounded && Input.GetButtonDown("Jump"))
         {
             //Debug.Log("Jump");
-            verticalVelocity = jumpSpeed;
+            verticalVelocity = GetJumpSpeed();
         }
 
         var speed = new Vector3(sideSpeed, verticalVelocity, forwardSpeed);
@@ -81,6 +81,19 @@ public class PlayerController : MonoBehaviour {
 
 		var horizontalSpeed = new Vector2(sideSpeed, forwardSpeed);
 		run = horizontalSpeed.magnitude / movementSpeed;
+	}
+
+	float GetJumpSpeed()
+	{
+		var result = jumpSpeed;
+		var components = new List<PS_JumpUp>();
+		components.AddRange(GetGun(0).GetComponents<PS_JumpUp>());
+		components.AddRange(GetGun(1).GetComponents<PS_JumpUp>());
+		foreach(var component in components)
+		{
+			result += component.jumpSpeed;
+		}
+		return result;
 	}
 
 	void OnShopOpen()
