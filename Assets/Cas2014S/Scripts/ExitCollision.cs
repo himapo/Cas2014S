@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class ExitCollision : MyBehaviour {
 
@@ -63,7 +64,15 @@ public class ExitCollision : MyBehaviour {
 
 	float GetStayTime()
 	{
-		return stayTime;
+		var result = stayTime;
+		var components = new List<PS_ExitUp>();
+		components.AddRange(GetGun(0).GetComponents<PS_ExitUp>());
+		components.AddRange(GetGun(1).GetComponents<PS_ExitUp>());
+		foreach(var component in components)
+		{
+			result *= component.stayTimeScale;
+		}
+		return result;
 	}
 
 	void OnTriggerEnter(Collider other)

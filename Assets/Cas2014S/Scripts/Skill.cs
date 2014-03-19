@@ -17,6 +17,7 @@ public enum SkillType
 	// Player Skills
 	AutoHeal,
 	JumpUp,
+	ExitUp,
 
 	Max,
 }
@@ -45,6 +46,8 @@ public abstract class Skill : MyBehaviour {
 			return "PS_AutoHeal";
 		case SkillType.JumpUp:
 			return "PS_JumpUp";
+		case SkillType.ExitUp:
+			return "PS_ExitUp";
 		default:
 			break;
 		}
