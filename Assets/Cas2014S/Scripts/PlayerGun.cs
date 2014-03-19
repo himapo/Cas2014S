@@ -153,17 +153,28 @@ public class PlayerGun : GunBase
 		var run = playerController.run;
 		var crouch = playerController.crouch;
 
+		var result = 0.0f;
+
 		if(run > 0.0f)
 		{
-			return Mathf.Lerp(standRecoil, runRecoil, run);
+			result = Mathf.Lerp(standRecoil, runRecoil, run);
 		}
-
-		if(crouch > 0.0f)
+		else if(crouch > 0.0f)
 		{
-			return Mathf.Lerp(standRecoil, crouchRecoil, crouch);
+			result =  Mathf.Lerp(standRecoil, crouchRecoil, crouch);
+		}
+		else
+		{
+			result = standRecoil;
 		}
 
-		return standRecoil;
+		var components = GetComponents<GS_Accuracy>();
+		foreach(var component in components)
+		{
+			result *= component.recoilScale;
+		}
+
+		return result;
 	}
 
 	PlayerController GetPlayerController()

@@ -14,6 +14,7 @@ public enum SkillType
 	DamageUp,
 	ReloadUp,
 	Absorb,
+	Accuracy,
 
 	// Player Skills
 	AutoHeal,
@@ -54,6 +55,8 @@ public abstract class Skill : MyBehaviour {
 			return "PS_SpeedUp";
 		case SkillType.Absorb:
 			return "GS_Absorb";
+		case SkillType.Accuracy:
+			return "GS_Accuracy";
 		default:
 			break;
 		}
