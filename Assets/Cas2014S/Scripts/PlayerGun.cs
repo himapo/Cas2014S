@@ -204,7 +204,11 @@ public class PlayerGun : GunBase
 		var bulletDirection = targetPosition - muzzle.transform.position;
 		bulletDirection.Normalize();
 		
-		SpawnBullet(bulletDirection);
+		var bullet = SpawnBullet(bulletDirection).GetComponent<Bullet>();
+		if(bullet)
+		{
+			bullet.gunIndex = (GetGun(0) == this) ? 0 : 1;
+		}
 		
 		--magazineRemaining;
 		

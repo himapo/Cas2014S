@@ -53,7 +53,7 @@ public class Health : MyBehaviour {
         }
 	}
 
-    public void OnBulletHit(BulletHitInfo info)
+    public int OnBulletHit(BulletHitInfo info)
     {
 		//Debug.Log(string.Format("{0} Damage", gameObject.name));;
 
@@ -74,6 +74,8 @@ public class Health : MyBehaviour {
 				text = damageInt.ToString(),
 				position = info.HitPosition,
 			});
+
+		return damageInt;
     }
 
 	float GetHealingSpeed()
@@ -95,6 +97,20 @@ public class Health : MyBehaviour {
 		if(health < maxHealth)
 		{
 			var heal = Mathf.FloorToInt(percentage * maxHealth / 100.0f);
+			heal = Mathf.Min (heal, maxHealth - health);
+			health += heal;
+			health = Mathf.Clamp(health, 0, maxHealth);
+			innerHealth = health;
+			return heal;
+		}
+		return 0;
+	}
+
+	public int Heal(int amount)
+	{
+		if(health < maxHealth)
+		{
+			var heal = amount;
 			heal = Mathf.Min (heal, maxHealth - health);
 			health += heal;
 			health = Mathf.Clamp(health, 0, maxHealth);

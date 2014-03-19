@@ -15,6 +15,9 @@ public class Bullet : MyBehaviour {
 	[HideInInspector]
 	public GameObject shooter;
 
+	[HideInInspector]
+	public int gunIndex;
+
 	public float scatterDamage = 0.2f;
 
 	// Use this for initialization
@@ -90,12 +93,14 @@ public class Bullet : MyBehaviour {
 			return;
 		}
 
-		health.OnBulletHit(
+		var damage = health.OnBulletHit(
 			new BulletHitInfo()
 			{
 				Damage = RandomizeDamage(),
 				HitPosition = hitPosition,
 			});
+
+		AbsorbDamage(damage);
 	}
 
 	float RandomizeDamage()
@@ -105,6 +110,23 @@ public class Bullet : MyBehaviour {
 		var r = Random.Range(-amplitude, amplitude);
 
 		return Mathf.Round(bulletDamage + r);
+	}
+
+	void AbsorbDamage(int damage)
+	{
+		if(shooter.tag != "Player")
+		{
+			return;
+		}
+
+		var absorb = 0.0f;
+		var components = GetGun(gunIndex).GetComponents<GS_Absorb>();
+		foreach(var component in components)
+		{
+			absorb += component.absorbPercentage;
+		}
+
+		PlayerHealth.Heal(Mathf.CeilToInt(absorb * damage * 0.01f));
 	}
 
     protected virtual void Explode()

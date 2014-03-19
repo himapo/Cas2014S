@@ -17,7 +17,15 @@ public class GranadeBullet : Bullet {
 
 	protected override void Explode ()
 	{
-		Instantiate(explosionPrefab, transform.position, transform.rotation);
+		var explosion = Instantiate(explosionPrefab, transform.position, transform.rotation) as GameObject;
+		var explosionComponent = explosion.GetComponent<GranadeExplosion>();
+
+		if(explosionComponent)
+		{
+			explosionComponent.shooter = shooter;
+			explosionComponent.gunIndex = gunIndex;
+		}
+
 		Destroy(gameObject);
 	}
 }

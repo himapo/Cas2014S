@@ -13,6 +13,7 @@ public enum SkillType
 	// Gun Skills
 	DamageUp,
 	ReloadUp,
+	Absorb,
 
 	// Player Skills
 	AutoHeal,
@@ -51,6 +52,8 @@ public abstract class Skill : MyBehaviour {
 			return "PS_ExitUp";
 		case SkillType.SpeedUp:
 			return "PS_SpeedUp";
+		case SkillType.Absorb:
+			return "GS_Absorb";
 		default:
 			break;
 		}
