@@ -15,6 +15,12 @@ public class GS_ReloadUp : GunSkill {
 		}
 	}
 
+	public override string Description {
+		get {
+			return "ガンスキル。リロード時間が短縮される";
+		}
+	}
+
 	public float reloadSpeedScale = 1.2f;
 
 	// Use this for initialization

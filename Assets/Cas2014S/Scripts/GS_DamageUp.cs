@@ -15,6 +15,12 @@ public class GS_DamageUp : GunSkill {
 		}
 	}
 
+	public override string Description {
+		get {
+			return "ガンスキル。ダメージが上昇する";
+		}
+	}
+
 	public float damageScale = 2.0f;
 
 	// Use this for initialization

@@ -695,6 +695,7 @@ MonoBehaviour:
   soundInterval: 0
   Type: 4
   Name: "\u30B7\u30FC\u30EB\u30C9"
+  Description: "\u653B\u6483\u306E\u4EE3\u308F\u308A\u306B\u5F3E\u3092\u9632\u3050\u30B7\u30FC\u30EB\u30C9\u3092\u5C55\u958B\u3059\u308B\u3002\u30B9\u30AD\u30EB\u30B9\u30ED\u30C3\u30C8\u6570\u306F5"
   rare: 2
   standRecoil: 0
   runRecoil: 0

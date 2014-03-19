@@ -28,6 +28,8 @@ public abstract class Skill : MyBehaviour {
 
 	public abstract string Name{get;}
 
+	public abstract string Description{get;}
+
 	public int rare;
 
 	public static string GetSkillName(SkillType type)

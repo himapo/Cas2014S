@@ -322,6 +322,8 @@ public class ShopGUI : MyBehaviour {
 			return;
 		},
 		"残りのアイテムは全て破棄されます");
+
+		ToolTip();
 	}
 
 	void StateGacha11()
@@ -335,6 +337,8 @@ public class ShopGUI : MyBehaviour {
 			return;
 		},
 		"残りのアイテムは全て破棄されます");
+
+		ToolTip();
 	}
 
 	void AtariLabel()
@@ -354,6 +358,23 @@ public class ShopGUI : MyBehaviour {
 		
 		GUILayout.FlexibleSpace();
 		GUILayout.EndArea();
+	}
+
+	void ToolTip()
+	{
+		var guiStyle = new GUIStyle(GUI.skin.GetStyle("label"));
+		guiStyle.alignment = TextAnchor.MiddleCenter;
+		guiStyle.fontSize = 15;
+
+		var topleft = Camera.main.ViewportToScreenPoint(new Vector3(0.2f, 0.12f, 0));
+
+		var size = Camera.main.ViewportToScreenPoint(new Vector3(0.6f, 0.1f, 0));
+
+		var area = new Rect(
+			topleft.x, topleft.y,
+			size.x, size.y);
+		
+		GUI.Label(area, GUI.tooltip, guiStyle);
 	}
 
 	void ItemButton()

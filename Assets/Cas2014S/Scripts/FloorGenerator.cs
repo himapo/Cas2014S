@@ -73,7 +73,7 @@ public class FloorGenerator : MyBehaviour {
 
 		SetPlayerPosition();
 
-		GenerateWall();
+		//GenerateWall();
 
 		SpawnExit();
 

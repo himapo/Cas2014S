@@ -9,7 +9,7 @@ public enum ItemType
 	Max,
 }
 
-public class GachaItem : MonoBehaviour {
+public class GachaItem : MyBehaviour {
 
 	public ItemType type;
 

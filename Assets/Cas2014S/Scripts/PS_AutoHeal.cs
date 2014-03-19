@@ -15,6 +15,12 @@ public class PS_AutoHeal : PlayerSkill {
 		}
 	}
 
+	public override string Description {
+		get {
+			return "プレイヤースキル。徐々に体力が回復していく";
+		}
+	}
+
 	public float healingSpeed = 1.0f;
 
 	// Use this for initialization

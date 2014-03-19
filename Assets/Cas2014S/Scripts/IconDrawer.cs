@@ -31,7 +31,7 @@ public class IconDrawer : MyBehaviour {
 	public void DrawGun(PlayerGun gun)
 	{
 		DrawShopIcon(
-			gun.Name,
+			new GUIContent(gun.Name, gun.Description),
 			contentColors[gun.rare],
 			gunBackColors[0],
 			Vector3.zero, true);
@@ -58,7 +58,7 @@ public class IconDrawer : MyBehaviour {
 	public void DrawShopSkill(Skill skill, Vector3 viewportPosition, bool layout)
 	{
 		DrawShopIcon(
-			skill.Name,
+			new GUIContent(skill.Name, skill.Description),
 			contentColors[skill.rare],
 			skillBackColors[(int)skill.Category],
 			viewportPosition, layout);
@@ -104,7 +104,7 @@ public class IconDrawer : MyBehaviour {
 		GUI.backgroundColor = backupBackgroundColor;
 	}
 
-	void DrawShopIcon(string content, Color contentColor, Color backgroundColor, Vector3 viewportPosition, bool layout)
+	void DrawShopIcon(GUIContent content, Color contentColor, Color backgroundColor, Vector3 viewportPosition, bool layout)
 	{
 		var backupContentColor = GUI.contentColor;
 		var backupBackgroundColor = GUI.backgroundColor;

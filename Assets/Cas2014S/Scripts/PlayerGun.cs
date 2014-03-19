@@ -21,6 +21,8 @@ public class PlayerGun : GunBase
 	public PlayerGunType Type;
 
 	public string Name;
+
+	public string Description;
 	
 	public int rare;
 
