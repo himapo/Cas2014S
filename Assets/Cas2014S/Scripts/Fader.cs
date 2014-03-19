@@ -55,12 +55,12 @@ public class Fader : MyBehaviour {
 
 	public void FadeOut(float time)
 	{
-		StartCoroutine(AsyncFade(0.0f, 1.0f, time));
+		StartCoroutine(AsyncFade(alpha, 1.0f, time));
 	}
 
 	public void FadeIn(float time)
 	{
-		StartCoroutine(AsyncFade(1.0f, 0.0f, time));
+		StartCoroutine(AsyncFade(alpha, 0.0f, time));
 	}
 
 	IEnumerator AsyncFade(float start, float end, float time)
