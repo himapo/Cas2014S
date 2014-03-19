@@ -42,8 +42,8 @@ public class PlayerController : MyBehaviour {
         verticalRotation = Mathf.Clamp(verticalRotation, -upDownRange, upDownRange);
         Camera.main.transform.localRotation = Quaternion.Euler(verticalRotation, 0, 0);
 
-        var forwardSpeed = Input.GetAxis("Vertical") * movementSpeed;
-        var sideSpeed = Input.GetAxis("Horizontal") * movementSpeed;
+		var forwardSpeed = Input.GetAxis("Vertical") * GetMovementSpeed();
+		var sideSpeed = Input.GetAxis("Horizontal") * GetMovementSpeed();
 
         verticalVelocity += Physics.gravity.y * Time.deltaTime;
 
@@ -80,7 +80,20 @@ public class PlayerController : MyBehaviour {
         characterController.Move(speed * Time.deltaTime);
 
 		var horizontalSpeed = new Vector2(sideSpeed, forwardSpeed);
-		run = horizontalSpeed.magnitude / movementSpeed;
+		run = horizontalSpeed.magnitude / GetMovementSpeed();
+	}
+
+	float GetMovementSpeed()
+	{
+		var result = movementSpeed;
+		var components = new List<PS_SpeedUp>();
+		components.AddRange(GetGun(0).GetComponents<PS_SpeedUp>());
+		components.AddRange(GetGun(1).GetComponents<PS_SpeedUp>());
+		foreach(var component in components)
+		{
+			result += component.movementSpeed;
+		}
+		return result;
 	}
 
 	float GetJumpSpeed()
