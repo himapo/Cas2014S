@@ -1,31 +1,29 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class PS_ExitUp : PlayerSkill {
+public class PS_Pakorepu : PlayerSkill {
 
 	public override SkillType Type {
 		get {
-			return SkillType.ExitUp;
+			return SkillType.Pakorepu;
 		}
 	}
 	
 	public override string Name {
 		get {
-			return "出口制圧強化";
+			return "壁抜け";
 		}
 	}
 	
 	public override string Description {
 		get {
-			return "プレイヤースキル。次のフロアに進む速度が上がる";
+			return "プレイヤースキル。壁を通過することができる";
 		}
 	}
 
-	public float stayTimeScale = 0.8f;
-
 	void Awake()
 	{
-		rare = 0;
+		rare = 3;
 	}
 
 	// Use this for initialization

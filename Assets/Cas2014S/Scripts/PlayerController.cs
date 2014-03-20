@@ -91,6 +91,8 @@ public class PlayerController : MyBehaviour {
 		
 		var horizontalSpeed = new Vector2(sideSpeed, forwardSpeed);
 		run = horizontalSpeed.magnitude / GetMovementSpeed();
+
+		CheckPakorepu();
 	}
 
 	float GetMovementSpeed()
@@ -117,6 +119,21 @@ public class PlayerController : MyBehaviour {
 			result += component.jumpSpeed;
 		}
 		return result;
+	}
+
+	void CheckPakorepu()
+	{
+		var num = GetGun(0).GetComponents<PS_Pakorepu>().Length;
+		num += GetGun(1).GetComponents<PS_Pakorepu>().Length;
+
+		if(num > 0)
+		{
+			gameObject.layer = LayerMask.NameToLayer("Pakorepu");
+		}
+		else
+		{
+			gameObject.layer = LayerMask.NameToLayer("Default");
+		}
 	}
 
 	void OnControllerCollideHit(ControllerColliderHit hit)

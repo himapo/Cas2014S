@@ -834,7 +834,7 @@ GameObject:
   - 23: {fileID: 186585937}
   - 114: {fileID: 186585936}
   - 136: {fileID: 186585935}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: Cylinder02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2468,7 +2468,7 @@ GameObject:
   - 33: {fileID: 395918393}
   - 64: {fileID: 395918392}
   - 23: {fileID: 395918391}
-  m_Layer: 17
+  m_Layer: 19
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3535,7 +3535,7 @@ GameObject:
   - 33: {fileID: 583214414}
   - 64: {fileID: 583214413}
   - 23: {fileID: 583214412}
-  m_Layer: 17
+  m_Layer: 19
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4181,7 +4181,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8ada419e2c663742b9b65c327e3a060, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 150
+  maxHealth: 15000
   healingSpeed: 0
   health: 0
 --- !u!114 &669144673
@@ -4917,7 +4917,7 @@ GameObject:
   - 33: {fileID: 819329593}
   - 64: {fileID: 819329592}
   - 23: {fileID: 819329591}
-  m_Layer: 17
+  m_Layer: 19
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7108,7 +7108,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53d9cf3f18214c940bfe6f94d7109319, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enableWall: 0
+  enableWall: 1
   wallProbability: .200000003
   gridSize: 3
   gridNum: 0a0000000a000000
@@ -7499,7 +7499,7 @@ GameObject:
   - 33: {fileID: 1299237365}
   - 64: {fileID: 1299237364}
   - 23: {fileID: 1299237363}
-  m_Layer: 17
+  m_Layer: 19
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8072,18 +8072,6 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 07485e6211b431147a6423184d7cd5fe, type: 2}
       propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 11400004, guid: 07485e6211b431147a6423184d7cd5fe, type: 2}
-      propertyPath: maxHealth
-      value: 150
-      objectReference: {fileID: 0}
-    - target: {fileID: 14300000, guid: 07485e6211b431147a6423184d7cd5fe, type: 2}
-      propertyPath: m_Height
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 14300000, guid: 07485e6211b431147a6423184d7cd5fe, type: 2}
-      propertyPath: m_Center.y
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -9180,11 +9168,11 @@ MonoBehaviour:
       chasePlayer: 0
       runAway: 0
       randomWalk: 1
-      movementSpeed: 10
+      movementSpeed: 5
       rotationRatio: 2
-      closeDistance: 10
+      closeDistance: 3
     gunSpecs:
-    - probability: 1
+    - probability: 10
       bulletPrefab: {fileID: 100000, guid: a80b5aabdd8d0204e9fd1cd4d22556c7, type: 2}
       bulletImpulse: 60
       raycastBullet: 0
@@ -9192,7 +9180,7 @@ MonoBehaviour:
       startDistance: 30
       bulletDamage: 58
       explosionDamage: 0
-    - probability: 1
+    - probability: 10
       bulletPrefab: {fileID: 100000, guid: a80b5aabdd8d0204e9fd1cd4d22556c7, type: 2}
       bulletImpulse: 200
       raycastBullet: 1
@@ -9200,7 +9188,7 @@ MonoBehaviour:
       startDistance: 40
       bulletDamage: 100
       explosionDamage: 0
-    - probability: 10
+    - probability: 1
       bulletPrefab: {fileID: 100002, guid: bf3aa7d72353e124a8f1a07bb45b6efe, type: 2}
       bulletImpulse: 1
       raycastBullet: 0

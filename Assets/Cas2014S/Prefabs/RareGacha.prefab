@@ -16,6 +16,7 @@ GameObject:
   - 114: {fileID: 11400010}
   - 114: {fileID: 11400012}
   - 114: {fileID: 11400014}
+  - 114: {fileID: 11400016}
   m_Layer: 0
   m_Name: RareGacha
   m_TagString: Untagged
@@ -151,6 +152,21 @@ MonoBehaviour:
   probability: 1
   gun: {fileID: 11400000, guid: ddbaf8e4aa2d3d549bed93dc783148fd, type: 2}
   skill: {fileID: 0}
+--- !u!114 &11400016
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f37bc4690463f2342bce82c42a2ea30c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 1
+  probability: 1
+  gun: {fileID: 0}
+  skill: {fileID: 11400000, guid: e5b0142e1614fe74f9eddf96e41893a5, type: 2}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

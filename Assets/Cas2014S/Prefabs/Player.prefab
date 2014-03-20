@@ -500,7 +500,7 @@ GameObject:
   - 23: {fileID: 2300032}
   - 114: {fileID: 11400012}
   - 136: {fileID: 13600000}
-  m_Layer: 16
+  m_Layer: 0
   m_Name: Cylinder02
   m_TagString: Untagged
   m_Icon: {fileID: 0}

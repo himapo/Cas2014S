@@ -21,6 +21,11 @@ public class PS_AutoHeal : PlayerSkill {
 		}
 	}
 
+	void Awake()
+	{
+		rare = 3;
+	}
+
 	public float healingSpeed = 1.0f;
 
 	// Use this for initialization

@@ -23,6 +23,11 @@ public class PS_JumpUp : PlayerSkill {
 	
 	public float jumpSpeed = 1.0f;
 
+	void Awake()
+	{
+		rare = 1;
+	}
+
 	// Use this for initialization
 	void Start () {
 	

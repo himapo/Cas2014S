@@ -79,9 +79,9 @@ public class EnemyController : MyBehaviour {
 			}
 			else
 			{
-				RandomWalk();
 				StopShoot();
 			}
+			RandomWalk();
 		}
 		else
 		{
@@ -199,7 +199,10 @@ public class EnemyController : MyBehaviour {
 	{
 		//Debug.Log ("hit");
 
-		if(randomWalk && hit.collider.transform.gameObject.layer == LayerMask.NameToLayer("Wall"))
+		var layer = hit.collider.transform.gameObject.layer;
+
+		if(randomWalk
+		   && (layer == LayerMask.NameToLayer("Wall") || layer == LayerMask.NameToLayer("OutWall")))
 		{
 			var normal = hit.normal;
 			
@@ -207,25 +210,6 @@ public class EnemyController : MyBehaviour {
 			
 			var rot = Quaternion.AngleAxis(rand, Vector3.up);
 			
-			randomDirection = rot * normal;
-		}
-	}
-
-	void OnCollisionEnter(Collision collision)
-	{
-		if(collision.transform.gameObject.layer == LayerMask.NameToLayer("Bullet"))
-		{
-			return;
-		}
-
-		if(randomWalk && collision.transform.gameObject.layer == LayerMask.NameToLayer("Wall"))
-		{
-			var normal = collision.contacts[0].normal;
-
-			var rand = Random.Range(-45.0f, 45.0f);
-
-			var rot = Quaternion.AngleAxis(rand, Vector3.up);
-
 			randomDirection = rot * normal;
 		}
 	}

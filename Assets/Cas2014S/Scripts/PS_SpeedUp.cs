@@ -23,6 +23,11 @@ public class PS_SpeedUp : PlayerSkill {
 
 	public float movementSpeed = 1.0f;
 
+	void Awake()
+	{
+		rare = 0;
+	}
+
 	// Use this for initialization
 	void Start () {
 	

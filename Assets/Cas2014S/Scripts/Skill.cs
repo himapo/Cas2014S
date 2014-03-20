@@ -21,6 +21,7 @@ public enum SkillType
 	JumpUp,
 	ExitUp,
 	SpeedUp,
+	Pakorepu,
 
 	Max,
 }
@@ -57,6 +58,8 @@ public abstract class Skill : MyBehaviour {
 			return "GS_Absorb";
 		case SkillType.Accuracy:
 			return "GS_Accuracy";
+		case SkillType.Pakorepu:
+			return "PS_Pakorepu";
 		default:
 			break;
 		}
