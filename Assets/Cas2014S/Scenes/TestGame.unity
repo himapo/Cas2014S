@@ -9179,7 +9179,7 @@ MonoBehaviour:
     - probability: 1
       chasePlayer: 1
       runAway: 0
-      randomWalk: 0
+      randomWalk: 1
     gunSpecs:
     - probability: 1
       bulletPrefab: {fileID: 100000, guid: a80b5aabdd8d0204e9fd1cd4d22556c7, type: 2}

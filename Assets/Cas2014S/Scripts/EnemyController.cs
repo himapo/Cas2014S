@@ -214,11 +214,13 @@ public class EnemyController : MyBehaviour {
 		verticalVelocity += Physics.gravity.y * Time.deltaTime;
 		
 		speed.y = verticalVelocity;
+
+		var lookRotation = Quaternion.LookRotation(direction);
 		
-		if(direction.magnitude < closeDistance)
-		{
-			speed.x = speed.z = 0;
-		}
+		gameObject.transform.rotation = Quaternion.Slerp(
+			gameObject.transform.rotation,
+			lookRotation,
+			rotationRatio);
 		
 		characterController.Move(speed * Time.deltaTime);
 	}
