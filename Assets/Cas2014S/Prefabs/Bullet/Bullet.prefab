@@ -90,6 +90,7 @@ MonoBehaviour:
   raycastBullet: 1
   direction: {x: 0, y: 0, z: 0}
   shooter: {fileID: 0}
+  gunIndex: 0
   scatterDamage: .200000003
 --- !u!135 &13500000
 SphereCollider:

@@ -53,10 +53,7 @@ public class EnemyController : MyBehaviour {
 			transform.position.y + 1.0f,
 			transform.position.z);
 
-		var target = new Vector3(
-			Player.transform.position.x,
-			Player.transform.position.y + 1.0f,
-			Player.transform.position.z);
+		var target = GetPlayerTargetPosition();
 
 		var ray = new Ray(origin, target - origin);
 
@@ -80,10 +77,9 @@ public class EnemyController : MyBehaviour {
 
 	void LookAtPlayer()
 	{
-		var playercc = Player.GetComponent<CharacterController>();
-		
-		var playerTarget = Player.transform.position;
-		playerTarget.y += playercc.height * 0.5f;
+		var playerTarget = GetPlayerTargetPosition();
+
+		//Debug.Log(string.Format("PlayerTarget.y = {0}", playerTarget.y));
 		
 		var direction = playerTarget - gameObject.transform.position;
 		var lookPlayer = Quaternion.LookRotation(direction);
@@ -92,6 +88,19 @@ public class EnemyController : MyBehaviour {
 			gameObject.transform.rotation,
 			lookPlayer,
 			rotationRatio);
+	}
+
+	Vector3 GetPlayerTargetPosition()
+	{
+		var playercc = Player.GetComponent<CharacterController>();
+		
+		var playerTarget = new Vector3(
+			Player.transform.position.x,
+			Player.transform.position.y,
+			Player.transform.position.z);
+		playerTarget.y += playercc.height * 0.5f;
+
+		return playerTarget;
 	}
 
 	void ChasePlayer()
@@ -103,11 +112,6 @@ public class EnemyController : MyBehaviour {
 		var speed = direction.normalized * movementSpeed;
 
 		verticalVelocity += Physics.gravity.y * Time.deltaTime;
-
-//		if(characterController.isGrounded)
-//		{
-//			verticalVelocity = 0;
-//		}
 
 		speed.y = verticalVelocity;
 

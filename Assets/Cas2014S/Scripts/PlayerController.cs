@@ -16,7 +16,11 @@ public class PlayerController : MyBehaviour {
 
     float verticalVelocity;
 
-	public float crouchSpeed;
+	public float height;
+
+	public float crouchDown;
+
+	public float crouchSpeed;	
 
 	[HideInInspector]
 	public float crouch { get; set; }	// 0.0 - 1.0
@@ -76,6 +80,12 @@ public class PlayerController : MyBehaviour {
 			0.0f,
 			1.75f - crouch,
 			0.0f);
+
+		characterController.height = height - crouch * crouchDown;
+		characterController.center = new Vector3(
+			characterController.center.x,
+			characterController.height * 0.51f,
+			characterController.center.z);
 
         characterController.Move(speed * Time.deltaTime);
 

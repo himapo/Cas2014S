@@ -4232,6 +4232,8 @@ MonoBehaviour:
   mouseSensitivity: 5
   jumpSpeed: 4.5
   upDownRange: 60
+  height: 2
+  crouchDown: 1
   crouchSpeed: 2
 --- !u!143 &669144675
 CharacterController:
@@ -8070,6 +8072,14 @@ Prefab:
     - target: {fileID: 11400004, guid: 07485e6211b431147a6423184d7cd5fe, type: 2}
       propertyPath: maxHealth
       value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 14300000, guid: 07485e6211b431147a6423184d7cd5fe, type: 2}
+      propertyPath: m_Height
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 14300000, guid: 07485e6211b431147a6423184d7cd5fe, type: 2}
+      propertyPath: m_Center.y
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 07485e6211b431147a6423184d7cd5fe, type: 2}

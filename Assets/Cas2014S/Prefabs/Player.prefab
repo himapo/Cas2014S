@@ -1599,6 +1599,8 @@ MonoBehaviour:
   mouseSensitivity: 5
   jumpSpeed: 4.5
   upDownRange: 60
+  height: 2
+  crouchDown: 1
   crouchSpeed: 2
 --- !u!114 &11400002
 MonoBehaviour:

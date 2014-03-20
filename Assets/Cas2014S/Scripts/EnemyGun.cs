@@ -40,11 +40,25 @@ public class EnemyGun : GunBase {
 	{
 		//Debug.Log("Enemy shoot");
 
-		var bulletDirection = gameObject.transform.forward;
+		var bulletDirection = GetPlayerTargetPosition() - muzzle.transform.position;
+		bulletDirection.Normalize();
 
 		SpawnBullet(bulletDirection);
 
 		PlayFireSound();
+	}
+
+	Vector3 GetPlayerTargetPosition()
+	{
+		var playercc = Player.GetComponent<CharacterController>();
+		
+		var playerTarget = new Vector3(
+			Player.transform.position.x,
+			Player.transform.position.y,
+			Player.transform.position.z);
+		playerTarget.y += playercc.height * 0.5f;
+		
+		return playerTarget;
 	}
 
 	void StopFire()
