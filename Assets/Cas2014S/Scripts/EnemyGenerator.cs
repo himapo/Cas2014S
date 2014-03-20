@@ -13,6 +13,12 @@ public class EnemyControllerSpec
 	public bool runAway;
 	
 	public bool randomWalk;
+
+	public float movementSpeed;
+
+	public float rotationRatio;
+
+	public float closeDistance;
 }
 
 [System.Serializable]
@@ -23,6 +29,12 @@ public class EnemyGunSpec
 	public GameObject bulletPrefab;
 
 	public float fireInterval;
+
+	public float startDistance;
+
+	public float bulletDamage;
+
+	public float explosionDamage;
 }
 
 [System.Serializable]
@@ -95,6 +107,9 @@ public class EnemyGenerator : MyBehaviour {
 		enemyController.chasePlayer = spec.chasePlayer;
 		enemyController.runAway = spec.runAway;
 		enemyController.randomWalk = spec.randomWalk;
+		enemyController.movementSpeed = spec.movementSpeed;
+		enemyController.rotationRatio = spec.rotationRatio;
+		enemyController.closeDistance = spec.closeDistance;
 	}
 
 	void SetGunSpec(int floor, GameObject enemy)
@@ -124,5 +139,8 @@ public class EnemyGenerator : MyBehaviour {
 		var enemyGun = enemy.GetComponent<EnemyGun>();
 		enemyGun.bulletPrefab = spec.bulletPrefab;
 		enemyGun.interval = spec.fireInterval;
+		enemyGun.bulletDamage = spec.bulletDamage;
+		enemyGun.startDistance = spec.startDistance;
+		enemyGun.explosionDamage = spec.explosionDamage;
 	}
 }

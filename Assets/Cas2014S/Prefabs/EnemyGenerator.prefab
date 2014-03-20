@@ -42,22 +42,34 @@ MonoBehaviour:
   - startFloor: 1
     controllerSpecs:
     - probability: 1
-      chasePlayer: 1
+      chasePlayer: 0
       runAway: 0
       randomWalk: 1
+      movementSpeed: 10
+      rotationRatio: 2
+      closeDistance: 10
     gunSpecs:
     - probability: 1
       bulletPrefab: {fileID: 100000, guid: a80b5aabdd8d0204e9fd1cd4d22556c7, type: 2}
-      fireInterval: 3
+      fireInterval: .400000006
+      startDistance: 30
+      bulletDamage: 58
+      explosionDamage: 0
     - probability: 1
       bulletPrefab: {fileID: 100000, guid: a80b5aabdd8d0204e9fd1cd4d22556c7, type: 2}
-      fireInterval: 7
+      fireInterval: .800000012
+      startDistance: 40
+      bulletDamage: 100
+      explosionDamage: 0
   - startFloor: 2
     controllerSpecs: []
     gunSpecs:
     - probability: 1
       bulletPrefab: {fileID: 100000, guid: a80b5aabdd8d0204e9fd1cd4d22556c7, type: 2}
       fireInterval: 4
+      startDistance: 0
+      bulletDamage: 0
+      explosionDamage: 0
   enemyPrefab: {fileID: 100000, guid: f8c35b3ca9b3dd2428b952764880fe7f, type: 2}
 --- !u!1001 &100100000
 Prefab:

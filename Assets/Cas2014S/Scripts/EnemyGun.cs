@@ -5,6 +5,12 @@ public class EnemyGun : GunBase {
 
 	public float interval = 2.0f;
 
+	public float startDistance;
+	
+	public float explosionDamage;
+
+	bool firing;
+
 	bool stopFire = false;
 
 	float lastTime;
@@ -13,7 +19,6 @@ public class EnemyGun : GunBase {
 
 	// Use this for initialization
 	void Start () {
-		StartCoroutine(AsyncFire());
 	}
 	
 	// Update is called once per frame
@@ -21,9 +26,26 @@ public class EnemyGun : GunBase {
 	
 	}
 
+	public void StartShoot()
+	{
+		if(firing)
+		{
+			return;
+		}
+
+		firing = true;
+
+		StartCoroutine(AsyncFire());
+	}
+
+	public void StopShoot()
+	{
+		firing = false;
+	}
+
 	IEnumerator AsyncFire()
 	{
-		while(true)
+		while(firing)
 		{
 			lastTime = Time.time;
 
@@ -41,9 +63,17 @@ public class EnemyGun : GunBase {
 		//Debug.Log("Enemy shoot");
 
 		var bulletDirection = GetPlayerTargetPosition() - muzzle.transform.position;
+
+		if(bulletDirection.magnitude > startDistance)
+		{
+			return;
+		}
+
 		bulletDirection.Normalize();
 
-		SpawnBullet(bulletDirection);
+		var bullet = SpawnBullet(bulletDirection);
+		var bulletComponent = bullet.GetComponent<Bullet>();
+		bulletComponent.bulletDamage = bulletDamage;
 
 		PlayFireSound();
 	}

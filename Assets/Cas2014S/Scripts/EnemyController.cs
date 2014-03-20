@@ -17,7 +17,8 @@ public class EnemyController : MyBehaviour {
 
 	bool playerFound;
 
-	EnemyGun gun;
+	[HideInInspector]
+	public EnemyGun gun;
 
 	CharacterController characterController;
 
@@ -47,10 +48,15 @@ public class EnemyController : MyBehaviour {
 			{
 				LookAtPlayer();
 				ChasePlayer();
+				StartShoot();
 			}
-			else if(randomWalk)
+			else
 			{
-				RandomWalk();
+				if(randomWalk)
+				{
+					RandomWalk();
+				}
+				StopShoot();
 			}
 		}
 		else if(runAway)
@@ -66,7 +72,28 @@ public class EnemyController : MyBehaviour {
 		}
 		else if(randomWalk)
 		{
-			RandomWalk();
+			if(playerFound)
+			{
+				LookAtPlayer();
+				StartShoot();
+			}
+			else
+			{
+				RandomWalk();
+				StopShoot();
+			}
+		}
+		else
+		{
+			if(playerFound)
+			{
+				LookAtPlayer();
+				StartShoot();
+			}
+			else
+			{
+				StopShoot();
+			}
 		}
 	}
 
@@ -223,6 +250,16 @@ public class EnemyController : MyBehaviour {
 			rotationRatio);
 		
 		characterController.Move(speed * Time.deltaTime);
+	}
+
+	void StartShoot()
+	{
+		gun.StartShoot();
+	}
+
+	void StopShoot()
+	{
+		gun.StopShoot();
 	}
 
 	void OnDie()
