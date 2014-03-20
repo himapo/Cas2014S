@@ -7108,7 +7108,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53d9cf3f18214c940bfe6f94d7109319, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enableWall: 1
+  enableWall: 0
   wallProbability: .200000003
   gridSize: 3
   gridNum: 0a0000000a000000
@@ -9188,7 +9188,7 @@ MonoBehaviour:
       bulletPrefab: {fileID: 100000, guid: a80b5aabdd8d0204e9fd1cd4d22556c7, type: 2}
       bulletImpulse: 60
       raycastBullet: 0
-      fireInterval: .400000006
+      fireInterval: 50
       startDistance: 30
       bulletDamage: 58
       explosionDamage: 0
@@ -9196,15 +9196,15 @@ MonoBehaviour:
       bulletPrefab: {fileID: 100000, guid: a80b5aabdd8d0204e9fd1cd4d22556c7, type: 2}
       bulletImpulse: 200
       raycastBullet: 1
-      fireInterval: .800000012
+      fireInterval: 50
       startDistance: 40
       bulletDamage: 100
       explosionDamage: 0
-    - probability: 1
-      bulletPrefab: {fileID: 100000, guid: f5b0ef75f4bfdf645bd369720c739a8a, type: 2}
-      bulletImpulse: 30
+    - probability: 10
+      bulletPrefab: {fileID: 100002, guid: bf3aa7d72353e124a8f1a07bb45b6efe, type: 2}
+      bulletImpulse: 1
       raycastBullet: 0
-      fireInterval: 5
+      fireInterval: 1
       startDistance: 40
       bulletDamage: 100
       explosionDamage: 200

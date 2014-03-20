@@ -117,7 +117,7 @@ public class Bullet : MyBehaviour {
 
 	void AbsorbDamage(int damage)
 	{
-		if(shooter.tag != "Player")
+		if(shooter == null || shooter.tag != "Player")
 		{
 			return;
 		}
