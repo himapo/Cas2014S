@@ -115,7 +115,18 @@ public class PlayerGun : GunBase
 		
 		Fire (targetPosition);
 		
-		intervalRemaining = intervalTime;
+		intervalRemaining = GetIntervalTime();
+	}
+
+	float GetIntervalTime()
+	{
+		var scale = 1.0f;
+		var components = GetComponents<GS_FastInterval>();
+		foreach(var component in components)
+		{
+			scale *= component.intervalScale;
+		}
+		return intervalTime * scale;
 	}
 
 	public void ShootFullAuto()
