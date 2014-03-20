@@ -39,10 +39,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletDamage: 40
+  explosionDamage: 0
   lifeSpan: 1
   raycastBullet: 0
   direction: {x: 0, y: 0, z: 0}
   shooter: {fileID: 0}
+  gunIndex: 0
   scatterDamage: .200000003
   detonatorPrefab: {fileID: 100000, guid: 999de6d3d571aac4db7a4760ab8cb1b8, type: 2}
   radius: 2

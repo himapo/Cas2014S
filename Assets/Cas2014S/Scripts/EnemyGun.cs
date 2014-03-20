@@ -74,6 +74,7 @@ public class EnemyGun : GunBase {
 		var bullet = SpawnBullet(bulletDirection);
 		var bulletComponent = bullet.GetComponent<Bullet>();
 		bulletComponent.bulletDamage = bulletDamage;
+		bulletComponent.explosionDamage = explosionDamage;
 
 		PlayFireSound();
 	}

@@ -61,6 +61,12 @@ MonoBehaviour:
       startDistance: 40
       bulletDamage: 100
       explosionDamage: 0
+    - probability: 1
+      bulletPrefab: {fileID: 100000, guid: f5b0ef75f4bfdf645bd369720c739a8a, type: 2}
+      fireInterval: 5
+      startDistance: 40
+      bulletDamage: 100
+      explosionDamage: 200
   - startFloor: 2
     controllerSpecs: []
     gunSpecs:

@@ -24,6 +24,7 @@ public class GranadeBullet : Bullet {
 		{
 			explosionComponent.shooter = shooter;
 			explosionComponent.gunIndex = gunIndex;
+			explosionComponent.bulletDamage = explosionDamage;
 		}
 
 		Destroy(gameObject);

@@ -6,6 +6,9 @@ public class Bullet : MyBehaviour {
 	[HideInInspector]
 	public float bulletDamage = 3.0f;
 
+	[HideInInspector]
+	public float explosionDamage;
+
     public float lifeSpan = 2.0f;
 
 	public bool raycastBullet;
