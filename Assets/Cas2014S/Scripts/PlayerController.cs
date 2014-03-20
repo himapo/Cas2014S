@@ -81,14 +81,14 @@ public class PlayerController : MyBehaviour {
 			1.75f - crouch,
 			0.0f);
 
-		characterController.height = height - crouch * crouchDown;
-		characterController.center = new Vector3(
-			characterController.center.x,
-			characterController.height * 0.51f,
-			characterController.center.z);
+//		characterController.height = height - crouch * crouchDown;
+//		characterController.center = new Vector3(
+//			characterController.center.x,
+//			characterController.height * 0.51f,
+//			characterController.center.z);
 
         characterController.Move(speed * Time.deltaTime);
-
+		
 		var horizontalSpeed = new Vector2(sideSpeed, forwardSpeed);
 		run = horizontalSpeed.magnitude / GetMovementSpeed();
 	}
@@ -117,6 +117,11 @@ public class PlayerController : MyBehaviour {
 			result += component.jumpSpeed;
 		}
 		return result;
+	}
+
+	void OnControllerCollideHit(ControllerColliderHit hit)
+	{
+
 	}
 
 	void OnShopOpen()
