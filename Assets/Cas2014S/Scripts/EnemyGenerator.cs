@@ -28,6 +28,10 @@ public class EnemyGunSpec
 	
 	public GameObject bulletPrefab;
 
+	public float bulletImpulse;
+
+	public bool raycastBullet;
+
 	public float fireInterval;
 
 	public float startDistance;
@@ -138,6 +142,8 @@ public class EnemyGenerator : MyBehaviour {
 		
 		var enemyGun = enemy.GetComponent<EnemyGun>();
 		enemyGun.bulletPrefab = spec.bulletPrefab;
+		enemyGun.bulletImpulse = spec.bulletImpulse;
+		enemyGun.raycastBullet = spec.raycastBullet;
 		enemyGun.interval = spec.fireInterval;
 		enemyGun.bulletDamage = spec.bulletDamage;
 		enemyGun.startDistance = spec.startDistance;

@@ -51,18 +51,24 @@ MonoBehaviour:
     gunSpecs:
     - probability: 1
       bulletPrefab: {fileID: 100000, guid: a80b5aabdd8d0204e9fd1cd4d22556c7, type: 2}
+      bulletImpulse: 60
+      raycastBullet: 0
       fireInterval: .400000006
       startDistance: 30
       bulletDamage: 58
       explosionDamage: 0
     - probability: 1
       bulletPrefab: {fileID: 100000, guid: a80b5aabdd8d0204e9fd1cd4d22556c7, type: 2}
+      bulletImpulse: 200
+      raycastBullet: 1
       fireInterval: .800000012
       startDistance: 40
       bulletDamage: 100
       explosionDamage: 0
     - probability: 1
       bulletPrefab: {fileID: 100000, guid: f5b0ef75f4bfdf645bd369720c739a8a, type: 2}
+      bulletImpulse: 30
+      raycastBullet: 0
       fireInterval: 5
       startDistance: 40
       bulletDamage: 100
@@ -72,6 +78,8 @@ MonoBehaviour:
     gunSpecs:
     - probability: 1
       bulletPrefab: {fileID: 100000, guid: a80b5aabdd8d0204e9fd1cd4d22556c7, type: 2}
+      bulletImpulse: 0
+      raycastBullet: 0
       fireInterval: 4
       startDistance: 0
       bulletDamage: 0
