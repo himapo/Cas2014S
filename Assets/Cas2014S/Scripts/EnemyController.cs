@@ -23,20 +23,46 @@ public class EnemyController : MyBehaviour {
 
 	float verticalVelocity;
 
+	Vector3 randomDirection;
+
 	// Use this for initialization
 	void Start () {
 		gun = GetComponent<EnemyGun>();
 		characterController = GetComponent<CharacterController>();
+
+		var rand = Random.value * 360.0f;
+		randomDirection = new Vector3(
+			Mathf.Cos(rand),
+			0.0f,
+			Mathf.Sin(rand));
 	}
 	
 	// Update is called once per frame
 	void FixedUpdate () {
 		FindPlayer();
 
-		if(playerFound)
+		if(chasePlayer)
 		{
-			LookAtPlayer();
-			ChasePlayer();
+			if(playerFound)
+			{
+				LookAtPlayer();
+				ChasePlayer();
+			}
+			else if(randomWalk)
+			{
+				RandomWalk();
+			}
+		}
+		else if(runAway)
+		{
+			if(playerFound)
+			{
+				RunAway();
+			}
+			else if(randomWalk)
+			{
+				RandomWalk();
+			}
 		}
 		else if(randomWalk)
 		{
@@ -64,6 +90,7 @@ public class EnemyController : MyBehaviour {
 		mask &= ~(1 << LayerMask.NameToLayer("Item"));
 		mask &= ~(1 << LayerMask.NameToLayer("Shop"));
 		mask &= ~(1 << LayerMask.NameToLayer("Shield"));
+		mask &= ~(1 << LayerMask.NameToLayer("Bullet"));
 		
 		if(Physics.Raycast(ray, out hit, float.MaxValue, mask))
 		{
@@ -125,11 +152,73 @@ public class EnemyController : MyBehaviour {
 
 	void RandomWalk()
 	{
-		var speed = Vector3.zero;
+		var speed = randomDirection * movementSpeed;
 		
 		verticalVelocity += Physics.gravity.y * Time.deltaTime;
 
 		speed.y = verticalVelocity;
+
+		var lookRotation = Quaternion.LookRotation(randomDirection);
+
+		gameObject.transform.rotation = Quaternion.Slerp(
+			gameObject.transform.rotation,
+			lookRotation,
+			rotationRatio);
+		
+		characterController.Move(speed * Time.deltaTime);
+	}
+
+	void OnControllerColliderHit(ControllerColliderHit hit)
+	{
+		//Debug.Log ("hit");
+
+		if(randomWalk && hit.collider.transform.gameObject.layer == LayerMask.NameToLayer("Wall"))
+		{
+			var normal = hit.normal;
+			
+			var rand = Random.Range(-45.0f, 45.0f);
+			
+			var rot = Quaternion.AngleAxis(rand, Vector3.up);
+			
+			randomDirection = rot * normal;
+		}
+	}
+
+	void OnCollisionEnter(Collision collision)
+	{
+		if(collision.transform.gameObject.layer == LayerMask.NameToLayer("Bullet"))
+		{
+			return;
+		}
+
+		if(randomWalk && collision.transform.gameObject.layer == LayerMask.NameToLayer("Wall"))
+		{
+			var normal = collision.contacts[0].normal;
+
+			var rand = Random.Range(-45.0f, 45.0f);
+
+			var rot = Quaternion.AngleAxis(rand, Vector3.up);
+
+			randomDirection = rot * normal;
+		}
+	}
+
+	void RunAway()
+	{
+		var playerTarget = Player.transform.position;
+		
+		var direction = gameObject.transform.position - playerTarget;
+		
+		var speed = direction.normalized * movementSpeed;
+		
+		verticalVelocity += Physics.gravity.y * Time.deltaTime;
+		
+		speed.y = verticalVelocity;
+		
+		if(direction.magnitude < closeDistance)
+		{
+			speed.x = speed.z = 0;
+		}
 		
 		characterController.Move(speed * Time.deltaTime);
 	}

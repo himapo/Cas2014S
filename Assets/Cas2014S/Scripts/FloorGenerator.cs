@@ -17,6 +17,8 @@ public class FloorGenerator : MyBehaviour {
 
 	public static FloorGenerator Instance{get{return instance;}set{}}
 
+	public bool enableWall;
+
 	public float wallProbability;
 
 	public float gridSize = 3.0f;
@@ -38,7 +40,7 @@ public class FloorGenerator : MyBehaviour {
 	public int maxItem;
 
 	public List<FloorItem> itemTable;
-
+	
 	List<int> emptyGridNumbers = new List<int>();
 
 	List<int> usedGridNumbers = new List<int>();
@@ -73,7 +75,10 @@ public class FloorGenerator : MyBehaviour {
 
 		SetPlayerPosition();
 
-		//GenerateWall();
+		if(enableWall)
+		{
+			GenerateWall();
+		}
 
 		SpawnExit();
 

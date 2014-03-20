@@ -10,7 +10,7 @@ GameObject:
   - 4: {fileID: 400000}
   - 198: {fileID: 19800000}
   - 199: {fileID: 19900000}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Smoke
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27,7 +27,7 @@ GameObject:
   - 4: {fileID: 400002}
   - 198: {fileID: 19800002}
   - 199: {fileID: 19900002}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Glow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -48,7 +48,7 @@ GameObject:
   - 114: {fileID: 11400000}
   - 199: {fileID: 19900004}
   - 198: {fileID: 19800004}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Fire (Mobile)
   m_TagString: Fire
   m_Icon: {fileID: 0}
@@ -203,6 +203,7 @@ MonoBehaviour:
   raycastBullet: 0
   direction: {x: 0, y: 0, z: 0}
   shooter: {fileID: 0}
+  gunIndex: 0
   scatterDamage: .600000024
 --- !u!135 &13500000
 SphereCollider:

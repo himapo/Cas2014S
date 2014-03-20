@@ -38,6 +38,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53d9cf3f18214c940bfe6f94d7109319, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enableWall: 1
   wallProbability: .200000003
   gridSize: 3
   gridNum: 0a0000000a000000

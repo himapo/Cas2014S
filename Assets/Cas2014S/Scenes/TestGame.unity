@@ -2468,7 +2468,7 @@ GameObject:
   - 33: {fileID: 395918393}
   - 64: {fileID: 395918392}
   - 23: {fileID: 395918391}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3535,7 +3535,7 @@ GameObject:
   - 33: {fileID: 583214414}
   - 64: {fileID: 583214413}
   - 23: {fileID: 583214412}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4580,6 +4580,10 @@ Prefab:
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 100008, guid: 121fd68dcd3998d4e828e9d27005e758, type: 2}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 121fd68dcd3998d4e828e9d27005e758, type: 2}
   m_RootGameObject: {fileID: 2139234328}
@@ -4913,7 +4917,7 @@ GameObject:
   - 33: {fileID: 819329593}
   - 64: {fileID: 819329592}
   - 23: {fileID: 819329591}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6123,7 +6127,7 @@ GameObject:
   - 33: {fileID: 1058314538}
   - 64: {fileID: 1058314537}
   - 23: {fileID: 1058314536}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7104,6 +7108,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53d9cf3f18214c940bfe6f94d7109319, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enableWall: 1
   wallProbability: .200000003
   gridSize: 3
   gridNum: 0a0000000a000000
@@ -7494,7 +7499,7 @@ GameObject:
   - 33: {fileID: 1299237365}
   - 64: {fileID: 1299237364}
   - 23: {fileID: 1299237363}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}

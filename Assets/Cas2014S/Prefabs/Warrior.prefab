@@ -1009,10 +1009,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movementSpeed: 3
   rotationRatio: .200000003
-  chasePlayer: 0
+  chasePlayer: 1
   closeDistance: 5
   runAway: 0
-  randomWalk: 0
+  randomWalk: 1
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1

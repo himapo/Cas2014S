@@ -92,9 +92,9 @@ public class EnemyGenerator : MyBehaviour {
 		});
 
 		var enemyController = enemy.GetComponent<EnemyController>();
-		enemyController.chasePlayer = spec.chasePlayer;
-		enemyController.runAway = spec.runAway;
-		enemyController.randomWalk = spec.runAway;
+		//enemyController.chasePlayer = spec.chasePlayer;
+		//enemyController.runAway = spec.runAway;
+		//enemyController.randomWalk = spec.runAway;
 	}
 
 	void SetGunSpec(int floor, GameObject enemy)
