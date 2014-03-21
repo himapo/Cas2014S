@@ -21,7 +21,7 @@ public class GS_DamageUp : GunSkill {
 		}
 	}
 
-	public float damageScale = 2.0f;
+	public float damageScale = 1.3f;
 
 	// Use this for initialization
 	void Start () {
