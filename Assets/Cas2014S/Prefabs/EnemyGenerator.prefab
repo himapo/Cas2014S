@@ -45,15 +45,36 @@ MonoBehaviour:
       chasePlayer: 1
       runAway: 0
       randomWalk: 1
-      movementSpeed: 5
-      rotationRatio: 2
+      movementSpeed: 3
+      rotationRatio: .5
       closeDistance: 3
+    - probability: 1
+      chasePlayer: 0
+      runAway: 0
+      randomWalk: 0
+      movementSpeed: 3
+      rotationRatio: .699999988
+      closeDistance: 3
+    - probability: 1
+      chasePlayer: 0
+      runAway: 0
+      randomWalk: 1
+      movementSpeed: 4
+      rotationRatio: .699999988
+      closeDistance: 3
+    - probability: 1
+      chasePlayer: 1
+      runAway: 0
+      randomWalk: 1
+      movementSpeed: 7
+      rotationRatio: .5
+      closeDistance: 15
     gunSpecs:
     - probability: 10
       bulletPrefab: {fileID: 100000, guid: a80b5aabdd8d0204e9fd1cd4d22556c7, type: 2}
       bulletImpulse: 60
       raycastBullet: 0
-      fireInterval: 2
+      fireInterval: 4
       startDistance: 30
       bulletDamage: 6
       explosionDamage: 0
@@ -61,14 +82,20 @@ MonoBehaviour:
       bulletPrefab: {fileID: 100000, guid: a80b5aabdd8d0204e9fd1cd4d22556c7, type: 2}
       bulletImpulse: 200
       raycastBullet: 1
-      fireInterval: 1
-      startDistance: 40
-      bulletDamage: 4
+      fireInterval: .800000012
+      startDistance: 10
+      bulletDamage: 2
       explosionDamage: 0
     healthSpecs:
-    - probability: 1
+    - probability: 4
       health: 10
-  - startFloor: 2
+    - probability: 4
+      health: 15
+    - probability: 3
+      health: 20
+    - probability: 1
+      health: 30
+  - startFloor: 20
     controllerSpecs: []
     gunSpecs:
     - probability: 1

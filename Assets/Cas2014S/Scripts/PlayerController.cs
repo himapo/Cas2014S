@@ -31,6 +31,7 @@ public class PlayerController : MyBehaviour {
 	// Use this for initialization
 	void Start () {
 		//enabled = false;
+		Player.transform.position = GameController.startPosition;
 	}
 	
 	// Update is called once per frame

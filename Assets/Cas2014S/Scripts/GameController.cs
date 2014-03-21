@@ -22,6 +22,9 @@ public class GameController : MyBehaviour {
 
 	float gameEndTime;
 
+	[HideInInspector]
+	public Vector3 startPosition;
+
 	// Use this for initialization
 	void Start () {
 		updateFunc = StateInit;

@@ -135,7 +135,7 @@ public class FloorGenerator : MyBehaviour {
 		var grid = SampleRandomEmptyGrid();
 		var position = GetGridPosition(grid);
 		
-		Player.transform.position = new Vector3(
+		GameController.startPosition = new Vector3(
 			position.x,
 			2.0f,
 			position.z);

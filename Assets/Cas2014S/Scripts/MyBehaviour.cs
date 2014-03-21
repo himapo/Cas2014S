@@ -4,15 +4,15 @@ using System.Collections.Generic;
 
 public class MyBehaviour : MonoBehaviour {
 
-	GameObject gameController;
+	GameController gameController;
 
-	protected GameObject GameController
+	protected GameController GameController
 	{
 		get
 		{
 			if(gameController == null)
 			{
-				gameController = GameObject.FindWithTag("GameController");
+				gameController = GameObject.FindWithTag("GameController").GetComponent<GameController>();
 			}
 
 			return gameController;
