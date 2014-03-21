@@ -293,13 +293,13 @@ public class GameController : MyBehaviour {
 			Restart();
 		}
 		
-		GUILayout.FlexibleSpace();
-		
-		GUILayout.EndHorizontal();
-
-		GUILayout.FlexibleSpace();
-
-		GUILayout.BeginHorizontal();
+//		GUILayout.FlexibleSpace();
+//		
+//		GUILayout.EndHorizontal();
+//
+//		GUILayout.FlexibleSpace();
+//
+//		GUILayout.BeginHorizontal();
 		
 		GUILayout.FlexibleSpace();
 
@@ -361,13 +361,13 @@ public class GameController : MyBehaviour {
 			Restart();
 		}
 		
-		GUILayout.FlexibleSpace();
-		
-		GUILayout.EndHorizontal();
-
-		GUILayout.FlexibleSpace();
-		
-		GUILayout.BeginHorizontal();
+//		GUILayout.FlexibleSpace();
+//		
+//		GUILayout.EndHorizontal();
+//
+//		GUILayout.FlexibleSpace();
+//		
+//		GUILayout.BeginHorizontal();
 		
 		GUILayout.FlexibleSpace();
 		

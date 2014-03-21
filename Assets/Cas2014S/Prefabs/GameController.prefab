@@ -67,8 +67,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   floorText: {fileID: 13200000}
-  maxFloor: 51
+  maxFloor: 2
   playerPrefab: {fileID: 100000, guid: 07485e6211b431147a6423184d7cd5fe, type: 2}
+  startPosition: {x: 0, y: 0, z: 0}
 --- !u!132 &13200000
 GUIText:
   m_ObjectHideFlags: 1
