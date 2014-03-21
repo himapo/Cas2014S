@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 using System;
+using System.Linq;
 
 public class GameController : MyBehaviour {
 
@@ -9,6 +11,8 @@ public class GameController : MyBehaviour {
 	public int lastFloor;
 
 	public int startFloor;
+
+	public List<string> tips;
 
 	public GameObject playerPrefab;
 
@@ -26,6 +30,8 @@ public class GameController : MyBehaviour {
 
 	[HideInInspector]
 	public Vector3 startPosition;
+
+	int tipsIndex;
 
 	// Use this for initialization
 	void Start () {
@@ -144,6 +150,8 @@ public class GameController : MyBehaviour {
 		updateFunc = StateFloorMove;
 		guiFunc = GUIFloorMove;
 
+		tipsIndex = UnityEngine.Random.Range(0, tips.Count);
+
 		abortMoveFloor = false;
 
 		StartCoroutine(AsyncFloorMove());
@@ -172,7 +180,14 @@ public class GameController : MyBehaviour {
 		guiStyle.fontSize = 200;
 		
 		GUILayout.Label(string.Format("{0}階", floor), guiStyle);
-		
+
+		GUILayout.FlexibleSpace();
+
+		var tipsStyle = new GUIStyle(GUI.skin.GetStyle("label"));
+		tipsStyle.alignment = TextAnchor.MiddleCenter;
+		tipsStyle.fontSize = 24;
+		GUILayout.Label(tips[tipsIndex], tipsStyle);
+
 		GUILayout.FlexibleSpace();
 		
 		GUILayout.EndArea();
