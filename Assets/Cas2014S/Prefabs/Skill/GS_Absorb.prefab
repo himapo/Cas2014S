@@ -38,7 +38,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba3cbf7092d545449ae1e8ea8082a8ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rare: 0
+  rare: 2
   gun: {fileID: 0}
   absorbPercentage: 2
 --- !u!1001 &100100000

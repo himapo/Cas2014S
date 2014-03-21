@@ -38,7 +38,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c95d70d25ab7d0249ae3df62772e3a71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rare: 0
+  rare: 3
   healingSpeed: 1
 --- !u!1001 &100100000
 Prefab:

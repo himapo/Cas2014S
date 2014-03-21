@@ -3361,7 +3361,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c95d70d25ab7d0249ae3df62772e3a71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rare: 0
+  rare: 3
   healingSpeed: 1
 --- !u!1 &558807103
 GameObject:
@@ -5306,7 +5306,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9b32a0152acaf542a713f5f2b8a7f3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rare: 0
+  rare: 1
   gun: {fileID: 0}
   damageScale: 2
 --- !u!1 &873319623
@@ -11209,7 +11209,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba3cbf7092d545449ae1e8ea8082a8ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rare: 0
+  rare: 2
   gun: {fileID: 0}
   absorbPercentage: 2
 --- !u!1 &2057671897

@@ -38,7 +38,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c820e9f55068f1348b6c10d460db0f1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rare: 0
+  rare: 1
   gun: {fileID: 0}
   timeScale: .699999988
 --- !u!1001 &100100000
