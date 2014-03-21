@@ -16,6 +16,8 @@ public enum SkillType
 	Absorb,
 	Accuracy,
 	FastInterval,
+	Accelerate,
+	Decelerate,
 
 	// Player Skills
 	AutoHeal,
@@ -63,6 +65,10 @@ public abstract class Skill : MyBehaviour {
 			return "PS_Pakorepu";
 		case SkillType.FastInterval:
 			return "GS_FastInterval";
+		case SkillType.Accelerate:
+			return "GS_Accelerate";
+		case SkillType.Decelerate:
+			return "GS_Decelerate";
 		default:
 			break;
 		}

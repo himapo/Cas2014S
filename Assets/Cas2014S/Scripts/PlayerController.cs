@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -35,14 +35,15 @@ public class PlayerController : MyBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
 		Screen.lockCursor = true;
 
         var characterController = GetComponent<CharacterController>();
 
-        var rotLeftRight = Input.GetAxis("Mouse X") * mouseSensitivity;
+        var rotLeftRight = Input.GetAxis("Mouse X") * mouseSensitivity * Time.timeScale;
         transform.Rotate(0, rotLeftRight, 0);
 
-        verticalRotation -= Input.GetAxis("Mouse Y") * mouseSensitivity;
+		verticalRotation -= Input.GetAxis("Mouse Y") * mouseSensitivity * Time.timeScale;
         verticalRotation = Mathf.Clamp(verticalRotation, -upDownRange, upDownRange);
         Camera.main.transform.localRotation = Quaternion.Euler(verticalRotation, 0, 0);
 

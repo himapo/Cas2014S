@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class GunController : MyBehaviour {
 
@@ -23,6 +24,8 @@ public class GunController : MyBehaviour {
 	// Update is called once per frame
 	void Update () {
 
+		CheckAccelerate();
+		
 		for(var i=0; i < reloadButtonNames.Length; ++i)
 		{
 			if(Input.GetButtonDown(reloadButtonNames[i]))
@@ -73,6 +76,43 @@ public class GunController : MyBehaviour {
 
 		Destroy(guns[gunIndex].gameObject);
 		guns[gunIndex] = newGun;
+	}
+
+	void CheckAccelerate()
+	{
+		var timeScale = 1.0f;
+
+		for(var i=0; i<2; ++i)
+		{
+			if(!Input.GetButton(fireButtonNames[swapTrigger ? 1 - i : i]))
+			{
+				continue;
+			}
+
+			{
+				var components = new List<GS_Accelerate>();
+
+				components.AddRange(GetGun(i).GetComponents<GS_Accelerate>());
+
+				foreach(var component in components)
+				{
+					timeScale *= component.timeScale;
+				}
+			}
+
+			{
+				var components = new List<GS_Decelerate>();
+
+				components.AddRange(GetGun(i).GetComponents<GS_Decelerate>());
+
+				foreach(var component in components)
+				{
+					timeScale *= component.timeScale;
+				}
+			}
+		}
+
+		Time.timeScale = timeScale;
 	}
 
 	void OnShopOpen()
