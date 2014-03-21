@@ -691,7 +691,8 @@ MonoBehaviour:
   muzzle: {fileID: 400016}
   skills: []
   maxSkillSlot: 6
-  bulletDamage: 3
+  bulletDamage: 20
+  explosionDamage: 0
   soundInterval: 0
   Type: 0
   Name: "\u30D4\u30B9\u30C8\u30EB"

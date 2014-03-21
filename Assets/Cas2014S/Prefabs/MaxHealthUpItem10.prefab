@@ -114,7 +114,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healPercentage: 0
-  maxHealthUp: 10
+  maxHealthUp: 50
   healTextPrefab: {fileID: 100000, guid: be8fe52fc1217a746bc14cb5a292ba1c, type: 2}
 --- !u!114 &11400002
 MonoBehaviour:
@@ -130,6 +130,7 @@ MonoBehaviour:
   maxHealth: 500
   healingSpeed: 0
   health: 0
+  innerHealth: 0
 --- !u!114 &11400004
 MonoBehaviour:
   m_ObjectHideFlags: 1

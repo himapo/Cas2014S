@@ -41,72 +41,500 @@ MonoBehaviour:
   floorEnemySpecs:
   - startFloor: 1
     controllerSpecs:
-    - probability: 1
+    - probability: 160
       chasePlayer: 1
-      runAway: 0
-      randomWalk: 1
-      movementSpeed: 3
-      rotationRatio: .5
-      closeDistance: 3
-    - probability: 1
-      chasePlayer: 0
-      runAway: 0
-      randomWalk: 0
-      movementSpeed: 3
-      rotationRatio: .699999988
-      closeDistance: 3
-    - probability: 1
-      chasePlayer: 0
       runAway: 0
       randomWalk: 1
       movementSpeed: 4
-      rotationRatio: .699999988
-      closeDistance: 3
-    - probability: 1
+      rotationRatio: .600000024
+      closeDistance: 4
+    - probability: 160
+      chasePlayer: 1
+      runAway: 0
+      randomWalk: 0
+      movementSpeed: 4.30000019
+      rotationRatio: .5
+      closeDistance: 5
+    - probability: 160
+      chasePlayer: 0
+      runAway: 0
+      randomWalk: 0
+      movementSpeed: 0
+      rotationRatio: .5
+      closeDistance: 5
+    - probability: 80
+      chasePlayer: 0
+      runAway: 0
+      randomWalk: 1
+      movementSpeed: 5
+      rotationRatio: .800000012
+      closeDistance: 5
+    - probability: 80
+      chasePlayer: 0
+      runAway: 1
+      randomWalk: 1
+      movementSpeed: 6.80000019
+      rotationRatio: .800000012
+      closeDistance: 5
+    - probability: 40
       chasePlayer: 1
       runAway: 0
       randomWalk: 1
-      movementSpeed: 7
-      rotationRatio: .5
-      closeDistance: 15
-    gunSpecs:
+      movementSpeed: 7.69999981
+      rotationRatio: .800000012
+      closeDistance: 11
+    - probability: 20
+      chasePlayer: 1
+      runAway: 0
+      randomWalk: 1
+      movementSpeed: 6.5999999
+      rotationRatio: .300000012
+      closeDistance: 2
     - probability: 10
+      chasePlayer: 1
+      runAway: 0
+      randomWalk: 0
+      movementSpeed: 10
+      rotationRatio: .5
+      closeDistance: 5
+    gunSpecs:
+    - probability: 160
       bulletPrefab: {fileID: 100000, guid: a80b5aabdd8d0204e9fd1cd4d22556c7, type: 2}
-      bulletImpulse: 60
+      bulletImpulse: 100
       raycastBullet: 0
       fireInterval: 4
       startDistance: 30
       bulletDamage: 6
       explosionDamage: 0
+    - probability: 160
+      bulletPrefab: {fileID: 100000, guid: a80b5aabdd8d0204e9fd1cd4d22556c7, type: 2}
+      bulletImpulse: 100
+      raycastBullet: 0
+      fireInterval: 5
+      startDistance: 50
+      bulletDamage: 8
+      explosionDamage: 0
+    - probability: 40
+      bulletPrefab: {fileID: 100000, guid: a80b5aabdd8d0204e9fd1cd4d22556c7, type: 2}
+      bulletImpulse: 100
+      raycastBullet: 0
+      fireInterval: 1.39999998
+      startDistance: 20
+      bulletDamage: 3
+      explosionDamage: 0
     - probability: 10
       bulletPrefab: {fileID: 100000, guid: a80b5aabdd8d0204e9fd1cd4d22556c7, type: 2}
-      bulletImpulse: 200
-      raycastBullet: 1
+      bulletImpulse: 100
+      raycastBullet: 0
       fireInterval: .800000012
-      startDistance: 10
-      bulletDamage: 2
+      startDistance: 15
+      bulletDamage: 4
       explosionDamage: 0
     healthSpecs:
-    - probability: 4
-      health: 10
-    - probability: 4
-      health: 15
-    - probability: 3
-      health: 20
-    - probability: 1
+    - probability: 160
       health: 30
-  - startFloor: 20
+    - probability: 160
+      health: 40
+    - probability: 40
+      health: 20
+    - probability: 10
+      health: 70
+  - startFloor: 6
     controllerSpecs: []
     gunSpecs:
-    - probability: 1
+    - probability: 160
       bulletPrefab: {fileID: 100000, guid: a80b5aabdd8d0204e9fd1cd4d22556c7, type: 2}
-      bulletImpulse: 0
+      bulletImpulse: 100
+      raycastBullet: 0
+      fireInterval: 3.5
+      startDistance: 30
+      bulletDamage: 8
+      explosionDamage: 0
+    - probability: 160
+      bulletPrefab: {fileID: 100000, guid: a80b5aabdd8d0204e9fd1cd4d22556c7, type: 2}
+      bulletImpulse: 100
+      raycastBullet: 0
+      fireInterval: 5
+      startDistance: 50
+      bulletDamage: 12
+      explosionDamage: 0
+    - probability: 40
+      bulletPrefab: {fileID: 100000, guid: a80b5aabdd8d0204e9fd1cd4d22556c7, type: 2}
+      bulletImpulse: 100
+      raycastBullet: 0
+      fireInterval: 1.20000005
+      startDistance: 20
+      bulletDamage: 7
+      explosionDamage: 0
+    - probability: 10
+      bulletPrefab: {fileID: 100006, guid: 135be4fb25fa4234db2dc99122dfbc67, type: 2}
+      bulletImpulse: 5
+      raycastBullet: 0
+      fireInterval: .200000003
+      startDistance: 10
+      bulletDamage: 8
+      explosionDamage: 0
+    healthSpecs:
+    - probability: 160
+      health: 45
+    - probability: 160
+      health: 60
+    - probability: 40
+      health: 25
+    - probability: 10
+      health: 100
+  - startFloor: 11
+    controllerSpecs: []
+    gunSpecs:
+    - probability: 160
+      bulletPrefab: {fileID: 100000, guid: a80b5aabdd8d0204e9fd1cd4d22556c7, type: 2}
+      bulletImpulse: 100
+      raycastBullet: 0
+      fireInterval: 3.29999995
+      startDistance: 30
+      bulletDamage: 16
+      explosionDamage: 0
+    - probability: 160
+      bulletPrefab: {fileID: 100000, guid: a80b5aabdd8d0204e9fd1cd4d22556c7, type: 2}
+      bulletImpulse: 100
+      raycastBullet: 0
+      fireInterval: 4.69999981
+      startDistance: 50
+      bulletDamage: 22
+      explosionDamage: 0
+    - probability: 40
+      bulletPrefab: {fileID: 100000, guid: a80b5aabdd8d0204e9fd1cd4d22556c7, type: 2}
+      bulletImpulse: 100
+      raycastBullet: 0
+      fireInterval: 1.20000005
+      startDistance: 30
+      bulletDamage: 11
+      explosionDamage: 0
+    - probability: 10
+      bulletPrefab: {fileID: 100000, guid: f5b0ef75f4bfdf645bd369720c739a8a, type: 2}
+      bulletImpulse: 40
       raycastBullet: 0
       fireInterval: 4
-      startDistance: 0
-      bulletDamage: 0
+      startDistance: 40
+      bulletDamage: 20
+      explosionDamage: 20
+    healthSpecs:
+    - probability: 160
+      health: 60
+    - probability: 160
+      health: 80
+    - probability: 40
+      health: 45
+    - probability: 10
+      health: 130
+  - startFloor: 16
+    controllerSpecs: []
+    gunSpecs:
+    - probability: 160
+      bulletPrefab: {fileID: 100000, guid: a80b5aabdd8d0204e9fd1cd4d22556c7, type: 2}
+      bulletImpulse: 100
+      raycastBullet: 0
+      fireInterval: 1.5
+      startDistance: 50
+      bulletDamage: 24
       explosionDamage: 0
-    healthSpecs: []
+    - probability: 160
+      bulletPrefab: {fileID: 100000, guid: a80b5aabdd8d0204e9fd1cd4d22556c7, type: 2}
+      bulletImpulse: 100
+      raycastBullet: 0
+      fireInterval: 3.5999999
+      startDistance: 30
+      bulletDamage: 48
+      explosionDamage: 0
+    - probability: 40
+      bulletPrefab: {fileID: 100006, guid: 135be4fb25fa4234db2dc99122dfbc67, type: 2}
+      bulletImpulse: 5
+      raycastBullet: 0
+      fireInterval: .200000003
+      startDistance: 10
+      bulletDamage: 18
+      explosionDamage: 0
+    - probability: 10
+      bulletPrefab: {fileID: 100002, guid: bf3aa7d72353e124a8f1a07bb45b6efe, type: 2}
+      bulletImpulse: 1
+      raycastBullet: 0
+      fireInterval: 5
+      startDistance: 50
+      bulletDamage: 20
+      explosionDamage: 20
+    healthSpecs:
+    - probability: 160
+      health: 75
+    - probability: 160
+      health: 100
+    - probability: 40
+      health: 60
+    - probability: 10
+      health: 160
+  - startFloor: 21
+    controllerSpecs: []
+    gunSpecs:
+    - probability: 160
+      bulletPrefab: {fileID: 100000, guid: a80b5aabdd8d0204e9fd1cd4d22556c7, type: 2}
+      bulletImpulse: 100
+      raycastBullet: 0
+      fireInterval: .200000003
+      startDistance: 40
+      bulletDamage: 13
+      explosionDamage: 0
+    - probability: 160
+      bulletPrefab: {fileID: 100000, guid: a80b5aabdd8d0204e9fd1cd4d22556c7, type: 2}
+      bulletImpulse: 100
+      raycastBullet: 0
+      fireInterval: 3.5999999
+      startDistance: 40
+      bulletDamage: 50
+      explosionDamage: 0
+    - probability: 40
+      bulletPrefab: {fileID: 100000, guid: f5b0ef75f4bfdf645bd369720c739a8a, type: 2}
+      bulletImpulse: 40
+      raycastBullet: 0
+      fireInterval: 3
+      startDistance: 40
+      bulletDamage: 40
+      explosionDamage: 40
+    - probability: 10
+      bulletPrefab: {fileID: 100000, guid: a80b5aabdd8d0204e9fd1cd4d22556c7, type: 2}
+      bulletImpulse: 100
+      raycastBullet: 0
+      fireInterval: 1.89999998
+      startDistance: 40
+      bulletDamage: 45
+      explosionDamage: 0
+    healthSpecs:
+    - probability: 160
+      health: 90
+    - probability: 160
+      health: 120
+    - probability: 40
+      health: 70
+    - probability: 10
+      health: 200
+  - startFloor: 26
+    controllerSpecs: []
+    gunSpecs:
+    - probability: 160
+      bulletPrefab: {fileID: 100006, guid: 135be4fb25fa4234db2dc99122dfbc67, type: 2}
+      bulletImpulse: 5
+      raycastBullet: 0
+      fireInterval: .200000003
+      startDistance: 10
+      bulletDamage: 20
+      explosionDamage: 0
+    - probability: 160
+      bulletPrefab: {fileID: 100000, guid: f5b0ef75f4bfdf645bd369720c739a8a, type: 2}
+      bulletImpulse: 40
+      raycastBullet: 0
+      fireInterval: 3
+      startDistance: 40
+      bulletDamage: 40
+      explosionDamage: 40
+    - probability: 40
+      bulletPrefab: {fileID: 100006, guid: 135be4fb25fa4234db2dc99122dfbc67, type: 2}
+      bulletImpulse: 10
+      raycastBullet: 0
+      fireInterval: .0500000007
+      startDistance: 20
+      bulletDamage: 16
+      explosionDamage: 0
+    - probability: 10
+      bulletPrefab: {fileID: 100000, guid: a80b5aabdd8d0204e9fd1cd4d22556c7, type: 2}
+      bulletImpulse: 100
+      raycastBullet: 0
+      fireInterval: .5
+      startDistance: 50
+      bulletDamage: 16
+      explosionDamage: 0
+    healthSpecs:
+    - probability: 160
+      health: 105
+    - probability: 160
+      health: 140
+    - probability: 40
+      health: 80
+    - probability: 10
+      health: 240
+  - startFloor: 31
+    controllerSpecs: []
+    gunSpecs:
+    - probability: 160
+      bulletPrefab: {fileID: 100000, guid: a80b5aabdd8d0204e9fd1cd4d22556c7, type: 2}
+      bulletImpulse: 100
+      raycastBullet: 0
+      fireInterval: 1.70000005
+      startDistance: 30
+      bulletDamage: 25
+      explosionDamage: 0
+    - probability: 160
+      bulletPrefab: {fileID: 100000, guid: f5b0ef75f4bfdf645bd369720c739a8a, type: 2}
+      bulletImpulse: 40
+      raycastBullet: 0
+      fireInterval: .800000012
+      startDistance: 40
+      bulletDamage: 12
+      explosionDamage: 20
+    - probability: 40
+      bulletPrefab: {fileID: 100002, guid: bf3aa7d72353e124a8f1a07bb45b6efe, type: 2}
+      bulletImpulse: 1
+      raycastBullet: 0
+      fireInterval: 3
+      startDistance: 50
+      bulletDamage: 58
+      explosionDamage: 85
+    - probability: 10
+      bulletPrefab: {fileID: 100006, guid: 135be4fb25fa4234db2dc99122dfbc67, type: 2}
+      bulletImpulse: 10
+      raycastBullet: 0
+      fireInterval: .0500000007
+      startDistance: 20
+      bulletDamage: 20
+      explosionDamage: 0
+    healthSpecs:
+    - probability: 160
+      health: 120
+    - probability: 160
+      health: 160
+    - probability: 40
+      health: 90
+    - probability: 10
+      health: 280
+  - startFloor: 36
+    controllerSpecs: []
+    gunSpecs:
+    - probability: 160
+      bulletPrefab: {fileID: 100000, guid: a80b5aabdd8d0204e9fd1cd4d22556c7, type: 2}
+      bulletImpulse: 100
+      raycastBullet: 0
+      fireInterval: 1.89999998
+      startDistance: 30
+      bulletDamage: 33
+      explosionDamage: 0
+    - probability: 160
+      bulletPrefab: {fileID: 100000, guid: f5b0ef75f4bfdf645bd369720c739a8a, type: 2}
+      bulletImpulse: 40
+      raycastBullet: 0
+      fireInterval: .800000012
+      startDistance: 50
+      bulletDamage: 22
+      explosionDamage: 35
+    - probability: 40
+      bulletPrefab: {fileID: 100000, guid: f5b0ef75f4bfdf645bd369720c739a8a, type: 2}
+      bulletImpulse: 40
+      raycastBullet: 0
+      fireInterval: 4
+      startDistance: 50
+      bulletDamage: 90
+      explosionDamage: 130
+    - probability: 10
+      bulletPrefab: {fileID: 100006, guid: 135be4fb25fa4234db2dc99122dfbc67, type: 2}
+      bulletImpulse: 20
+      raycastBullet: 0
+      fireInterval: .100000001
+      startDistance: 40
+      bulletDamage: 27
+      explosionDamage: 0
+    healthSpecs:
+    - probability: 160
+      health: 135
+    - probability: 160
+      health: 180
+    - probability: 40
+      health: 95
+    - probability: 10
+      health: 330
+  - startFloor: 41
+    controllerSpecs: []
+    gunSpecs:
+    - probability: 160
+      bulletPrefab: {fileID: 100000, guid: a80b5aabdd8d0204e9fd1cd4d22556c7, type: 2}
+      bulletImpulse: 100
+      raycastBullet: 0
+      fireInterval: .5
+      startDistance: 30
+      bulletDamage: 30
+      explosionDamage: 0
+    - probability: 160
+      bulletPrefab: {fileID: 100000, guid: a80b5aabdd8d0204e9fd1cd4d22556c7, type: 2}
+      bulletImpulse: 100
+      raycastBullet: 0
+      fireInterval: 2.5999999
+      startDistance: 100
+      bulletDamage: 160
+      explosionDamage: 0
+    - probability: 40
+      bulletPrefab: {fileID: 100002, guid: bf3aa7d72353e124a8f1a07bb45b6efe, type: 2}
+      bulletImpulse: 1
+      raycastBullet: 0
+      fireInterval: 1.60000002
+      startDistance: 50
+      bulletDamage: 30
+      explosionDamage: 55
+    - probability: 10
+      bulletPrefab: {fileID: 100000, guid: f5b0ef75f4bfdf645bd369720c739a8a, type: 2}
+      bulletImpulse: 40
+      raycastBullet: 0
+      fireInterval: 2
+      startDistance: 50
+      bulletDamage: 100
+      explosionDamage: 200
+    healthSpecs:
+    - probability: 160
+      health: 150
+    - probability: 160
+      health: 200
+    - probability: 40
+      health: 105
+    - probability: 10
+      health: 380
+  - startFloor: 46
+    controllerSpecs: []
+    gunSpecs:
+    - probability: 160
+      bulletPrefab: {fileID: 100000, guid: a80b5aabdd8d0204e9fd1cd4d22556c7, type: 2}
+      bulletImpulse: 100
+      raycastBullet: 0
+      fireInterval: .200000003
+      startDistance: 30
+      bulletDamage: 30
+      explosionDamage: 0
+    - probability: 160
+      bulletPrefab: {fileID: 100002, guid: bf3aa7d72353e124a8f1a07bb45b6efe, type: 2}
+      bulletImpulse: 1
+      raycastBullet: 0
+      fireInterval: 2.5999999
+      startDistance: 100
+      bulletDamage: 120
+      explosionDamage: 120
+    - probability: 40
+      bulletPrefab: {fileID: 100000, guid: f5b0ef75f4bfdf645bd369720c739a8a, type: 2}
+      bulletImpulse: 40
+      raycastBullet: 0
+      fireInterval: 4
+      startDistance: 50
+      bulletDamage: 240
+      explosionDamage: 290
+    - probability: 10
+      bulletPrefab: {fileID: 100000, guid: a80b5aabdd8d0204e9fd1cd4d22556c7, type: 2}
+      bulletImpulse: 100
+      raycastBullet: 0
+      fireInterval: 4.80000019
+      startDistance: 100
+      bulletDamage: 430
+      explosionDamage: 0
+    healthSpecs:
+    - probability: 160
+      health: 165
+    - probability: 160
+      health: 220
+    - probability: 40
+      health: 260
+    - probability: 10
+      health: 440
   enemyPrefab: {fileID: 100000, guid: f8c35b3ca9b3dd2428b952764880fe7f, type: 2}
 --- !u!1001 &100100000
 Prefab:

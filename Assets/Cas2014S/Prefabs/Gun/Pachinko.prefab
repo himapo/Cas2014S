@@ -690,8 +690,9 @@ MonoBehaviour:
   raycastBullet: 0
   muzzle: {fileID: 400002}
   skills: []
-  maxSkillSlot: 8
-  bulletDamage: 2
+  maxSkillSlot: 10
+  bulletDamage: 5
+  explosionDamage: 0
   soundInterval: 0
   Type: 5
   Name: "\u30D1\u30C1\u30F3\u30B3"
@@ -700,9 +701,9 @@ MonoBehaviour:
   standRecoil: 2
   runRecoil: 4
   crouchRecoil: 1
-  intervalTime: .200000003
+  intervalTime: .0500000007
   reloadSpeed: 2
-  magazineSize: 4
+  magazineSize: 20
   fullAuto: 0
 --- !u!1001 &100100000
 Prefab:

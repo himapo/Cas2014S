@@ -6,7 +6,9 @@ public class GameController : MyBehaviour {
 
 	public GUIText floorText;
 
-	public int maxFloor;
+	public int lastFloor;
+
+	public int startFloor;
 
 	public GameObject playerPrefab;
 
@@ -400,7 +402,7 @@ public class GameController : MyBehaviour {
 		BroadcastAll("OnRestart");
 
 		abortMoveFloor = true;
-		floor = 0;
+		floor = startFloor - 1;
 
 		GotoNextFloor();
 	}
@@ -409,7 +411,7 @@ public class GameController : MyBehaviour {
 	{
 		floor++;
 
-		if(floor < maxFloor)
+		if(floor <= lastFloor)
 		{
 			Fader.Instance.FadeOut(0.0001f);
 			updateFunc = StateBeginFloorMove;

@@ -285,4 +285,14 @@ public class EnemyController : MyBehaviour {
 	{
 		enabled = true;
 	}
+
+	void OnGameOver()
+	{
+		enabled = false;
+	}
+
+	void OnGameClear()
+	{
+		enabled = false;
+	}
 }
