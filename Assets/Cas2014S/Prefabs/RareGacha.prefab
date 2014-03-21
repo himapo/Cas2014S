@@ -17,6 +17,9 @@ GameObject:
   - 114: {fileID: 11400012}
   - 114: {fileID: 11400014}
   - 114: {fileID: 11400016}
+  - 114: {fileID: 11400018}
+  - 114: {fileID: 11400020}
+  - 114: {fileID: 11400024}
   m_Layer: 0
   m_Name: RareGacha
   m_TagString: Untagged
@@ -59,7 +62,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 1
-  probability: 1
+  probability: 10
   gun: {fileID: 0}
   skill: {fileID: 11400000, guid: 4d0779cb67f9dd34d8fc6d5850e9dea7, type: 2}
 --- !u!114 &11400004
@@ -74,7 +77,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 0
-  probability: 10
+  probability: 160
   gun: {fileID: 11400002, guid: ed2dcd1395e6c6444b12f0b0187c1ea3, type: 2}
   skill: {fileID: 0}
 --- !u!114 &11400006
@@ -89,8 +92,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 0
-  probability: 10
-  gun: {fileID: 11400000, guid: 2da5559d1eff7eb4e99fd7901966cc27, type: 2}
+  probability: 160
+  gun: {fileID: 11400002, guid: 0b0caed4a0df04c448bd509db239a3cf, type: 2}
   skill: {fileID: 0}
 --- !u!114 &11400008
 MonoBehaviour:
@@ -104,8 +107,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 0
-  probability: 10
-  gun: {fileID: 11400000, guid: ffd5b59520a7bd4429bb65035e097b6f, type: 2}
+  probability: 160
+  gun: {fileID: 11400000, guid: 1ce6b06831365b3478783c5cbe9dd92d, type: 2}
   skill: {fileID: 0}
 --- !u!114 &11400010
 MonoBehaviour:
@@ -119,7 +122,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 0
-  probability: 10
+  probability: 40
   gun: {fileID: 11400000, guid: 82bf89639de94174eb72674a3fc91dd5, type: 2}
   skill: {fileID: 0}
 --- !u!114 &11400012
@@ -134,7 +137,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 0
-  probability: 10
+  probability: 40
   gun: {fileID: 11400000, guid: 0054ab1c521d5d54bb16be2335eec479, type: 2}
   skill: {fileID: 0}
 --- !u!114 &11400014
@@ -149,7 +152,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 0
-  probability: 1
+  probability: 40
   gun: {fileID: 11400000, guid: ddbaf8e4aa2d3d549bed93dc783148fd, type: 2}
   skill: {fileID: 0}
 --- !u!114 &11400016
@@ -164,9 +167,54 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 1
-  probability: 1
+  probability: 10
   gun: {fileID: 0}
   skill: {fileID: 11400000, guid: e5b0142e1614fe74f9eddf96e41893a5, type: 2}
+--- !u!114 &11400018
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f37bc4690463f2342bce82c42a2ea30c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 1
+  probability: 40
+  gun: {fileID: 0}
+  skill: {fileID: 11400000, guid: f1e9c48b6a18476479832c8e5f606b15, type: 2}
+--- !u!114 &11400020
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f37bc4690463f2342bce82c42a2ea30c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 1
+  probability: 160
+  gun: {fileID: 0}
+  skill: {fileID: 11400000, guid: 52dabe13f2ca2624b9bee2d862fa47fd, type: 2}
+--- !u!114 &11400024
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f37bc4690463f2342bce82c42a2ea30c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 1
+  probability: 40
+  gun: {fileID: 0}
+  skill: {fileID: 11400000, guid: 865b58749ff2b0940b72ab21df43ba08, type: 2}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

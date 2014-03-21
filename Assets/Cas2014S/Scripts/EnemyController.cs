@@ -36,6 +36,8 @@ public class EnemyController : MyBehaviour {
 			Mathf.Cos(rand),
 			0.0f,
 			Mathf.Sin(rand));
+
+		enabled = false;
 	}
 	
 	// Update is called once per frame
@@ -294,5 +296,22 @@ public class EnemyController : MyBehaviour {
 	void OnGameClear()
 	{
 		enabled = false;
+	}
+
+	void OnEndFloorMove()
+	{
+		StartCoroutine(AsyncMoveStart());
+	}
+
+	IEnumerator AsyncMoveStart()
+	{
+		var startTime = Time.time;
+		
+		while(Time.time - startTime < 2.0f)
+		{
+			yield return null;
+		}
+
+		enabled = true;
 	}
 }

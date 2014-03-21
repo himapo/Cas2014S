@@ -691,8 +691,8 @@ MonoBehaviour:
   muzzle: {fileID: 400022}
   skills: []
   maxSkillSlot: 3
-  bulletDamage: 160
-  explosionDamage: 80
+  bulletDamage: 130
+  explosionDamage: 70
   soundInterval: 0
   Type: 2
   Name: "\u30B0\u30EC\u30CD\u30FC\u30C9\u30E9\u30F3\u30C1\u30E3\u30FC"
@@ -702,7 +702,7 @@ MonoBehaviour:
   runRecoil: 4
   crouchRecoil: 1
   intervalTime: .100000001
-  reloadSpeed: .349999994
+  reloadSpeed: .300000012
   magazineSize: 1
   fullAuto: 0
 --- !u!1001 &100100000

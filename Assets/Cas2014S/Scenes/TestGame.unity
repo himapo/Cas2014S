@@ -5198,8 +5198,8 @@ MonoBehaviour:
   muzzle: {fileID: 268947374}
   skills: []
   maxSkillSlot: 3
-  bulletDamage: 160
-  explosionDamage: 80
+  bulletDamage: 130
+  explosionDamage: 70
   soundInterval: 0
   Type: 2
   Name: "\u30B0\u30EC\u30CD\u30FC\u30C9\u30E9\u30F3\u30C1\u30E3\u30FC"
@@ -5209,7 +5209,7 @@ MonoBehaviour:
   runRecoil: 4
   crouchRecoil: 1
   intervalTime: .100000001
-  reloadSpeed: .349999994
+  reloadSpeed: .300000012
   magazineSize: 1
   fullAuto: 0
 --- !u!82 &843558706
@@ -5310,7 +5310,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9b32a0152acaf542a713f5f2b8a7f3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rare: 1
+  rare: 0
   gun: {fileID: 0}
   damageScale: 2
 --- !u!1 &873319623
@@ -5429,7 +5429,7 @@ MonoBehaviour:
   standRecoil: 2
   runRecoil: 4
   crouchRecoil: 1
-  intervalTime: 1
+  intervalTime: .200000003
   reloadSpeed: .5
   magazineSize: 4
   fullAuto: 0
@@ -7062,7 +7062,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53d9cf3f18214c940bfe6f94d7109319, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shopProbability: 1
+  shopProbability: .25
   enableWall: 1
   wallProbability: .200000003
   minWall: 30
@@ -7092,17 +7092,17 @@ MonoBehaviour:
   - {fileID: 100000, guid: bbb2550fb7c697948b6e2135af575f91, type: 2}
   minEnemy: 2
   maxEnemy: 8
-  minItem: 1
-  maxItem: 4
+  minItem: 2
+  maxItem: 6
   itemTable:
   - prefab: {fileID: 100002, guid: 8616d6591907a8d42ae5db38ce2c1281, type: 2}
-    probability: 500
+    probability: 800
   - prefab: {fileID: 100002, guid: 8d510516121c2014a81c9ebf2c6e5d20, type: 2}
-    probability: 500
+    probability: 800
   - prefab: {fileID: 100002, guid: 631ee82915e28a74d8025d721d2694ee, type: 2}
-    probability: 150
+    probability: 200
   - prefab: {fileID: 100002, guid: 421db083c0f1fb240a7f2e95427d349a, type: 2}
-    probability: 600
+    probability: 800
   - prefab: {fileID: 100020, guid: b5b67c5d6b6ab494baaf6a8984d2ce5f, type: 2}
     probability: 25
   - prefab: {fileID: 100020, guid: a431688e0d4b1fd42bed7161cbca08c7, type: 2}
@@ -9240,7 +9240,7 @@ MonoBehaviour:
     - probability: 40
       health: 20
     - probability: 10
-      health: 70
+      health: 60
   - startFloor: 6
     controllerSpecs: []
     gunSpecs:
@@ -9278,13 +9278,13 @@ MonoBehaviour:
       explosionDamage: 0
     healthSpecs:
     - probability: 160
-      health: 45
+      health: 41
     - probability: 160
-      health: 60
+      health: 55
     - probability: 40
       health: 25
     - probability: 10
-      health: 100
+      health: 80
   - startFloor: 11
     controllerSpecs: []
     gunSpecs:
@@ -9322,13 +9322,13 @@ MonoBehaviour:
       explosionDamage: 20
     healthSpecs:
     - probability: 160
-      health: 60
+      health: 52
     - probability: 160
-      health: 80
+      health: 60
     - probability: 40
       health: 45
     - probability: 10
-      health: 130
+      health: 100
   - startFloor: 16
     controllerSpecs: []
     gunSpecs:
@@ -9366,13 +9366,13 @@ MonoBehaviour:
       explosionDamage: 20
     healthSpecs:
     - probability: 160
-      health: 75
+      health: 63
     - probability: 160
-      health: 100
+      health: 75
     - probability: 40
       health: 60
     - probability: 10
-      health: 160
+      health: 120
   - startFloor: 21
     controllerSpecs: []
     gunSpecs:
@@ -9380,9 +9380,9 @@ MonoBehaviour:
       bulletPrefab: {fileID: 100000, guid: a80b5aabdd8d0204e9fd1cd4d22556c7, type: 2}
       bulletImpulse: 100
       raycastBullet: 1
-      fireInterval: .200000003
+      fireInterval: .600000024
       startDistance: 40
-      bulletDamage: 13
+      bulletDamage: 8
       explosionDamage: 0
     - probability: 160
       bulletPrefab: {fileID: 100000, guid: a80b5aabdd8d0204e9fd1cd4d22556c7, type: 2}
@@ -9398,8 +9398,8 @@ MonoBehaviour:
       raycastBullet: 0
       fireInterval: 3
       startDistance: 40
-      bulletDamage: 40
-      explosionDamage: 40
+      bulletDamage: 30
+      explosionDamage: 30
     - probability: 10
       bulletPrefab: {fileID: 100000, guid: a80b5aabdd8d0204e9fd1cd4d22556c7, type: 2}
       bulletImpulse: 100
@@ -9410,13 +9410,13 @@ MonoBehaviour:
       explosionDamage: 0
     healthSpecs:
     - probability: 160
-      health: 90
+      health: 74
     - probability: 160
-      health: 120
+      health: 90
     - probability: 40
       health: 70
     - probability: 10
-      health: 200
+      health: 140
   - startFloor: 26
     controllerSpecs: []
     gunSpecs:
@@ -9434,8 +9434,8 @@ MonoBehaviour:
       raycastBullet: 0
       fireInterval: 3
       startDistance: 40
-      bulletDamage: 40
-      explosionDamage: 40
+      bulletDamage: 30
+      explosionDamage: 30
     - probability: 40
       bulletPrefab: {fileID: 100006, guid: 135be4fb25fa4234db2dc99122dfbc67, type: 2}
       bulletImpulse: 10
@@ -9454,13 +9454,13 @@ MonoBehaviour:
       explosionDamage: 0
     healthSpecs:
     - probability: 160
-      health: 105
+      health: 85
     - probability: 160
-      health: 140
+      health: 105
     - probability: 40
       health: 80
     - probability: 10
-      health: 240
+      health: 160
   - startFloor: 31
     controllerSpecs: []
     gunSpecs:
@@ -9476,7 +9476,7 @@ MonoBehaviour:
       bulletPrefab: {fileID: 100000, guid: f5b0ef75f4bfdf645bd369720c739a8a, type: 2}
       bulletImpulse: 40
       raycastBullet: 0
-      fireInterval: .800000012
+      fireInterval: 2.20000005
       startDistance: 40
       bulletDamage: 12
       explosionDamage: 20
@@ -9498,13 +9498,13 @@ MonoBehaviour:
       explosionDamage: 0
     healthSpecs:
     - probability: 160
-      health: 120
+      health: 96
     - probability: 160
-      health: 160
+      health: 120
     - probability: 40
       health: 90
     - probability: 10
-      health: 280
+      health: 180
   - startFloor: 36
     controllerSpecs: []
     gunSpecs:
@@ -9520,7 +9520,7 @@ MonoBehaviour:
       bulletPrefab: {fileID: 100000, guid: f5b0ef75f4bfdf645bd369720c739a8a, type: 2}
       bulletImpulse: 40
       raycastBullet: 0
-      fireInterval: .800000012
+      fireInterval: 2.20000005
       startDistance: 50
       bulletDamage: 22
       explosionDamage: 35
@@ -9530,8 +9530,8 @@ MonoBehaviour:
       raycastBullet: 0
       fireInterval: 4
       startDistance: 50
-      bulletDamage: 90
-      explosionDamage: 130
+      bulletDamage: 60
+      explosionDamage: 50
     - probability: 10
       bulletPrefab: {fileID: 100006, guid: 135be4fb25fa4234db2dc99122dfbc67, type: 2}
       bulletImpulse: 20
@@ -9542,13 +9542,13 @@ MonoBehaviour:
       explosionDamage: 0
     healthSpecs:
     - probability: 160
-      health: 135
+      health: 107
     - probability: 160
-      health: 180
+      health: 135
     - probability: 40
       health: 95
     - probability: 10
-      health: 330
+      health: 200
   - startFloor: 41
     controllerSpecs: []
     gunSpecs:
@@ -9556,9 +9556,9 @@ MonoBehaviour:
       bulletPrefab: {fileID: 100000, guid: a80b5aabdd8d0204e9fd1cd4d22556c7, type: 2}
       bulletImpulse: 100
       raycastBullet: 1
-      fireInterval: .5
+      fireInterval: 1.10000002
       startDistance: 30
-      bulletDamage: 30
+      bulletDamage: 20
       explosionDamage: 0
     - probability: 160
       bulletPrefab: {fileID: 100000, guid: a80b5aabdd8d0204e9fd1cd4d22556c7, type: 2}
@@ -9566,7 +9566,7 @@ MonoBehaviour:
       raycastBullet: 1
       fireInterval: 2.5999999
       startDistance: 100
-      bulletDamage: 160
+      bulletDamage: 90
       explosionDamage: 0
     - probability: 40
       bulletPrefab: {fileID: 100002, guid: bf3aa7d72353e124a8f1a07bb45b6efe, type: 2}
@@ -9582,17 +9582,17 @@ MonoBehaviour:
       raycastBullet: 0
       fireInterval: 2
       startDistance: 50
-      bulletDamage: 100
-      explosionDamage: 200
+      bulletDamage: 80
+      explosionDamage: 120
     healthSpecs:
     - probability: 160
-      health: 150
+      health: 118
     - probability: 160
-      health: 200
+      health: 150
     - probability: 40
       health: 105
     - probability: 10
-      health: 380
+      health: 220
   - startFloor: 46
     controllerSpecs: []
     gunSpecs:
@@ -9600,9 +9600,9 @@ MonoBehaviour:
       bulletPrefab: {fileID: 100000, guid: a80b5aabdd8d0204e9fd1cd4d22556c7, type: 2}
       bulletImpulse: 100
       raycastBullet: 1
-      fireInterval: .200000003
+      fireInterval: .800000012
       startDistance: 30
-      bulletDamage: 30
+      bulletDamage: 20
       explosionDamage: 0
     - probability: 160
       bulletPrefab: {fileID: 100002, guid: bf3aa7d72353e124a8f1a07bb45b6efe, type: 2}
@@ -9618,25 +9618,25 @@ MonoBehaviour:
       raycastBullet: 0
       fireInterval: 4
       startDistance: 50
-      bulletDamage: 240
-      explosionDamage: 290
+      bulletDamage: 120
+      explosionDamage: 150
     - probability: 10
       bulletPrefab: {fileID: 100000, guid: a80b5aabdd8d0204e9fd1cd4d22556c7, type: 2}
       bulletImpulse: 100
       raycastBullet: 1
       fireInterval: 4.80000019
       startDistance: 100
-      bulletDamage: 430
+      bulletDamage: 230
       explosionDamage: 0
     healthSpecs:
     - probability: 160
-      health: 165
+      health: 129
     - probability: 160
-      health: 220
+      health: 165
     - probability: 40
-      health: 260
+      health: 200
     - probability: 10
-      health: 440
+      health: 240
   enemyPrefab: {fileID: 100000, guid: f8c35b3ca9b3dd2428b952764880fe7f, type: 2}
 --- !u!4 &1696096495
 Transform:

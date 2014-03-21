@@ -38,7 +38,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9b32a0152acaf542a713f5f2b8a7f3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rare: 1
+  rare: 0
   gun: {fileID: 0}
   damageScale: 2
 --- !u!1001 &100100000

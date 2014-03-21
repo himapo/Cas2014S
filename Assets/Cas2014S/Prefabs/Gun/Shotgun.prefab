@@ -701,7 +701,7 @@ MonoBehaviour:
   standRecoil: 2
   runRecoil: 4
   crouchRecoil: 1
-  intervalTime: 1
+  intervalTime: .200000003
   reloadSpeed: .5
   magazineSize: 4
   fullAuto: 0

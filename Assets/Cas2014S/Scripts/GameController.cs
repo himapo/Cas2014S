@@ -182,7 +182,7 @@ public class GameController : MyBehaviour {
 	{
 		var startTime = Time.time;
 		
-		while(!abortMoveFloor && Time.time - startTime < 0.5f)
+		while(!abortMoveFloor && Time.time - startTime < 3.0f)
 		{
 			yield return null;
 		}
