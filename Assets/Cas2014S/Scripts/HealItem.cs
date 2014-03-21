@@ -51,6 +51,34 @@ public class HealItem : MyBehaviour {
 			healText.heal = Mathf.RoundToInt(up);
 		}
 
+		var audio = GetComponent<AudioSource>();
+		
+		if(audio != null)
+		{
+			audio.Play();
+			enabled = false;
+			StartCoroutine(AsyncDestroy());
+		}
+		else
+		{
+			Destroy(gameObject);
+		}
+	}
+
+	IEnumerator AsyncDestroy()
+	{
+		var audio = GetComponent<AudioSource>();
+
+		if(audio == null)
+		{
+			yield break;
+		}
+
+		while(audio.isPlaying)
+		{
+			yield return null;
+		}
+
 		Destroy(gameObject);
 	}
 
