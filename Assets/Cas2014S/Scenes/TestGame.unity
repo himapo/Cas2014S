@@ -2862,6 +2862,10 @@ Prefab:
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 11400004, guid: 07485e6211b431147a6423184d7cd5fe, type: 2}
+      propertyPath: maxHealth
+      value: 100
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 07485e6211b431147a6423184d7cd5fe, type: 2}
   m_RootGameObject: {fileID: 669144668}
@@ -7058,7 +7062,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53d9cf3f18214c940bfe6f94d7109319, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shopProbability: .25
+  shopProbability: 1
   enableWall: 1
   wallProbability: .200000003
   minWall: 30

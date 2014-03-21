@@ -42,11 +42,13 @@ public class HealItem : MyBehaviour {
 
 		if(maxHealthUp > 0)
 		{
-			PlayerHealth.AddMaxHealth(maxHealthUp);
+			var up = Mathf.RoundToInt(Random.Range(0.6f, 1.4f) * maxHealthUp);
+
+			PlayerHealth.AddMaxHealth(up);
 
 			var go = Instantiate(healTextPrefab) as GameObject;
 			var healText = go.GetComponent<HealText>();
-			healText.heal = Mathf.RoundToInt(Random.Range(0.6f, 1.4f) * maxHealthUp);
+			healText.heal = Mathf.RoundToInt(up);
 		}
 
 		Destroy(gameObject);
