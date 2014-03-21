@@ -46,42 +46,42 @@ MonoBehaviour:
       runAway: 0
       randomWalk: 1
       movementSpeed: 4
-      rotationRatio: .600000024
+      rotationRatio: .5
       closeDistance: 4
     - probability: 160
       chasePlayer: 1
       runAway: 0
       randomWalk: 0
       movementSpeed: 4.30000019
-      rotationRatio: .5
+      rotationRatio: .400000006
       closeDistance: 5
     - probability: 160
       chasePlayer: 0
       runAway: 0
       randomWalk: 0
       movementSpeed: 0
-      rotationRatio: .5
+      rotationRatio: .400000006
       closeDistance: 5
     - probability: 80
       chasePlayer: 0
       runAway: 0
       randomWalk: 1
       movementSpeed: 5
-      rotationRatio: .800000012
+      rotationRatio: .699999988
       closeDistance: 5
     - probability: 80
       chasePlayer: 0
       runAway: 1
       randomWalk: 1
       movementSpeed: 6.80000019
-      rotationRatio: .800000012
+      rotationRatio: .699999988
       closeDistance: 5
     - probability: 40
       chasePlayer: 1
       runAway: 0
       randomWalk: 1
       movementSpeed: 7.69999981
-      rotationRatio: .800000012
+      rotationRatio: .699999988
       closeDistance: 11
     - probability: 20
       chasePlayer: 1
@@ -95,7 +95,7 @@ MonoBehaviour:
       runAway: 0
       randomWalk: 0
       movementSpeed: 10
-      rotationRatio: .5
+      rotationRatio: .400000006
       closeDistance: 5
     gunSpecs:
     - probability: 160
