@@ -43,6 +43,8 @@ MonoBehaviour:
   minWall: 30
   minBush: 10
   maxBush: 40
+  minTree: 0
+  maxTree: 5
   gridSize: 3
   gridNum: 0a0000000a000000
   exitPrefab: {fileID: 100008, guid: 9551961b649729a4994e16d2e17aaed8, type: 2}
@@ -60,6 +62,9 @@ MonoBehaviour:
   - {fileID: 100000, guid: 7875a99f318c77542b41a1483e321196, type: 2}
   - {fileID: 100000, guid: 61af2eee79324e04fa8e74b3acd11c5a, type: 2}
   - {fileID: 100000, guid: d35aa794667ce7e48ab77e5e37cf63ab, type: 2}
+  treePrefabs:
+  - {fileID: 100000, guid: 2d64c9dafe32e1d4080b26f031614e90, type: 2}
+  - {fileID: 100000, guid: bbb2550fb7c697948b6e2135af575f91, type: 2}
   minEnemy: 2
   maxEnemy: 8
   minItem: 1

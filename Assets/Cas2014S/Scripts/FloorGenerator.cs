@@ -27,6 +27,10 @@ public class FloorGenerator : MyBehaviour {
 
 	public int maxBush;
 
+	public int minTree;
+
+	public int maxTree;
+
 	public float gridSize = 3.0f;
 	
 	public int[] gridNum = new int[2]{ 10, 10 };
@@ -38,6 +42,8 @@ public class FloorGenerator : MyBehaviour {
 	public GameObject wallPrefab;
 
 	public List<GameObject> bushPrefabs;
+
+	public List<GameObject> treePrefabs;
 
 	public int minEnemy;
 	
@@ -97,6 +103,8 @@ public class FloorGenerator : MyBehaviour {
 		SpawnEnemys ();
 
 		SpawnBush();
+
+		SpawnTrees();
 	}
 
 	int SampleRandomEmptyGrid()
@@ -413,12 +421,34 @@ public class FloorGenerator : MyBehaviour {
 				gridPosition.y,
 				gridPosition.z + Random.Range(-0.8f, 0.8f));
 
-			var bushType = Random.Range(0, bushPrefabs.Count);
+			var type = Random.Range(0, bushPrefabs.Count);
 
 			var rotation = Quaternion.AngleAxis(Random.Range(0.0f, 360.0f), Vector3.up);
 
-			var go = Instantiate(bushPrefabs[bushType], position, rotation) as GameObject;
-			//go.transform.localScale *= 0.5f;
+			Instantiate(bushPrefabs[type], position, rotation);
+		}
+	}
+
+	void SpawnTrees()
+	{
+		var num = Random.Range(minTree, maxTree);
+		
+		for(var i=0; i<num; ++i)
+		{
+			var grid = SampleRandomEmptyGrid();
+			
+			var gridPosition = GetGridPosition(grid);
+			
+			var position = new Vector3(
+				gridPosition.x + Random.Range(-1.2f, 1.2f),
+				gridPosition.y,
+				gridPosition.z + Random.Range(-1.2f, 1.2f));
+			
+			var type = Random.Range(0, treePrefabs.Count);
+			
+			var rotation = Quaternion.AngleAxis(Random.Range(0.0f, 360.0f), Vector3.up);
+			
+			Instantiate(treePrefabs[type], position, rotation);
 		}
 	}
 }
