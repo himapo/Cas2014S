@@ -260,8 +260,20 @@ public class FloorGenerator : MyBehaviour {
 			}
 		}
 
-		while(chamberWallMap.Count > 1)
+		var wallNum = -1;
+		var minWall = 10;
+
+		while(wallChamberMap.Count > wallNum)
 		{
+			if(wallNum == -1 && chamberWallMap.Count == 1)
+			{
+				if(wallChamberMap.Count <= minWall)
+				{
+					break;
+				}
+				wallNum = Random.Range(10, wallChamberMap.Count);
+			}
+
 			var wallIndex = Random.Range(0, wallChamberMap.Count);
 
 			var wall = wallChamberMap.Keys.ElementAt(wallIndex);
