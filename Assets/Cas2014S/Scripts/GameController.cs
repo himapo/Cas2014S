@@ -199,7 +199,7 @@ public class GameController : MyBehaviour {
 		Fader.Instance.FadeIn(0.5f);
 		
 		updateFunc = StateGameMain;
-		guiFunc = ()=>{};
+		guiFunc = GUIGameMain;
 	}
 
 	void StateGameMain()
@@ -211,6 +211,36 @@ public class GameController : MyBehaviour {
 			guiFunc = GUIGameOverResult;
 			BroadcastAll("OnGameOver");
 		}
+	}
+
+	void GUIGameMain()
+	{
+		var topleft = Camera.main.ViewportToScreenPoint(new Vector3(0.4f, 0, 0));
+		var size = Camera.main.ViewportToScreenPoint(new Vector3(0.2f, 0.1f, 0));
+		var area = new Rect(
+			topleft.x, topleft.y,
+			size.x, size.y);
+
+		GUILayout.BeginArea(area);
+
+		GUILayout.BeginHorizontal();
+
+		//GUILayout.FlexibleSpace();
+
+		var labelStyle = new GUIStyle(GUI.skin.GetStyle("label"));
+		labelStyle.alignment = TextAnchor.MiddleCenter;
+		labelStyle.fontSize = 40;
+
+		GUILayout.Label(
+			string.Format("{0}階", floor),
+			labelStyle);
+
+		//GUILayout.FlexibleSpace();
+
+		GUILayout.EndHorizontal();
+
+		GUILayout.EndArea();
+
 	}
 
 	void StateGameOver()
