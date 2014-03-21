@@ -23,7 +23,7 @@ public class Health : MyBehaviour {
     public int health;
 
 	// 回復のために小数点以下を保持
-	float innerHealth;
+	public float innerHealth;
 
 	GameObject worldGUI;
 

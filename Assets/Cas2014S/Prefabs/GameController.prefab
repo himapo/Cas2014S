@@ -67,7 +67,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   floorText: {fileID: 13200000}
-  maxFloor: 100
+  maxFloor: 51
   playerPrefab: {fileID: 100000, guid: 07485e6211b431147a6423184d7cd5fe, type: 2}
 --- !u!132 &13200000
 GUIText:

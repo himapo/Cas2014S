@@ -692,6 +692,7 @@ MonoBehaviour:
   skills: []
   maxSkillSlot: 3
   bulletDamage: 20
+  explosionDamage: 40
   soundInterval: 0
   Type: 2
   Name: "\u30B0\u30EC\u30CD\u30FC\u30C9\u30E9\u30F3\u30C1\u30E3\u30FC"

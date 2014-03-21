@@ -6,8 +6,6 @@ public class EnemyGun : GunBase {
 	public float interval = 2.0f;
 
 	public float startDistance;
-	
-	public float explosionDamage;
 
 	bool firing;
 

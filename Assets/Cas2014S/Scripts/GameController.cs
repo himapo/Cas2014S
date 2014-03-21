@@ -269,7 +269,7 @@ public class GameController : MyBehaviour {
 
 		var finishTime = gameEndTime - gameStartTime;
 		var minutes = Mathf.FloorToInt(finishTime / 60.0f);
-		var seconds = Mathf.FloorToInt(finishTime - Mathf.Floor (finishTime / 60.0f));
+		var seconds = Mathf.FloorToInt(finishTime - 60.0f * minutes);
 		
 		GUILayout.Label(
 			string.Format("{0}分{1}秒", minutes, seconds),
@@ -337,7 +337,7 @@ public class GameController : MyBehaviour {
 		
 		var finishTime = gameEndTime - gameStartTime;
 		var minutes = Mathf.FloorToInt(finishTime / 60.0f);
-		var seconds = Mathf.FloorToInt(finishTime - Mathf.Floor (finishTime / 60.0f));
+		var seconds = Mathf.FloorToInt(finishTime - 60.0f * minutes);
 		
 		GUILayout.Label(
 			string.Format("{0}分{1}秒", minutes, seconds),

@@ -21,6 +21,8 @@ public class FloorGenerator : MyBehaviour {
 
 	public float wallProbability;
 
+	public int minWall;
+
 	public float gridSize = 3.0f;
 	
 	public int[] gridNum = new int[2]{ 10, 10 };
@@ -261,7 +263,6 @@ public class FloorGenerator : MyBehaviour {
 		}
 
 		var wallNum = -1;
-		var minWall = 10;
 
 		while(wallChamberMap.Count > wallNum)
 		{

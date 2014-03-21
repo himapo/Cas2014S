@@ -14,11 +14,11 @@ public class EnemyControllerSpec
 	
 	public bool randomWalk;
 
-	public float movementSpeed;
+	public float movementSpeed = 4.0f;
 
-	public float rotationRatio;
+	public float rotationRatio = 0.7f;
 
-	public float closeDistance;
+	public float closeDistance = 3.0f;
 }
 
 [System.Serializable]
@@ -42,6 +42,14 @@ public class EnemyGunSpec
 }
 
 [System.Serializable]
+public class EnemyHealthSpec
+{
+	public int probability;
+
+	public int health;
+}
+
+[System.Serializable]
 public class EnemySpecTable
 {
 	public int startFloor;
@@ -49,6 +57,8 @@ public class EnemySpecTable
 	public List<EnemyControllerSpec> controllerSpecs;
 
 	public List<EnemyGunSpec> gunSpecs;
+
+	public List<EnemyHealthSpec> healthSpecs;
 }
 
 public class EnemyGenerator : MyBehaviour {
@@ -81,6 +91,7 @@ public class EnemyGenerator : MyBehaviour {
 
 		SetControllerSpec(floor, enemy);
 		SetGunSpec(floor, enemy);
+		SetHealthSpec(floor, enemy);
 	}
 
 	void SetControllerSpec(int floor, GameObject enemy)
@@ -148,5 +159,35 @@ public class EnemyGenerator : MyBehaviour {
 		enemyGun.bulletDamage = spec.bulletDamage;
 		enemyGun.startDistance = spec.startDistance;
 		enemyGun.explosionDamage = spec.explosionDamage;
+	}
+
+	void SetHealthSpec(int floor, GameObject enemy)
+	{
+		var specStartFloor = floorEnemySpecs.Where((floorSpec)=>{
+			return floorSpec.healthSpecs.Count > 0 && floorSpec.startFloor <= floor;
+		}).Max((floorSpec)=>{
+			return floorSpec.startFloor;
+		});
+		
+		var specs = floorEnemySpecs.FirstOrDefault((floorSpec)=>{
+			return floorSpec.startFloor == specStartFloor;
+		}).healthSpecs;
+		
+		var probSum = specs.Sum((s)=>{
+			return s.probability;
+		});
+		
+		var sample = Random.Range(0, probSum);
+		
+		var border = 0;
+		var spec = specs.First((s)=>{
+			border += s.probability;
+			return border > sample;
+		});
+		
+		var enemyHealth = enemy.GetComponent<Health>();
+		enemyHealth.maxHealth = spec.health;
+		enemyHealth.health = spec.health;
+		enemyHealth.innerHealth = spec.health;
 	}
 }

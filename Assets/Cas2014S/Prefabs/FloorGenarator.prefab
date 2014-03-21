@@ -40,6 +40,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enableWall: 1
   wallProbability: .200000003
+  minWall: 30
   gridSize: 3
   gridNum: 0a0000000a000000
   exitPrefab: {fileID: 100008, guid: 9551961b649729a4994e16d2e17aaed8, type: 2}

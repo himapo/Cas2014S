@@ -19,6 +19,8 @@ public class GunBase : MyBehaviour
 
 	public float bulletDamage;
 
+	public float explosionDamage;
+
 	public float soundInterval;
 
 	float soundTime;
@@ -73,6 +75,7 @@ public class GunBase : MyBehaviour
 		bulletComponent.direction = direction;
 		bulletComponent.shooter = transform.root.gameObject;
 		bulletComponent.bulletDamage = GetBulletDamage();
+		bulletComponent.explosionDamage = GetExplosionDamage();
 
 		return bullet;
 	}
@@ -80,6 +83,17 @@ public class GunBase : MyBehaviour
 	public float GetBulletDamage()
 	{
 		var result = bulletDamage;
+		var damageUps = GetComponents<GS_DamageUp>();
+		foreach(var damageUp in damageUps)
+		{
+			result *= damageUp.damageScale;
+		}
+		return result;
+	}
+
+	public float GetExplosionDamage()
+	{
+		var result = explosionDamage;
 		var damageUps = GetComponents<GS_DamageUp>();
 		foreach(var damageUp in damageUps)
 		{

@@ -870,6 +870,7 @@ MonoBehaviour:
   skills: []
   maxSkillSlot: 6
   bulletDamage: 3
+  explosionDamage: 0
   soundInterval: 0
   Type: 0
   Name: "\u30D4\u30B9\u30C8\u30EB"
@@ -1332,6 +1333,7 @@ MonoBehaviour:
   skills: []
   maxSkillSlot: 3
   bulletDamage: 30
+  explosionDamage: 50
   soundInterval: 0
   Type: 8
   Name: "\u30ED\u30B1\u30C3\u30C8\u30E9\u30F3\u30C1\u30E3\u30FC"
@@ -1826,6 +1828,7 @@ MonoBehaviour:
   skills: []
   maxSkillSlot: 3
   bulletDamage: 10
+  explosionDamage: 0
   soundInterval: 0
   Type: 6
   Name: "\u30DE\u30B0\u30CA\u30E0"
@@ -3636,6 +3639,7 @@ MonoBehaviour:
   skills: []
   maxSkillSlot: 6
   bulletDamage: 3
+  explosionDamage: 0
   soundInterval: 0
   Type: 0
   Name: "\u30D4\u30B9\u30C8\u30EB"
@@ -3977,6 +3981,7 @@ MonoBehaviour:
   maxHealth: 100
   healingSpeed: 0
   health: 0
+  innerHealth: 0
 --- !u!114 &669144673
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4472,6 +4477,7 @@ MonoBehaviour:
   skills: []
   maxSkillSlot: 4
   bulletDamage: 10
+  explosionDamage: 0
   soundInterval: .119999997
   Type: 3
   Name: "\u706B\u708E\u653E\u5C04\u5668"
@@ -4952,6 +4958,7 @@ MonoBehaviour:
   skills: []
   maxSkillSlot: 3
   bulletDamage: 20
+  explosionDamage: 40
   soundInterval: 0
   Type: 2
   Name: "\u30B0\u30EC\u30CD\u30FC\u30C9\u30E9\u30F3\u30C1\u30E3\u30FC"
@@ -5172,6 +5179,7 @@ MonoBehaviour:
   skills: []
   maxSkillSlot: 4
   bulletDamage: 3
+  explosionDamage: 0
   soundInterval: 0
   Type: 1
   Name: "\u30B7\u30E7\u30C3\u30C8\u30AC\u30F3"
@@ -6237,6 +6245,7 @@ MonoBehaviour:
   skills: []
   maxSkillSlot: 3
   bulletDamage: 8
+  explosionDamage: 0
   soundInterval: 0
   Type: 7
   Name: "\u30A2\u30B5\u30EB\u30C8\u30E9\u30A4\u30D5\u30EB"
@@ -7074,6 +7083,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enableWall: 1
   wallProbability: .200000003
+  minWall: 30
   gridSize: 3
   gridNum: 0a0000000a000000
   exitPrefab: {fileID: 100008, guid: 9551961b649729a4994e16d2e17aaed8, type: 2}
@@ -8320,6 +8330,7 @@ MonoBehaviour:
   skills: []
   maxSkillSlot: 8
   bulletDamage: 2
+  explosionDamage: 0
   soundInterval: 0
   Type: 5
   Name: "\u30D1\u30C1\u30F3\u30B3"
@@ -8518,7 +8529,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   floorText: {fileID: 1459685253}
-  maxFloor: 100
+  maxFloor: 51
   playerPrefab: {fileID: 100000, guid: 07485e6211b431147a6423184d7cd5fe, type: 2}
 --- !u!4 &1635459932
 Transform:
@@ -9039,7 +9050,7 @@ MonoBehaviour:
       raycastBullet: 0
       fireInterval: 2
       startDistance: 30
-      bulletDamage: 58
+      bulletDamage: 6
       explosionDamage: 0
     - probability: 10
       bulletPrefab: {fileID: 100000, guid: a80b5aabdd8d0204e9fd1cd4d22556c7, type: 2}
@@ -9047,16 +9058,11 @@ MonoBehaviour:
       raycastBullet: 1
       fireInterval: 1
       startDistance: 40
-      bulletDamage: 100
+      bulletDamage: 4
       explosionDamage: 0
-    - probability: 10
-      bulletPrefab: {fileID: 100002, guid: bf3aa7d72353e124a8f1a07bb45b6efe, type: 2}
-      bulletImpulse: 1
-      raycastBullet: 0
-      fireInterval: 2
-      startDistance: 40
-      bulletDamage: 100
-      explosionDamage: 200
+    healthSpecs:
+    - probability: 1
+      health: 10
   - startFloor: 2
     controllerSpecs: []
     gunSpecs:
@@ -9068,6 +9074,7 @@ MonoBehaviour:
       startDistance: 0
       bulletDamage: 0
       explosionDamage: 0
+    healthSpecs: []
   enemyPrefab: {fileID: 100000, guid: f8c35b3ca9b3dd2428b952764880fe7f, type: 2}
 --- !u!4 &1696096495
 Transform:
@@ -9821,6 +9828,7 @@ MonoBehaviour:
   skills: []
   maxSkillSlot: 5
   bulletDamage: 0
+  explosionDamage: 0
   soundInterval: 0
   Type: 4
   Name: "\u30B7\u30FC\u30EB\u30C9"
@@ -10549,6 +10557,7 @@ MonoBehaviour:
   skills: []
   maxSkillSlot: 6
   bulletDamage: 3
+  explosionDamage: 0
   soundInterval: 0
   Type: 0
   Name: "\u30D4\u30B9\u30C8\u30EB"
