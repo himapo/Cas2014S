@@ -9203,7 +9203,7 @@ MonoBehaviour:
     - probability: 160
       bulletPrefab: {fileID: 100000, guid: a80b5aabdd8d0204e9fd1cd4d22556c7, type: 2}
       bulletImpulse: 100
-      raycastBullet: 0
+      raycastBullet: 1
       fireInterval: 4
       startDistance: 30
       bulletDamage: 6
@@ -9211,7 +9211,7 @@ MonoBehaviour:
     - probability: 160
       bulletPrefab: {fileID: 100000, guid: a80b5aabdd8d0204e9fd1cd4d22556c7, type: 2}
       bulletImpulse: 100
-      raycastBullet: 0
+      raycastBullet: 1
       fireInterval: 5
       startDistance: 50
       bulletDamage: 8
@@ -9219,7 +9219,7 @@ MonoBehaviour:
     - probability: 40
       bulletPrefab: {fileID: 100000, guid: a80b5aabdd8d0204e9fd1cd4d22556c7, type: 2}
       bulletImpulse: 100
-      raycastBullet: 0
+      raycastBullet: 1
       fireInterval: 1.39999998
       startDistance: 20
       bulletDamage: 3
@@ -9227,7 +9227,7 @@ MonoBehaviour:
     - probability: 10
       bulletPrefab: {fileID: 100000, guid: a80b5aabdd8d0204e9fd1cd4d22556c7, type: 2}
       bulletImpulse: 100
-      raycastBullet: 0
+      raycastBullet: 1
       fireInterval: .800000012
       startDistance: 15
       bulletDamage: 4
@@ -9247,7 +9247,7 @@ MonoBehaviour:
     - probability: 160
       bulletPrefab: {fileID: 100000, guid: a80b5aabdd8d0204e9fd1cd4d22556c7, type: 2}
       bulletImpulse: 100
-      raycastBullet: 0
+      raycastBullet: 1
       fireInterval: 3.5
       startDistance: 30
       bulletDamage: 8
@@ -9255,7 +9255,7 @@ MonoBehaviour:
     - probability: 160
       bulletPrefab: {fileID: 100000, guid: a80b5aabdd8d0204e9fd1cd4d22556c7, type: 2}
       bulletImpulse: 100
-      raycastBullet: 0
+      raycastBullet: 1
       fireInterval: 5
       startDistance: 50
       bulletDamage: 12
@@ -9263,7 +9263,7 @@ MonoBehaviour:
     - probability: 40
       bulletPrefab: {fileID: 100000, guid: a80b5aabdd8d0204e9fd1cd4d22556c7, type: 2}
       bulletImpulse: 100
-      raycastBullet: 0
+      raycastBullet: 1
       fireInterval: 1.20000005
       startDistance: 20
       bulletDamage: 7
@@ -9291,7 +9291,7 @@ MonoBehaviour:
     - probability: 160
       bulletPrefab: {fileID: 100000, guid: a80b5aabdd8d0204e9fd1cd4d22556c7, type: 2}
       bulletImpulse: 100
-      raycastBullet: 0
+      raycastBullet: 1
       fireInterval: 3.29999995
       startDistance: 30
       bulletDamage: 16
@@ -9299,7 +9299,7 @@ MonoBehaviour:
     - probability: 160
       bulletPrefab: {fileID: 100000, guid: a80b5aabdd8d0204e9fd1cd4d22556c7, type: 2}
       bulletImpulse: 100
-      raycastBullet: 0
+      raycastBullet: 1
       fireInterval: 4.69999981
       startDistance: 50
       bulletDamage: 22
@@ -9307,7 +9307,7 @@ MonoBehaviour:
     - probability: 40
       bulletPrefab: {fileID: 100000, guid: a80b5aabdd8d0204e9fd1cd4d22556c7, type: 2}
       bulletImpulse: 100
-      raycastBullet: 0
+      raycastBullet: 1
       fireInterval: 1.20000005
       startDistance: 30
       bulletDamage: 11
@@ -9335,7 +9335,7 @@ MonoBehaviour:
     - probability: 160
       bulletPrefab: {fileID: 100000, guid: a80b5aabdd8d0204e9fd1cd4d22556c7, type: 2}
       bulletImpulse: 100
-      raycastBullet: 0
+      raycastBullet: 1
       fireInterval: 1.5
       startDistance: 50
       bulletDamage: 24
@@ -9343,7 +9343,7 @@ MonoBehaviour:
     - probability: 160
       bulletPrefab: {fileID: 100000, guid: a80b5aabdd8d0204e9fd1cd4d22556c7, type: 2}
       bulletImpulse: 100
-      raycastBullet: 0
+      raycastBullet: 1
       fireInterval: 3.5999999
       startDistance: 30
       bulletDamage: 48
@@ -9379,7 +9379,7 @@ MonoBehaviour:
     - probability: 160
       bulletPrefab: {fileID: 100000, guid: a80b5aabdd8d0204e9fd1cd4d22556c7, type: 2}
       bulletImpulse: 100
-      raycastBullet: 0
+      raycastBullet: 1
       fireInterval: .200000003
       startDistance: 40
       bulletDamage: 13
@@ -9387,7 +9387,7 @@ MonoBehaviour:
     - probability: 160
       bulletPrefab: {fileID: 100000, guid: a80b5aabdd8d0204e9fd1cd4d22556c7, type: 2}
       bulletImpulse: 100
-      raycastBullet: 0
+      raycastBullet: 1
       fireInterval: 3.5999999
       startDistance: 40
       bulletDamage: 50
@@ -9403,7 +9403,7 @@ MonoBehaviour:
     - probability: 10
       bulletPrefab: {fileID: 100000, guid: a80b5aabdd8d0204e9fd1cd4d22556c7, type: 2}
       bulletImpulse: 100
-      raycastBullet: 0
+      raycastBullet: 1
       fireInterval: 1.89999998
       startDistance: 40
       bulletDamage: 45
@@ -9447,7 +9447,7 @@ MonoBehaviour:
     - probability: 10
       bulletPrefab: {fileID: 100000, guid: a80b5aabdd8d0204e9fd1cd4d22556c7, type: 2}
       bulletImpulse: 100
-      raycastBullet: 0
+      raycastBullet: 1
       fireInterval: .5
       startDistance: 50
       bulletDamage: 16
@@ -9467,7 +9467,7 @@ MonoBehaviour:
     - probability: 160
       bulletPrefab: {fileID: 100000, guid: a80b5aabdd8d0204e9fd1cd4d22556c7, type: 2}
       bulletImpulse: 100
-      raycastBullet: 0
+      raycastBullet: 1
       fireInterval: 1.70000005
       startDistance: 30
       bulletDamage: 25
@@ -9511,7 +9511,7 @@ MonoBehaviour:
     - probability: 160
       bulletPrefab: {fileID: 100000, guid: a80b5aabdd8d0204e9fd1cd4d22556c7, type: 2}
       bulletImpulse: 100
-      raycastBullet: 0
+      raycastBullet: 1
       fireInterval: 1.89999998
       startDistance: 30
       bulletDamage: 33
@@ -9555,7 +9555,7 @@ MonoBehaviour:
     - probability: 160
       bulletPrefab: {fileID: 100000, guid: a80b5aabdd8d0204e9fd1cd4d22556c7, type: 2}
       bulletImpulse: 100
-      raycastBullet: 0
+      raycastBullet: 1
       fireInterval: .5
       startDistance: 30
       bulletDamage: 30
@@ -9563,7 +9563,7 @@ MonoBehaviour:
     - probability: 160
       bulletPrefab: {fileID: 100000, guid: a80b5aabdd8d0204e9fd1cd4d22556c7, type: 2}
       bulletImpulse: 100
-      raycastBullet: 0
+      raycastBullet: 1
       fireInterval: 2.5999999
       startDistance: 100
       bulletDamage: 160
@@ -9599,7 +9599,7 @@ MonoBehaviour:
     - probability: 160
       bulletPrefab: {fileID: 100000, guid: a80b5aabdd8d0204e9fd1cd4d22556c7, type: 2}
       bulletImpulse: 100
-      raycastBullet: 0
+      raycastBullet: 1
       fireInterval: .200000003
       startDistance: 30
       bulletDamage: 30
@@ -9623,7 +9623,7 @@ MonoBehaviour:
     - probability: 10
       bulletPrefab: {fileID: 100000, guid: a80b5aabdd8d0204e9fd1cd4d22556c7, type: 2}
       bulletImpulse: 100
-      raycastBullet: 0
+      raycastBullet: 1
       fireInterval: 4.80000019
       startDistance: 100
       bulletDamage: 430
