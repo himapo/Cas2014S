@@ -57,6 +57,8 @@ public class HealItem : MyBehaviour {
 		{
 			audio.Play();
 			enabled = false;
+			GetComponent<SphereCollider>().enabled = false;
+			GetComponent<SphereCollider>().radius = 0;
 			StartCoroutine(AsyncDestroy());
 		}
 		else

@@ -686,12 +686,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 100000, guid: 36621af3fc3b2294ca3dd5e3aa1ea329, type: 2}
-  bulletImpulse: 10
+  bulletImpulse: 15
   raycastBullet: 0
   muzzle: {fileID: 400002}
   skills: []
   maxSkillSlot: 10
-  bulletDamage: 5
+  bulletDamage: 7
   explosionDamage: 0
   soundInterval: 0
   Type: 5
