@@ -7108,7 +7108,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53d9cf3f18214c940bfe6f94d7109319, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enableWall: 1
+  enableWall: 0
   wallProbability: .200000003
   gridSize: 3
   gridNum: 0a0000000a000000
@@ -9165,7 +9165,7 @@ MonoBehaviour:
   - startFloor: 1
     controllerSpecs:
     - probability: 1
-      chasePlayer: 0
+      chasePlayer: 1
       runAway: 0
       randomWalk: 1
       movementSpeed: 5
@@ -9176,7 +9176,7 @@ MonoBehaviour:
       bulletPrefab: {fileID: 100000, guid: a80b5aabdd8d0204e9fd1cd4d22556c7, type: 2}
       bulletImpulse: 60
       raycastBullet: 0
-      fireInterval: 50
+      fireInterval: 2
       startDistance: 30
       bulletDamage: 58
       explosionDamage: 0
@@ -9184,15 +9184,15 @@ MonoBehaviour:
       bulletPrefab: {fileID: 100000, guid: a80b5aabdd8d0204e9fd1cd4d22556c7, type: 2}
       bulletImpulse: 200
       raycastBullet: 1
-      fireInterval: 50
+      fireInterval: 1
       startDistance: 40
       bulletDamage: 100
       explosionDamage: 0
-    - probability: 1
+    - probability: 10
       bulletPrefab: {fileID: 100002, guid: bf3aa7d72353e124a8f1a07bb45b6efe, type: 2}
       bulletImpulse: 1
       raycastBullet: 0
-      fireInterval: 1
+      fireInterval: 2
       startDistance: 40
       bulletDamage: 100
       explosionDamage: 200

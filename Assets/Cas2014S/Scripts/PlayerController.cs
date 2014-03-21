@@ -142,6 +142,11 @@ public class PlayerController : MyBehaviour {
 
 	}
 
+	void OnDamage()
+	{
+		Fader.Instance.RedFadeIn(0.4f);
+	}
+
 	void OnShopOpen()
 	{
 		enabled = false;

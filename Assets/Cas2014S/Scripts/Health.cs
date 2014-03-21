@@ -75,6 +75,10 @@ public class Health : MyBehaviour {
 				position = info.HitPosition,
 			});
 
+		gameObject.SendMessage(
+			"OnDamage",
+			SendMessageOptions.DontRequireReceiver);
+
 		return damageInt;
     }
 

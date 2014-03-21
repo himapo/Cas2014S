@@ -7,9 +7,13 @@ public class Fader : MyBehaviour {
 	public static Fader Instance{get{return instance;}set{}}
 
 	Texture2D blackTexture;
-	
-	float alpha = 1.0f;
 
+	Texture2D redTexture;
+	
+	float blackAlpha = 1.0f;
+
+	float redAlpha = 0.0f;
+	
 	bool abort = false;
 
 	void Awake()
@@ -21,16 +25,19 @@ public class Fader : MyBehaviour {
 	void Start () {
 	
 		blackTexture = new Texture2D(32,32,TextureFormat.RGB24,false);
-
+		redTexture = new Texture2D(32,32,TextureFormat.RGB24,false);
+		
 		for(var y=0; y<32; ++y)
 		{
 			for(var x=0; x<32; ++x)
 			{
 				blackTexture.SetPixel(x, y, Color.black);
+				redTexture.SetPixel(x, y, Color.red);
 			}
 		}
 
 		blackTexture.Apply();
+		redTexture.Apply();
 
 	}
 	
@@ -45,27 +52,44 @@ public class Fader : MyBehaviour {
 //		{
 //			return;
 //		}
-		
-		GUI.color = new Color(0, 0, 0, alpha);
 
 		GUI.depth = 2;
-		
-		GUI.DrawTexture( new Rect(0, 0, Screen.width, Screen.height ), blackTexture );
+
+		if(blackAlpha > 0.0f)
+		{
+			GUI.BeginGroup(new Rect(0, 0, Screen.width, Screen.height));
+			GUI.color = new Color(0, 0, 0, blackAlpha);
+			GUI.DrawTexture( new Rect(0, 0, Screen.width, Screen.height ), blackTexture );
+			GUI.EndGroup();
+		}
+
+		if(redAlpha > 0.0f)
+		{
+			GUI.BeginGroup(new Rect(0, 0, Screen.width, Screen.height));
+			GUI.color = new Color(1, 0, 0, redAlpha);
+			GUI.DrawTexture( new Rect(0, 0, Screen.width, Screen.height ), redTexture );
+			GUI.EndGroup();
+		}
 	}
 
 	public void FadeOut(float time)
 	{
-		StartCoroutine(AsyncFade(alpha, 1.0f, time));
+		StartCoroutine(AsyncFadeBlack(blackAlpha, 1.0f, time));
 	}
 
 	public void FadeIn(float time)
 	{
-		StartCoroutine(AsyncFade(alpha, 0.0f, time));
+		StartCoroutine(AsyncFadeBlack(blackAlpha, 0.0f, time));
 	}
 
-	IEnumerator AsyncFade(float start, float end, float time)
+	public void RedFadeIn(float time)
 	{
-		alpha = start;
+		StartCoroutine(AsyncFadeRed(0.5f, 0.0f, time));
+	}
+
+	IEnumerator AsyncFadeBlack(float start, float end, float time)
+	{
+		blackAlpha = start;
 
 		var startTime = Time.time;
 		
@@ -76,12 +100,34 @@ public class Fader : MyBehaviour {
 				break;
 			}
 
-			alpha = Mathf.Lerp(start, end, (Time.time - startTime) / time);
+			blackAlpha = Mathf.Lerp(start, end, (Time.time - startTime) / time);
 			//Debug.Log (alpha);
 			
 			yield return null;
 		}
 
-		alpha = end;
+		blackAlpha = end;
+	}
+
+	IEnumerator AsyncFadeRed(float start, float end, float time)
+	{
+		redAlpha = start;
+		
+		var startTime = Time.time;
+		
+		while(Time.time - startTime < time)
+		{
+			if(abort)
+			{
+				break;
+			}
+			
+			redAlpha = Mathf.Lerp(start, end, (Time.time - startTime) / time);
+			//Debug.Log (alpha);
+			
+			yield return null;
+		}
+		
+		redAlpha = end;
 	}
 }
