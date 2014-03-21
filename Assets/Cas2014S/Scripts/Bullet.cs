@@ -50,6 +50,7 @@ public class Bullet : MyBehaviour {
 		mask &= ~(1 << LayerMask.NameToLayer("Ignore Raycast"));
 		mask &= ~(1 << LayerMask.NameToLayer("Bullet"));
 		mask &= ~(1 << LayerMask.NameToLayer("Zone"));
+		mask &= ~(1 << LayerMask.NameToLayer("Item"));
 
 		if(!Physics.Raycast(transform.position, direction, out hit, Mathf.Infinity, mask))
 		{
