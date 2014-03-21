@@ -41,11 +41,25 @@ MonoBehaviour:
   enableWall: 1
   wallProbability: .200000003
   minWall: 30
+  minBush: 10
+  maxBush: 40
   gridSize: 3
   gridNum: 0a0000000a000000
   exitPrefab: {fileID: 100008, guid: 9551961b649729a4994e16d2e17aaed8, type: 2}
   shopPrefab: {fileID: 100000, guid: 4d86faffffd57bb44825e160661e9a26, type: 2}
   wallPrefab: {fileID: 100000, guid: f0037facef7702345bc7d3723c767bc9, type: 2}
+  bushPrefabs:
+  - {fileID: 100000, guid: 712c12aff3fb2ff4abecbfc247c77510, type: 2}
+  - {fileID: 100000, guid: f6f7439f216db8f4f8315a0bd7d94dca, type: 2}
+  - {fileID: 100000, guid: ee01b24535ec41641bb11c99ecd4cb1f, type: 2}
+  - {fileID: 100000, guid: 8ff10a8b2188a2841ac0e91cee786a85, type: 2}
+  - {fileID: 100000, guid: 612c9ee8b4926784996bfd55f3087c87, type: 2}
+  - {fileID: 100000, guid: 5784eb7b02b8e2f4197b7a3d76659824, type: 2}
+  - {fileID: 100000, guid: 2d6be9112b6449146ae0240d02d73b97, type: 2}
+  - {fileID: 100000, guid: eaef11df37563cb489b36fbaefc24359, type: 2}
+  - {fileID: 100000, guid: 7875a99f318c77542b41a1483e321196, type: 2}
+  - {fileID: 100000, guid: 61af2eee79324e04fa8e74b3acd11c5a, type: 2}
+  - {fileID: 100000, guid: d35aa794667ce7e48ab77e5e37cf63ab, type: 2}
   minEnemy: 2
   maxEnemy: 8
   minItem: 1
