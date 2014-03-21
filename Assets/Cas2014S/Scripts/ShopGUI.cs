@@ -157,12 +157,12 @@ public class ShopGUI : MyBehaviour {
 		
 		//GUILayout.FlexibleSpace();
 
-		GUI.color = Color.red;
-		guiStyle.fontSize = 20;
-		
-		GUILayout.Label(
-			"11連でSR1枚確定キャンペーン中！！！",
-			guiStyle);
+//		GUI.color = Color.red;
+//		guiStyle.fontSize = 20;
+//		
+//		GUILayout.Label(
+//			"11連でSR1枚確定キャンペーン中！！！",
+//			guiStyle);
 
 		GUI.color = Color.yellow;
 		
