@@ -38,6 +38,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53d9cf3f18214c940bfe6f94d7109319, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shopProbability: .25
   enableWall: 1
   wallProbability: .200000003
   minWall: 30
@@ -71,13 +72,13 @@ MonoBehaviour:
   maxItem: 4
   itemTable:
   - prefab: {fileID: 100002, guid: 8616d6591907a8d42ae5db38ce2c1281, type: 2}
-    probability: 400
-  - prefab: {fileID: 100002, guid: 8d510516121c2014a81c9ebf2c6e5d20, type: 2}
-    probability: 400
-  - prefab: {fileID: 100002, guid: 631ee82915e28a74d8025d721d2694ee, type: 2}
-    probability: 100
-  - prefab: {fileID: 100002, guid: 421db083c0f1fb240a7f2e95427d349a, type: 2}
     probability: 500
+  - prefab: {fileID: 100002, guid: 8d510516121c2014a81c9ebf2c6e5d20, type: 2}
+    probability: 500
+  - prefab: {fileID: 100002, guid: 631ee82915e28a74d8025d721d2694ee, type: 2}
+    probability: 150
+  - prefab: {fileID: 100002, guid: 421db083c0f1fb240a7f2e95427d349a, type: 2}
+    probability: 600
   - prefab: {fileID: 100020, guid: b5b67c5d6b6ab494baaf6a8984d2ce5f, type: 2}
     probability: 25
   - prefab: {fileID: 100020, guid: a431688e0d4b1fd42bed7161cbca08c7, type: 2}

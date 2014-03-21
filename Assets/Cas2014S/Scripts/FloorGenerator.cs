@@ -17,6 +17,8 @@ public class FloorGenerator : MyBehaviour {
 
 	public static FloorGenerator Instance{get{return instance;}set{}}
 
+	public float shopProbability;
+
 	public bool enableWall;
 
 	public float wallProbability;
@@ -166,6 +168,11 @@ public class FloorGenerator : MyBehaviour {
 
 	void SpawnShop()
 	{
+		if(Random.value >= shopProbability)
+		{
+			return;
+		}
+
 		SpawnObject(shopPrefab, SampleRandomEmptyGrid(), 0, Quaternion.AngleAxis(Random.value * 360.0f, Vector3.up));
 	}
 
