@@ -22,7 +22,12 @@ public class GS_Decelerate : GunSkill {
 	}
 	
 	public float timeScale = 1.43f;
-	
+
+	void Awake()
+	{
+		rare = 2;
+	}
+
 	// Use this for initialization
 	void Start () {
 		

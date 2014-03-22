@@ -23,6 +23,11 @@ public class GS_ReloadUp : GunSkill {
 
 	public float reloadSpeedScale = 1.2f;
 
+	void Awake()
+	{
+		rare = 0;
+	}
+
 	// Use this for initialization
 	void Start () {
 	

@@ -23,6 +23,11 @@ public class GS_Absorb : GunSkill {
 	
 	public float absorbPercentage = 2.0f;
 
+	void Awake()
+	{
+		rare = 2;
+	}
+
 	// Use this for initialization
 	void Start () {
 	

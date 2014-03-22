@@ -23,6 +23,11 @@ public class GS_DamageUp : GunSkill {
 
 	public float damageScale = 1.3f;
 
+	void Awake()
+	{
+		rare = 1;
+	}
+
 	// Use this for initialization
 	void Start () {
 	

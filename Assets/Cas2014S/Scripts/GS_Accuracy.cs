@@ -23,6 +23,11 @@ public class GS_Accuracy : GunSkill {
 
 	public float recoilScale = 0.8f;
 
+	void Awake()
+	{
+		rare = 0;
+	}
+
 	// Use this for initialization
 	void Start () {
 	

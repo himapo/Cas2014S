@@ -25,7 +25,7 @@ public class PS_JumpUp : PlayerSkill {
 
 	void Awake()
 	{
-		rare = 1;
+		rare = 0;
 	}
 
 	// Use this for initialization

@@ -23,6 +23,11 @@ public class GS_Accelerate : GunSkill {
 
 	public float timeScale = 0.7f;
 
+	void Awake()
+	{
+		rare = 1;
+	}
+
 	// Use this for initialization
 	void Start () {
 	
