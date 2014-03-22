@@ -43,16 +43,19 @@ public class EnemyGun : GunBase {
 
 	IEnumerator AsyncFire()
 	{
+		// 最初の発砲は早くする
+		lastTime = Time.time - Random.value * interval * 0.2f;
+		
 		while(firing)
 		{
-			lastTime = Time.time;
-
 			while(stopFire || Time.time - lastTime < interval)
 			{
 				yield return null;
 			}
 
 			Fire();
+
+			lastTime = Time.time;
 		}
 	}
 

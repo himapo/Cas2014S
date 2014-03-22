@@ -219,6 +219,7 @@ public class PauseMenu : MyBehaviour {
 
 		var toggleStyle = new GUIStyle(GUI.skin.GetStyle("toggle"));
 		toggleStyle.fontSize = 20;
+		toggleStyle.alignment = TextAnchor.MiddleCenter;
 
 		swapTrigger = 
 			GUILayout.Toggle(

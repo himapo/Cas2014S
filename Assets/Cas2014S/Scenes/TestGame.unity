@@ -9470,7 +9470,7 @@ MonoBehaviour:
       movementSpeed: 5
       rotationRatio: .699999988
       closeDistance: 5
-    - probability: 80
+    - probability: 40
       chasePlayer: 0
       runAway: 1
       randomWalk: 1
@@ -9491,7 +9491,7 @@ MonoBehaviour:
       movementSpeed: 6.5999999
       rotationRatio: .300000012
       closeDistance: 2
-    - probability: 10
+    - probability: 20
       chasePlayer: 1
       runAway: 0
       randomWalk: 0
