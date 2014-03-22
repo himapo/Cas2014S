@@ -14,7 +14,7 @@ public class GunController : MyBehaviour {
 
 	public GameObject[] gunPrefabs;
 
-	public bool swapTrigger;
+	bool SwapTrigger{get{return PauseMenu.Instance.swapTrigger;}set{}}
 
 	// Use this for initialization
 	void Start () {
@@ -38,12 +38,12 @@ public class GunController : MyBehaviour {
 		{
 			if(Input.GetButtonDown(fireButtonNames[i]))
 			{
-				GetGun(swapTrigger ? 1 - i : i).Shoot();
+				GetGun(SwapTrigger ? 1 - i : i).Shoot();
 				//Debug.Log("SemiAutoShoot");
 			}
 			else if(Input.GetButton(fireButtonNames[i]))
 			{
-				GetGun(swapTrigger ? 1 - i : i).ShootFullAuto();
+				GetGun(SwapTrigger ? 1 - i : i).ShootFullAuto();
 				//Debug.Log("FullAutoShoot");
 			}
 		}
@@ -84,7 +84,7 @@ public class GunController : MyBehaviour {
 
 		for(var i=0; i<2; ++i)
 		{
-			if(!Input.GetButton(fireButtonNames[swapTrigger ? 1 - i : i]))
+			if(!Input.GetButton(fireButtonNames[SwapTrigger ? 1 - i : i]))
 			{
 				continue;
 			}

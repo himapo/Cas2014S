@@ -3,7 +3,19 @@ using System.Collections;
 
 public class PauseMenu : MyBehaviour {
 
+	static PauseMenu instance;
+	public static PauseMenu Instance{get{return instance;}set{}}
+
+    public float mouseSensitivity;
+
+	public bool swapTrigger;
+
 	bool isShow;
+
+	void Awake()
+	{
+		instance = this;
+	}
 
 	// Use this for initialization
 	void Start () {
@@ -55,9 +67,9 @@ public class PauseMenu : MyBehaviour {
 
 		GUILayout.FlexibleSpace();
 
-		var topleft = Camera.main.ViewportToScreenPoint(new Vector3(0.35f, 0.1f, 0));
+		var topleft = Camera.main.ViewportToScreenPoint(new Vector3(0.3f, 0.1f, 0));
 		
-		var size = Camera.main.ViewportToScreenPoint(new Vector3(0.3f, 0.7f));
+		var size = Camera.main.ViewportToScreenPoint(new Vector3(0.4f, 0.7f));
 		
 		var windowRect = new Rect(
 			topleft.x, topleft.y,
@@ -140,7 +152,7 @@ public class PauseMenu : MyBehaviour {
 				AudioListener.volume,
 				0.0f,
 				1.0f,
-				GUILayout.MinWidth(200));
+				GUILayout.MinWidth(240));
 
 		GUILayout.FlexibleSpace();
 		
@@ -179,14 +191,12 @@ public class PauseMenu : MyBehaviour {
 		
 		GUILayout.FlexibleSpace();
 		
-		var playerController = Player.GetComponent<PlayerController>();
-		
-		playerController.mouseSensitivity = 
+		mouseSensitivity = 
 			GUILayout.HorizontalSlider(
-				playerController.mouseSensitivity,
-				1.0f,
+				mouseSensitivity,
+				0.1f,
 				20.0f,
-				GUILayout.MinWidth(200));
+				GUILayout.MinWidth(240));
 		
 		GUILayout.FlexibleSpace();
 		
@@ -210,9 +220,9 @@ public class PauseMenu : MyBehaviour {
 		var toggleStyle = new GUIStyle(GUI.skin.GetStyle("toggle"));
 		toggleStyle.fontSize = 20;
 
-		GunController.swapTrigger = 
+		swapTrigger = 
 			GUILayout.Toggle(
-				GunController.swapTrigger,
+				swapTrigger,
 				"トリガー左右入れ替え",
 				toggleStyle);
 		

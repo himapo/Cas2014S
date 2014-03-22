@@ -6,7 +6,7 @@ public class PlayerController : MyBehaviour {
 
     public float movementSpeed;
 
-    public float mouseSensitivity;
+	float MouseSensitivity{get{return PauseMenu.Instance.mouseSensitivity;}set{}}
 
     public float jumpSpeed;
 
@@ -56,10 +56,10 @@ public class PlayerController : MyBehaviour {
 
         var characterController = GetComponent<CharacterController>();
 
-        var rotLeftRight = Input.GetAxis("Mouse X") * mouseSensitivity * Time.timeScale;
+        var rotLeftRight = Input.GetAxis("Mouse X") * MouseSensitivity * Time.timeScale;
         transform.Rotate(0, rotLeftRight, 0);
 
-		verticalRotation -= Input.GetAxis("Mouse Y") * mouseSensitivity * Time.timeScale;
+		verticalRotation -= Input.GetAxis("Mouse Y") * MouseSensitivity * Time.timeScale;
         verticalRotation = Mathf.Clamp(verticalRotation, -upDownRange, upDownRange);
         Camera.main.transform.localRotation = Quaternion.Euler(verticalRotation, 0, 0);
 

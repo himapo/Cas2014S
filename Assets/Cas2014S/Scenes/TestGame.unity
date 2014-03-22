@@ -3994,7 +3994,6 @@ MonoBehaviour:
   - {fileID: 100016, guid: 2da5559d1eff7eb4e99fd7901966cc27, type: 2}
   - {fileID: 100016, guid: 82bf89639de94174eb72674a3fc91dd5, type: 2}
   - {fileID: 100012, guid: 0054ab1c521d5d54bb16be2335eec479, type: 2}
-  swapTrigger: 0
 --- !u!114 &669144674
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4008,7 +4007,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementSpeed: 8
-  mouseSensitivity: 5
   jumpSpeed: 4.5
   upDownRange: 60
   height: 2
@@ -9400,6 +9398,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d575fe8acfe1c74498139d0618241912, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mouseSensitivity: 5
+  swapTrigger: 0
 --- !u!4 &1695459310
 Transform:
   m_ObjectHideFlags: 0
