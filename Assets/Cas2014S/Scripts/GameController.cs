@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System;
 using System.Linq;
+using System.IO;
 
 public class GameController : MyBehaviour {
 
@@ -32,6 +33,8 @@ public class GameController : MyBehaviour {
 	public Vector3 startPosition;
 
 	int tipsIndex;
+
+	bool screenShot;
 
 	// Use this for initialization
 	void Start () {
@@ -225,6 +228,7 @@ public class GameController : MyBehaviour {
 			updateFunc = StateResult;
 			guiFunc = GUIGameOverResult;
 			BroadcastAll("OnGameOver");
+			screenShot = false;
 		}
 	}
 
@@ -260,11 +264,31 @@ public class GameController : MyBehaviour {
 
 	void StateGameOver()
 	{
+		SaveScreenShot();
 	}
 
 	void StateResult()
 	{
+		SaveScreenShot();
+	}
 
+	void SaveScreenShot()
+	{
+		if(!screenShot)
+		{
+			var path = Application.dataPath + "/../ScreenShot/";
+
+			if(!Directory.Exists(path))
+			{
+				Directory.CreateDirectory(path);
+			}
+
+			Application.CaptureScreenshot(
+				string.Format(
+					path + "{0}.png",
+					DateTime.Now.ToString("yyyy-MM-dd-hh-mm-ss")));
+			screenShot = true;
+		}
 	}
 
 	void GUIClearResult()
@@ -469,6 +493,7 @@ public class GameController : MyBehaviour {
 			updateFunc = StateResult;
 			guiFunc = GUIClearResult;
 			BroadcastAll("OnGameClear");
+			screenShot = false;
 		}
 	}
 
