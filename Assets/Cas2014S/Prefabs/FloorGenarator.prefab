@@ -41,7 +41,7 @@ MonoBehaviour:
   shopProbability: .25
   enableWall: 1
   wallProbability: .200000003
-  minWall: 30
+  minWall: 10
   minBush: 10
   maxBush: 40
   minTree: 0
