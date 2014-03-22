@@ -38,7 +38,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53d9cf3f18214c940bfe6f94d7109319, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shopProbability: 1
+  shopProbability: .25
   enableWall: 1
   wallProbability: .200000003
   minWall: 30
