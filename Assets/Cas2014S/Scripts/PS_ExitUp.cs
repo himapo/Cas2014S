@@ -21,11 +21,11 @@ public class PS_ExitUp : PlayerSkill {
 		}
 	}
 
-	public float stayTimeScale = 0.8f;
+	public float stayTimeScale = 0.9f;
 
 	void Awake()
 	{
-		rare = 0;
+		rare = 1;
 	}
 
 	// Use this for initialization

@@ -691,7 +691,7 @@ MonoBehaviour:
   muzzle: {fileID: 400016}
   skills: []
   maxSkillSlot: 7
-  bulletDamage: 20
+  bulletDamage: 15
   explosionDamage: 0
   soundInterval: 0
   Type: 0

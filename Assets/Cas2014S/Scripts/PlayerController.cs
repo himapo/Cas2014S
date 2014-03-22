@@ -31,6 +31,22 @@ public class PlayerController : MyBehaviour {
 	// Use this for initialization
 	void Start () {
 
+//		GetGun(0).AddSkill(SkillType.DamageUp);
+//		GetGun(0).AddSkill(SkillType.DamageUp);
+//		GetGun(0).AddSkill(SkillType.DamageUp);
+//		GetGun(0).AddSkill(SkillType.DamageUp);
+//		GetGun(0).AddSkill(SkillType.DamageUp);
+//		GetGun(0).AddSkill(SkillType.DamageUp);
+//		GetGun(0).AddSkill(SkillType.DamageUp);
+//
+//		GetGun(1).AddSkill(SkillType.ExitUp);
+//		GetGun(1).AddSkill(SkillType.ExitUp);
+//		GetGun(1).AddSkill(SkillType.ExitUp);
+//		GetGun(1).AddSkill(SkillType.ExitUp);
+//		GetGun(1).AddSkill(SkillType.ExitUp);
+//		GetGun(1).AddSkill(SkillType.ExitUp);
+//		GetGun(1).AddSkill(SkillType.ExitUp);
+		
 	}
 	
 	// Update is called once per frame

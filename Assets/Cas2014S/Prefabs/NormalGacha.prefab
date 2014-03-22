@@ -117,7 +117,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 1
-  probability: 160
+  probability: 40
   gun: {fileID: 0}
   skill: {fileID: 11400000, guid: c8fef6a4e1439af43b6e563ba29536db, type: 2}
 --- !u!114 &11400010
@@ -207,7 +207,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 1
-  probability: 160
+  probability: 40
   gun: {fileID: 0}
   skill: {fileID: 11400000, guid: 7a3d9e1c32192e54199bccde2e567d6d, type: 2}
 --- !u!114 &11400022

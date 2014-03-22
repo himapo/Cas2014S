@@ -68,17 +68,17 @@ MonoBehaviour:
   - {fileID: 100000, guid: bbb2550fb7c697948b6e2135af575f91, type: 2}
   minEnemy: 2
   maxEnemy: 8
-  minItem: 2
-  maxItem: 6
+  minItem: 1
+  maxItem: 5
   itemTable:
   - prefab: {fileID: 100002, guid: 8616d6591907a8d42ae5db38ce2c1281, type: 2}
-    probability: 800
+    probability: 700
   - prefab: {fileID: 100002, guid: 8d510516121c2014a81c9ebf2c6e5d20, type: 2}
-    probability: 800
+    probability: 700
   - prefab: {fileID: 100002, guid: 631ee82915e28a74d8025d721d2694ee, type: 2}
     probability: 200
   - prefab: {fileID: 100002, guid: 421db083c0f1fb240a7f2e95427d349a, type: 2}
-    probability: 800
+    probability: 700
   - prefab: {fileID: 100020, guid: b5b67c5d6b6ab494baaf6a8984d2ce5f, type: 2}
     probability: 25
   - prefab: {fileID: 100020, guid: a431688e0d4b1fd42bed7161cbca08c7, type: 2}
@@ -114,9 +114,9 @@ MonoBehaviour:
   - prefab: {fileID: 100002, guid: 3f6a8b33819cbcf4abf19c77b45fd807, type: 2}
     probability: 20
   - prefab: {fileID: 100002, guid: d65bbfea08e345547adc0f80864da0ab, type: 2}
-    probability: 300
-  - prefab: {fileID: 100002, guid: a41f4e954b7621e49929b958a9dee8d6, type: 2}
     probability: 100
+  - prefab: {fileID: 100002, guid: a41f4e954b7621e49929b958a9dee8d6, type: 2}
+    probability: 200
   - prefab: {fileID: 100002, guid: 2d00d6df42b4d5c4597271866fec6346, type: 2}
     probability: 10
   - prefab: {fileID: 100002, guid: 27ba4c3fc7555844f9af7a47d84bdac5, type: 2}

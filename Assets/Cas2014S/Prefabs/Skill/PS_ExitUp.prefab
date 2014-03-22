@@ -38,7 +38,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 539f3e775760c2b4480a4063004636de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rare: 0
+  rare: 1
   stayTimeScale: .800000012
 --- !u!1001 &100100000
 Prefab:

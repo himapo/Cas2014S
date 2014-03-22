@@ -192,7 +192,7 @@ public class FloorGenerator : MyBehaviour {
 		var gridPosition = GetGridPosition(gridIndex);
 		var position = new Vector3(
 			gridPosition.x,
-			gridPosition.y + 0.05f,
+			gridPosition.y + 0.1f,
 			gridPosition.z);
 		EnemyGenerator.Instance.Generate(floor, position);
 		MarkGridUsed(gridIndex);

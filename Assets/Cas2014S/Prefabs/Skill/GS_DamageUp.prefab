@@ -40,7 +40,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rare: 1
   gun: {fileID: 0}
-  damageScale: 2
+  damageScale: 1.29999995
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
