@@ -132,13 +132,13 @@ MonoBehaviour:
       explosionDamage: 0
     healthSpecs:
     - probability: 160
-      health: 30
+      health: 50
     - probability: 160
-      health: 40
-    - probability: 40
-      health: 20
-    - probability: 10
       health: 60
+    - probability: 40
+      health: 40
+    - probability: 10
+      health: 90
   - startFloor: 6
     controllerSpecs: []
     gunSpecs:
@@ -176,13 +176,13 @@ MonoBehaviour:
       explosionDamage: 0
     healthSpecs:
     - probability: 160
-      health: 41
+      health: 65
     - probability: 160
-      health: 55
+      health: 75
     - probability: 40
-      health: 25
+      health: 50
     - probability: 10
-      health: 80
+      health: 110
   - startFloor: 11
     controllerSpecs: []
     gunSpecs:
@@ -220,13 +220,13 @@ MonoBehaviour:
       explosionDamage: 20
     healthSpecs:
     - probability: 160
-      health: 52
+      health: 80
     - probability: 160
-      health: 60
+      health: 90
     - probability: 40
-      health: 45
+      health: 60
     - probability: 10
-      health: 100
+      health: 140
   - startFloor: 16
     controllerSpecs: []
     gunSpecs:
@@ -264,13 +264,13 @@ MonoBehaviour:
       explosionDamage: 20
     healthSpecs:
     - probability: 160
-      health: 63
+      health: 100
     - probability: 160
-      health: 75
-    - probability: 40
-      health: 60
-    - probability: 10
       health: 120
+    - probability: 40
+      health: 80
+    - probability: 10
+      health: 180
   - startFloor: 21
     controllerSpecs: []
     gunSpecs:
@@ -308,13 +308,13 @@ MonoBehaviour:
       explosionDamage: 0
     healthSpecs:
     - probability: 160
-      health: 74
+      health: 130
     - probability: 160
-      health: 90
+      health: 160
     - probability: 40
-      health: 70
+      health: 100
     - probability: 10
-      health: 140
+      health: 220
   - startFloor: 26
     controllerSpecs: []
     gunSpecs:
@@ -352,13 +352,13 @@ MonoBehaviour:
       explosionDamage: 0
     healthSpecs:
     - probability: 160
-      health: 85
+      health: 150
     - probability: 160
-      health: 105
+      health: 180
     - probability: 40
-      health: 80
+      health: 130
     - probability: 10
-      health: 160
+      health: 240
   - startFloor: 31
     controllerSpecs: []
     gunSpecs:
@@ -396,13 +396,13 @@ MonoBehaviour:
       explosionDamage: 0
     healthSpecs:
     - probability: 160
-      health: 96
+      health: 170
     - probability: 160
-      health: 120
+      health: 200
     - probability: 40
-      health: 90
+      health: 150
     - probability: 10
-      health: 180
+      health: 290
   - startFloor: 36
     controllerSpecs: []
     gunSpecs:
@@ -440,13 +440,13 @@ MonoBehaviour:
       explosionDamage: 0
     healthSpecs:
     - probability: 160
-      health: 107
+      health: 185
     - probability: 160
-      health: 135
+      health: 210
     - probability: 40
-      health: 95
+      health: 150
     - probability: 10
-      health: 200
+      health: 320
   - startFloor: 41
     controllerSpecs: []
     gunSpecs:
@@ -484,13 +484,13 @@ MonoBehaviour:
       explosionDamage: 120
     healthSpecs:
     - probability: 160
-      health: 118
+      health: 200
     - probability: 160
-      health: 150
-    - probability: 40
-      health: 105
-    - probability: 10
       health: 220
+    - probability: 40
+      health: 150
+    - probability: 10
+      health: 350
   - startFloor: 46
     controllerSpecs: []
     gunSpecs:
@@ -528,13 +528,13 @@ MonoBehaviour:
       explosionDamage: 0
     healthSpecs:
     - probability: 160
-      health: 129
+      health: 215
     - probability: 160
-      health: 165
+      health: 230
     - probability: 40
-      health: 200
+      health: 150
     - probability: 10
-      health: 240
+      health: 380
   enemyPrefab: {fileID: 100000, guid: f8c35b3ca9b3dd2428b952764880fe7f, type: 2}
 --- !u!1001 &100100000
 Prefab:

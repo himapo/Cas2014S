@@ -31,9 +31,9 @@ public class PlayerController : MyBehaviour {
 	// Use this for initialization
 	void Start () {
 
-//		GetGun(0).AddSkill(SkillType.DamageUp);
-//		GetGun(0).AddSkill(SkillType.DamageUp);
-//		GetGun(0).AddSkill(SkillType.DamageUp);
+//		GetGun(0).AddSkill(SkillType.JumpUp);
+//		GetGun(0).AddSkill(SkillType.JumpUp);
+//		GetGun(0).AddSkill(SkillType.JumpUp);
 //		GetGun(0).AddSkill(SkillType.DamageUp);
 //		GetGun(0).AddSkill(SkillType.DamageUp);
 //		GetGun(0).AddSkill(SkillType.DamageUp);

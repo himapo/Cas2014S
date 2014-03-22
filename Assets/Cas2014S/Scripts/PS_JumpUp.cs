@@ -21,7 +21,7 @@ public class PS_JumpUp : PlayerSkill {
 		}
 	}
 	
-	public float jumpSpeed = 1.0f;
+	public float jumpSpeed = 0.5f;
 
 	void Awake()
 	{

@@ -1596,8 +1596,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementSpeed: 8
-  mouseSensitivity: 5
-  jumpSpeed: 4.5
+  jumpSpeed: 3
   upDownRange: 60
   height: 2
   crouchDown: 1
@@ -1630,7 +1629,7 @@ MonoBehaviour:
   runRecoil: 4
   crouchRecoil: 1
   intervalTime: .100000001
-  reloadSpeed: 1
+  reloadSpeed: .800000012
   magazineSize: 10
   fullAuto: 0
 --- !u!114 &11400004
@@ -1678,7 +1677,6 @@ MonoBehaviour:
   - {fileID: 100016, guid: 2da5559d1eff7eb4e99fd7901966cc27, type: 2}
   - {fileID: 100016, guid: 82bf89639de94174eb72674a3fc91dd5, type: 2}
   - {fileID: 100012, guid: 0054ab1c521d5d54bb16be2335eec479, type: 2}
-  swapTrigger: 0
 --- !u!114 &11400008
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1731,7 +1729,7 @@ MonoBehaviour:
   runRecoil: 4
   crouchRecoil: 1
   intervalTime: .100000001
-  reloadSpeed: 1
+  reloadSpeed: .800000012
   magazineSize: 10
   fullAuto: 0
 --- !u!124 &12400000
