@@ -9775,7 +9775,7 @@ MonoBehaviour:
       raycastBullet: 1
       fireInterval: .800000012
       startDistance: 30
-      bulletDamage: 20
+      bulletDamage: 30
       explosionDamage: 0
     - probability: 160
       bulletPrefab: {fileID: 100002, guid: bf3aa7d72353e124a8f1a07bb45b6efe, type: 2}
@@ -9789,7 +9789,7 @@ MonoBehaviour:
       bulletPrefab: {fileID: 100000, guid: f5b0ef75f4bfdf645bd369720c739a8a, type: 2}
       bulletImpulse: 40
       raycastBullet: 0
-      fireInterval: 4
+      fireInterval: 3
       startDistance: 50
       bulletDamage: 120
       explosionDamage: 150
