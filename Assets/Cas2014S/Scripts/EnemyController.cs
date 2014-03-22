@@ -96,6 +96,8 @@ public class EnemyController : MyBehaviour {
 			{
 				StopShoot();
 			}
+
+			characterController.Move(Vector3.zero);
 		}
 	}
 

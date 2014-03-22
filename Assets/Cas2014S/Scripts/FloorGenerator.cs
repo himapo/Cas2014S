@@ -189,7 +189,12 @@ public class FloorGenerator : MyBehaviour {
 	void SpawnEnemy()
 	{
 		var gridIndex = SampleRandomEmptyGrid();
-		EnemyGenerator.Instance.Generate(floor, GetGridPosition(gridIndex));
+		var gridPosition = GetGridPosition(gridIndex);
+		var position = new Vector3(
+			gridPosition.x,
+			gridPosition.y + 0.05f,
+			gridPosition.z);
+		EnemyGenerator.Instance.Generate(floor, position);
 		MarkGridUsed(gridIndex);
 	}
 
