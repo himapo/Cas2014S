@@ -64,16 +64,6 @@ public class Crosshair : MyBehaviour {
 		return gun.GetRecoil();
 	}
 
-	public void OnShopOpen()
-	{
-		enabled = false;
-	}
-
-	public void OnShopClose()
-	{
-		enabled = true;
-	}
-
 	void OnBeginFloorMove()
 	{
 		enabled = false;
@@ -89,12 +79,12 @@ public class Crosshair : MyBehaviour {
 		enabled = false;
 	}
 
-	void OnPauseMenuOpen()
+	void OnPause()
 	{
 		enabled = false;
 	}
 
-	void OnPauseMenuClose()
+	void OnUnpause()
 	{
 		enabled = true;
 	}

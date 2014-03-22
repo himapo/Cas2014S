@@ -10,6 +10,8 @@ public class ExitCollision : MyBehaviour {
 
 	bool enter;
 
+	bool isPause;
+
 	// Use this for initialization
 	void Start () {
 		elapsed = 0;
@@ -85,6 +87,11 @@ public class ExitCollision : MyBehaviour {
 
 	void OnTriggerStay(Collider other)
 	{
+		if(isPause)
+		{
+			return;
+		}
+
 		if(other.tag == "Player")
 		{
 			elapsed += Time.deltaTime;
@@ -105,5 +112,15 @@ public class ExitCollision : MyBehaviour {
 			elapsed = 0;
 			enter = false;
 		}
+	}
+
+	void OnPause()
+	{
+		isPause = true;
+	}
+
+	void OnUnpause()
+	{
+		isPause = false;
 	}
 }

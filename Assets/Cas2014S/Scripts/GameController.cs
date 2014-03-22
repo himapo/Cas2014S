@@ -228,6 +228,7 @@ public class GameController : MyBehaviour {
 			updateFunc = StateResult;
 			guiFunc = GUIGameOverResult;
 			BroadcastAll("OnGameOver");
+			PauseCounter.Instance.Increment();
 			screenShot = false;
 		}
 	}
@@ -470,6 +471,8 @@ public class GameController : MyBehaviour {
 
 		BroadcastAll("OnRestart");
 
+		PauseCounter.Instance.Unpause();
+		
 		abortMoveFloor = true;
 		floor = startFloor - 1;
 
@@ -493,6 +496,7 @@ public class GameController : MyBehaviour {
 			updateFunc = StateResult;
 			guiFunc = GUIClearResult;
 			BroadcastAll("OnGameClear");
+			PauseCounter.Instance.Increment();
 			screenShot = false;
 		}
 	}

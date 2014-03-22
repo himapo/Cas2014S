@@ -268,26 +268,6 @@ public class EnemyController : MyBehaviour {
 		Destroy(gameObject);
 	}
 
-	void OnShopOpen()
-	{
-		enabled = false;
-	}
-	
-	void OnShopClose()
-	{
-		enabled = true;
-	}
-
-	void OnPauseMenuOpen()
-	{
-		enabled = false;
-	}
-	
-	void OnPauseMenuClose()
-	{
-		enabled = true;
-	}
-
 	void OnGameOver()
 	{
 		enabled = false;
@@ -312,6 +292,16 @@ public class EnemyController : MyBehaviour {
 			yield return null;
 		}
 
+		enabled = true;
+	}
+
+	void OnPause()
+	{
+		enabled = false;
+	}
+	
+	void OnUnpause()
+	{
 		enabled = true;
 	}
 }

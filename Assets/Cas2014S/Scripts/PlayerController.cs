@@ -148,34 +148,6 @@ public class PlayerController : MyBehaviour {
 		Fader.Instance.RedFadeIn(0.4f);
 	}
 
-	void OnShopOpen()
-	{
-		enabled = false;
-		Screen.lockCursor = false;
-		Screen.showCursor = true;
-	}
-
-	void OnShopClose()
-	{
-		enabled = true;
-		Screen.lockCursor = true;
-		Screen.showCursor = false;
-	}
-
-	void OnPauseMenuOpen()
-	{
-		enabled = false;
-		Screen.lockCursor = false;
-		Screen.showCursor = true;
-	}
-
-	void OnPauseMenuClose()
-	{
-		enabled = true;
-		Screen.lockCursor = true;
-		Screen.showCursor = false;
-	}
-
 	void OnBeginFloorMove()
 	{
 		enabled = false;
@@ -213,14 +185,14 @@ public class PlayerController : MyBehaviour {
 		Screen.showCursor = true;
 	}
 
-	void OnPickWindowOpen()
+	void OnPause()
 	{
 		enabled = false;
 		Screen.lockCursor = false;
 		Screen.showCursor = true;
 	}
 
-	void OnPickWindowClose()
+	void OnUnpause()
 	{
 		enabled = true;
 		Screen.lockCursor = true;

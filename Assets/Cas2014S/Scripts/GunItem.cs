@@ -113,7 +113,8 @@ public class GunItem : MyBehaviour {
 				if(GUILayout.Button("いらない", buttonStyle, GUILayout.MinHeight(50)))
 				{
 					isShowPick = false;
-					BroadcastAll("OnPickWindowClose");
+					//BroadcastAll("OnPickWindowClose");
+					PauseCounter.Instance.Decrement();
 				}
 				
 				GUILayout.FlexibleSpace();
@@ -165,7 +166,8 @@ public class GunItem : MyBehaviour {
 		if(Input.GetButton("Use"))
 		{
 			isShowPick = true;
-			BroadcastAll("OnPickWindowOpen");
+			//BroadcastAll("OnPickWindowOpen");
+			PauseCounter.Instance.Increment();
 			ButtonHelp.Instance.SetShow("pick", false);
 			return;
 		}
@@ -176,7 +178,8 @@ public class GunItem : MyBehaviour {
 	void KillMe()
 	{
 		isShowPick = false;
-		BroadcastAll("OnPickWindowClose");
+		//BroadcastAll("OnPickWindowClose");
+		PauseCounter.Instance.Decrement();
 		ButtonHelp.Instance.SetShow("pick", false);
 		Destroy(gameObject);
 	}
@@ -191,16 +194,5 @@ public class GunItem : MyBehaviour {
 	{
 		ButtonHelp.Instance.SetShow("pick", false);
 		Destroy(gameObject);
-	}
-
-	void OnPauseMenuOpen()
-	{
-		enabled = false;
-	}
-
-	void OnPauseMenuClose()
-	{
-		enabled = true;
-		isShowPick = false;
 	}
 }

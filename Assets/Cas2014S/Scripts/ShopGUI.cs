@@ -68,15 +68,7 @@ public class ShopGUI : MyBehaviour {
 
 		isShopOpen = true;
 
-		Player.SendMessage("OnShopOpen", SendMessageOptions.DontRequireReceiver);
-
-		var enemys = GameObject.FindGameObjectsWithTag("Enemy");
-		foreach(var enemy in enemys)
-		{
-			enemy.SendMessage("OnShopOpen", SendMessageOptions.DontRequireReceiver);
-		}
-
-		Crosshair.Instance.OnShopOpen();
+		PauseCounter.Instance.Increment();
 	}
 
 	void CloseShop()
@@ -88,15 +80,7 @@ public class ShopGUI : MyBehaviour {
 
 		isShopOpen = false;
 
-		Player.SendMessage("OnShopClose", SendMessageOptions.DontRequireReceiver);
-		
-		var enemys = GameObject.FindGameObjectsWithTag("Enemy");
-		foreach(var enemy in enemys)
-		{
-			enemy.SendMessage("OnShopClose", SendMessageOptions.DontRequireReceiver);
-		}
-
-		Crosshair.Instance.OnShopClose();
+		PauseCounter.Instance.Decrement();
 	}
 
 	void OnGUI()

@@ -115,26 +115,6 @@ public class GunController : MyBehaviour {
 		Time.timeScale = timeScale;
 	}
 
-	void OnShopOpen()
-	{
-		enabled = false;
-	}
-	
-	void OnShopClose()
-	{
-		enabled = true;
-	}
-
-	void OnPauseMenuOpen()
-	{
-		enabled = false;
-	}
-	
-	void OnPauseMenuClose()
-	{
-		enabled = true;
-	}
-
 	void OnBeginFloorMove()
 	{
 		enabled = false;
@@ -160,12 +140,12 @@ public class GunController : MyBehaviour {
 		enabled = false;
 	}
 
-	void OnPickWindowOpen()
+	void OnPause()
 	{
 		enabled = false;
 	}
-	
-	void OnPickWindowClose()
+
+	void OnUnpause()
 	{
 		enabled = true;
 	}

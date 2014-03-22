@@ -102,16 +102,6 @@ public class EnemyGun : GunBase {
 		lastTime = Time.time - timeRemaining;
 	}
 
-	void OnShopOpen()
-	{
-		StopFire();
-	}
-	
-	void OnShopClose()
-	{
-		StartFire();
-	}
-
 	void OnGameClear()
 	{
 		StopFire();
@@ -122,13 +112,13 @@ public class EnemyGun : GunBase {
 		StopFire();
 	}
 
-	void OnPauseMenuOpen()
+	void OnPause()
 	{
 		StopFire();
 	}
-
-	void OnPauseMenuClose()
+	
+	void OnUnpause()
 	{
-		StartFire();
+		StartFire ();
 	}
 }

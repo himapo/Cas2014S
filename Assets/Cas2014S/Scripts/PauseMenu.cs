@@ -34,14 +34,14 @@ public class PauseMenu : MyBehaviour {
 	{
 		isShow = true;
 
-		BroadcastAll("OnPauseMenuOpen");
+		PauseCounter.Instance.Increment();
 	}
 
 	void Close()
 	{
 		isShow = false;
 
-		BroadcastAll("OnPauseMenuClose");
+		PauseCounter.Instance.Decrement();
 	}
 
 	void OnGUI()
