@@ -91,8 +91,8 @@ public class ShopGUI : MyBehaviour {
 		}
 		
 		GUI.Box(new Rect(0, 0, Screen.width, Screen.height), " ");
-		GUI.Box(new Rect(0, 0, Screen.width, Screen.height), " ");
-		GUI.Box(new Rect(0, 0, Screen.width, Screen.height), " ");
+		//GUI.Box(new Rect(0, 0, Screen.width, Screen.height), " ");
+		//GUI.Box(new Rect(0, 0, Screen.width, Screen.height), " ");
 		
 		guiState();
 	}
