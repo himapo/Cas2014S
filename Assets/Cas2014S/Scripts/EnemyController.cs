@@ -257,6 +257,7 @@ public class EnemyController : MyBehaviour {
 
 	void OnDie()
 	{
+		GlobalSound.Instance.Play((int)GlobalSoundID.KillEnemy);
 		Destroy(gameObject);
 	}
 
