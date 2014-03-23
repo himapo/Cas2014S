@@ -25,6 +25,8 @@ public class CameraRayCast : MyBehaviour {
 		mask &= ~(1 << LayerMask.NameToLayer("Ignore Raycast"));
 		mask &= ~(1 << LayerMask.NameToLayer("Bullet"));
 		mask &= ~(1 << LayerMask.NameToLayer("Zone"));
+		mask &= ~(1 << LayerMask.NameToLayer("Item"));
+		mask &= ~(1 << LayerMask.NameToLayer("Shield"));
 		
 		isHit = Physics.Raycast(cameraRay, out hit, Mathf.Infinity, mask);
 	}
