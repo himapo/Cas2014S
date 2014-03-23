@@ -73,18 +73,21 @@ public class Fader : MyBehaviour {
 	public void FadeOut(float time)
 	{
 		StopAllCoroutines();
+		redAlpha = 0.0f;
 		StartCoroutine(AsyncFadeBlack(blackAlpha, 1.0f, time));
 	}
 
 	public void FadeIn(float time)
 	{
 		StopAllCoroutines();
+		redAlpha = 0.0f;
 		StartCoroutine(AsyncFadeBlack(blackAlpha, 0.0f, time));
 	}
 
 	public void RedFadeIn(float time)
 	{
 		StopAllCoroutines();
+		blackAlpha = 0.0f;
 		StartCoroutine(AsyncFadeRed(0.5f, 0.0f, time));
 	}
 
