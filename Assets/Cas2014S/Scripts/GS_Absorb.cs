@@ -21,7 +21,7 @@ public class GS_Absorb : GunSkill {
 		}
 	}
 	
-	public float absorbPercentage = 2.0f;
+	public float absorbPercentage = 5.0f;
 
 	void Awake()
 	{

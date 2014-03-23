@@ -33,21 +33,15 @@ public class PlayerController : MyBehaviour {
 	// Use this for initialization
 	void Start () {
 
-//		GetGun(0).AddSkill(SkillType.Decelerate);
-//		GetGun(0).AddSkill(SkillType.Decelerate);
-//		GetGun(0).AddSkill(SkillType.Decelerate);
-//		GetGun(0).AddSkill(SkillType.Decelerate);
-//		GetGun(0).AddSkill(SkillType.Decelerate);
-//		GetGun(0).AddSkill(SkillType.Decelerate);
-//		GetGun(0).AddSkill(SkillType.Decelerate);
+		//GetGun(0).AddSkill(SkillType.Absorb);
+		//GetGun(0).AddSkill(SkillType.Absorb);
+		//GetGun(0).AddSkill(SkillType.Absorb);
+		//GetGun(0).AddSkill(SkillType.Absorb);
 
-//		GetGun(1).AddSkill(SkillType.ExitUp);
-//		GetGun(1).AddSkill(SkillType.ExitUp);
-//		GetGun(1).AddSkill(SkillType.ExitUp);
-//		GetGun(1).AddSkill(SkillType.ExitUp);
-//		GetGun(1).AddSkill(SkillType.ExitUp);
-//		GetGun(1).AddSkill(SkillType.ExitUp);
-//		GetGun(1).AddSkill(SkillType.ExitUp);
+		//GetGun(1).AddSkill(SkillType.Absorb);
+		//GetGun(1).AddSkill(SkillType.Absorb);
+		//GetGun(1).AddSkill(SkillType.Absorb);
+		//GetGun(1).AddSkill(SkillType.Absorb);
 		
 	}
 	
