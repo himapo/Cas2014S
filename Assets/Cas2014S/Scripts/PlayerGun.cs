@@ -47,6 +47,8 @@ public class PlayerGun : GunBase
 
 	public bool fullAuto;
 
+	protected bool isPause;
+	
 	// Use this for initialization
 	void Start()
 	{
@@ -56,6 +58,11 @@ public class PlayerGun : GunBase
 	// Update is called once per frame
 	protected virtual void Update()
 	{
+		if(isPause)
+		{
+			return;
+		}
+
 		if(IsReloading())
 		{
 			reloadDuration += GetReloadSpeed() * Time.deltaTime;
@@ -237,5 +244,15 @@ public class PlayerGun : GunBase
 		PlayFireSound();
 		
 		ActivateMuzzleFlash();
+	}
+
+	void OnPause()
+	{
+		isPause = true;
+	}
+	
+	void OnUnpause()
+	{
+		isPause = false;
 	}
 }

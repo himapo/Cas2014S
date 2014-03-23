@@ -8,7 +8,7 @@ public class Shield : PlayerGun {
 	public CapsuleCollider shieldCollider;
 
 	bool isOpen;
-	
+		
 	// Use this for initialization
 //	void Start () {
 //	
@@ -20,7 +20,7 @@ public class Shield : PlayerGun {
 		shieldMeshRenderer.enabled = isOpen;
 		shieldCollider.enabled = isOpen;
 		
-		if(isOpen)
+		if(isOpen && !isPause)
 		{
 			--magazineRemaining;
 		}
