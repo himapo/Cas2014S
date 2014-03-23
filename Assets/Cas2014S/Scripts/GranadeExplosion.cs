@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class GranadeExplosion : Bullet {
 
@@ -38,6 +39,8 @@ public class GranadeExplosion : Bullet {
 
 			var colliders = Physics.OverlapSphere(transform.position, radius);
 
+			var healthes = new List<Health>();
+
 			foreach(var collider in colliders)
 			{
 				if(collider.gameObject.layer == LayerMask.NameToLayer("Zone"))
@@ -45,8 +48,13 @@ public class GranadeExplosion : Bullet {
 					continue;
 				}
 
-				Damage(collider.transform.root.GetComponent<Health>(),
-				       collider.transform.position);
+				var health = collider.transform.root.GetComponent<Health>();
+
+				if(health != null && !healthes.Contains(health))
+				{
+					healthes.Add(health);
+					Damage(health, collider.transform.position);
+				}
 			}
 		}
 	}

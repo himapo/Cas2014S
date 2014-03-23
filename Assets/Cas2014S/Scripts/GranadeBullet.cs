@@ -5,6 +5,8 @@ public class GranadeBullet : Bullet {
 
 	public GameObject explosionPrefab;
 
+	bool exploded;
+
 	// Use this for initialization
 //	void Start () {
 //	
@@ -17,6 +19,13 @@ public class GranadeBullet : Bullet {
 
 	protected override void Explode ()
 	{
+		if(exploded)
+		{
+			return;
+		}
+
+		exploded = true;
+
 		var explosion = Instantiate(explosionPrefab, transform.position, transform.rotation) as GameObject;
 		var explosionComponent = explosion.GetComponent<GranadeExplosion>();
 
