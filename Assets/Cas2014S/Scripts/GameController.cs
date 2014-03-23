@@ -246,7 +246,7 @@ public class GameController : MyBehaviour {
 	{
 		if(PlayerHealth.health <= 0)
 		{
-			gameEndTime = Time.time;
+			gameEndTime = Time.realtimeSinceStartup;
 			updateFunc = StateResult;
 			guiFunc = GUIGameOverResult;
 			BroadcastAll("OnGameOver");
@@ -483,7 +483,7 @@ public class GameController : MyBehaviour {
 
 	public void Restart()
 	{
-		gameStartTime = Time.time;
+		gameStartTime = Time.realtimeSinceStartup;
 
 		abortMoveFloor = true;
 		
@@ -515,7 +515,7 @@ public class GameController : MyBehaviour {
 		}
 		else
 		{
-			gameEndTime = Time.time;
+			gameEndTime = Time.realtimeSinceStartup;
 			updateFunc = StateResult;
 			guiFunc = GUIClearResult;
 			BroadcastAll("OnGameClear");
