@@ -143,4 +143,14 @@ public class Bullet : MyBehaviour {
 	{
 		Destroy(gameObject);
 	}
+
+	void OnGameClear()
+	{
+		Destroy(gameObject);
+	}
+
+	void OnGameOver()
+	{
+		Destroy(gameObject);
+	}
 }
