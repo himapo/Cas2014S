@@ -16,6 +16,8 @@ public class GunController : MyBehaviour {
 
 	bool SwapTrigger{get{return PauseMenu.Instance.swapTrigger;}set{}}
 
+	bool movingFloor;
+	
 	// Use this for initialization
 	void Start () {
 		//enabled = false;
@@ -118,11 +120,13 @@ public class GunController : MyBehaviour {
 	void OnBeginFloorMove()
 	{
 		enabled = false;
+		movingFloor = true;
 	}
 
 	void OnEndFloorMove()
 	{
 		enabled = true;
+		movingFloor = false;
 	}
 
 	void OnGotoTitle()
@@ -142,11 +146,17 @@ public class GunController : MyBehaviour {
 
 	void OnPause()
 	{
-		enabled = false;
+		if(!movingFloor)
+		{
+			enabled = false;
+		}
 	}
 
 	void OnUnpause()
 	{
-		enabled = true;
+		if(!movingFloor)
+		{
+			enabled = true;
+		}
 	}
 }

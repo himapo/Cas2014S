@@ -36,6 +36,8 @@ public class GameController : MyBehaviour {
 
 	bool screenShot;
 
+	float floorMoveStartTime;
+
 	// Use this for initialization
 	void Start () {
 		updateFunc = StateInit;
@@ -148,20 +150,34 @@ public class GameController : MyBehaviour {
 	{
 		BroadcastAll("OnBeginFloorMove");
 
-		FloorGenerator.Instance.Generate(floor);
-
 		updateFunc = StateFloorMove;
 		guiFunc = GUIFloorMove;
 
 		tipsIndex = UnityEngine.Random.Range(0, tips.Count);
 
-		abortMoveFloor = false;
-
-		StartCoroutine(AsyncFloorMove());
+		floorMoveStartTime = Time.time;
 	}
 
 	void StateFloorMove()
-	{
+	{		
+		if(Time.time - floorMoveStartTime < 2.5f)
+		{
+			return;
+		}
+		
+		if(PauseMenu.Instance.IsShow)
+		{
+			return;
+		}
+
+		FloorGenerator.Instance.Generate(floor);
+		
+		BroadcastAll("OnEndFloorMove");
+		
+		Fader.Instance.FadeIn(0.5f);
+		
+		updateFunc = StateGameMain;
+		guiFunc = GUIGameMain;
 	}
 
 	void GUIFloorMove()
@@ -205,8 +221,14 @@ public class GameController : MyBehaviour {
 			yield return null;
 		}
 
+		while(PauseMenu.Instance.IsShow)
+		{
+			yield return null;
+		}
+
 		if(abortMoveFloor)
 		{
+			abortMoveFloor = false;
 			yield break;
 		}
 		
@@ -463,6 +485,8 @@ public class GameController : MyBehaviour {
 	{
 		gameStartTime = Time.time;
 
+		abortMoveFloor = true;
+		
 		Destroy(Player);
 
 		var player = Instantiate(playerPrefab) as GameObject;
@@ -472,8 +496,7 @@ public class GameController : MyBehaviour {
 		BroadcastAll("OnRestart");
 
 		PauseCounter.Instance.Unpause();
-		
-		abortMoveFloor = true;
+
 		floor = startFloor - 1;
 
 		GotoNextFloor();

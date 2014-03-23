@@ -28,6 +28,8 @@ public class PlayerController : MyBehaviour {
 	[HideInInspector]
 	public float run { get; set; }	// 0.0 - 1.0
 
+	bool movingFloor;
+	
 	// Use this for initialization
 	void Start () {
 
@@ -166,12 +168,14 @@ public class PlayerController : MyBehaviour {
 	void OnBeginFloorMove()
 	{
 		enabled = false;
+		movingFloor = true;
 	}
 
 	void OnEndFloorMove()
 	{
 		Player.transform.position = GameController.startPosition;
 		enabled = true;
+		movingFloor = false;
 	}
 
 	void OnRestart()
@@ -203,14 +207,20 @@ public class PlayerController : MyBehaviour {
 
 	void OnPause()
 	{
-		enabled = false;
+		if(!movingFloor)
+		{
+			enabled = false;
+		}
 		Screen.lockCursor = false;
 		Screen.showCursor = true;
 	}
 
 	void OnUnpause()
 	{
-		enabled = true;
+		if(!movingFloor)
+		{
+			enabled = true;
+		}
 		Screen.lockCursor = true;
 		Screen.showCursor = false;
 	}

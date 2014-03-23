@@ -12,6 +12,8 @@ public class PauseMenu : MyBehaviour {
 
 	public bool swapTrigger;
 
+	public bool IsShow{get{return isShow;}private set{isShow = value;}}
+
 	bool isShow;
 
 	void Awake()

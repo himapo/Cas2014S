@@ -8,6 +8,8 @@ public class Crosshair : MyBehaviour {
 	static Crosshair instance;
 	public static Crosshair Instance { get { return instance; } set { } }
 
+	bool movingFloor;
+
 	void Awake()
 	{
 		if(instance != null)
@@ -67,11 +69,13 @@ public class Crosshair : MyBehaviour {
 	void OnBeginFloorMove()
 	{
 		enabled = false;
+		movingFloor = true;
 	}
 	
 	void OnEndFloorMove()
 	{
 		enabled = true;
+		movingFloor = false;
 	}
 
 	void OnGotoTitle()
@@ -81,11 +85,17 @@ public class Crosshair : MyBehaviour {
 
 	void OnPause()
 	{
-		enabled = false;
+		if(!movingFloor)
+		{
+			enabled = false;
+		}
 	}
 
 	void OnUnpause()
 	{
-		enabled = true;
+		if(!movingFloor)
+		{
+			enabled = true;
+		}
 	}
 }
