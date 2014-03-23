@@ -691,7 +691,7 @@ MonoBehaviour:
   muzzle: {fileID: 400002}
   skills: []
   maxSkillSlot: 6
-  bulletDamage: 40
+  bulletDamage: 70
   explosionDamage: 0
   soundInterval: 0
   Type: 6
@@ -699,10 +699,10 @@ MonoBehaviour:
   Description: "\u30D4\u30B9\u30C8\u30EB\u3088\u308A\u6570\u6BB5\u9AD8\u3044\u5A01\u529B\u3092\u6301\u3064\u3002\u9023\u5C04\u304C\u3084\u3084\u9045\u3044\u3002\u30B9\u30AD\u30EB\u30B9\u30ED\u30C3\u30C8\u6570\u306F6"
   rare: 0
   standRecoil: 4
-  runRecoil: 8
+  runRecoil: 6
   crouchRecoil: 1
   intervalTime: .400000006
-  reloadSpeed: .600000024
+  reloadSpeed: .75
   magazineSize: 6
   fullAuto: 0
 --- !u!1001 &100100000
