@@ -26,6 +26,10 @@ public class EnemyController : MyBehaviour {
 
 	Vector3 randomDirection;
 
+	bool isBeforeMoveStart;
+
+	bool isPause;
+
 	// Use this for initialization
 	void Start () {
 		gun = GetComponent<EnemyGun>();
@@ -38,6 +42,7 @@ public class EnemyController : MyBehaviour {
 			Mathf.Sin(rand));
 
 		enabled = false;
+		isBeforeMoveStart = true;
 	}
 	
 	// Update is called once per frame
@@ -288,22 +293,43 @@ public class EnemyController : MyBehaviour {
 	IEnumerator AsyncMoveStart()
 	{
 		var startTime = Time.time;
-		
-		while(Time.time - startTime < 2.0f)
+		var lastTime = startTime;
+
+		while(isPause || Time.time - startTime < 2.0f)
 		{
+			if(isPause)
+			{
+				startTime += Time.time - lastTime;
+			}
+			lastTime = Time.time;
 			yield return null;
 		}
 
 		enabled = true;
+		isBeforeMoveStart = false;
 	}
 
 	void OnPause()
 	{
-		enabled = false;
+		if(isBeforeMoveStart)
+		{
+			isPause = true;
+		}
+		else
+		{
+			enabled = false;
+		}
 	}
 	
 	void OnUnpause()
 	{
-		enabled = true;
+		if(isBeforeMoveStart)
+		{
+			isPause = false;
+		}
+		else
+		{
+			enabled = true;
+		}
 	}
 }
