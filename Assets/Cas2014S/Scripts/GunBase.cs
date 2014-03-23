@@ -39,6 +39,7 @@ public class GunBase : MyBehaviour
 		mask &= ~(1 << LayerMask.NameToLayer("Ignore Raycast"));
 		mask &= ~(1 << LayerMask.NameToLayer("Bullet"));
 		mask &= ~(1 << LayerMask.NameToLayer("Zone"));
+		mask &= ~(1 << LayerMask.NameToLayer("Item"));
 
 		var isHit = Physics.Raycast(cameraRay, out cameraHit, Mathf.Infinity, mask);
 
