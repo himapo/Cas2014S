@@ -25,8 +25,14 @@ public class ButtonHelpInfo
 	public bool swap;
 	
 	public Rect area{get;set;}
-	
+
 	public bool isShow{get;set;}
+
+	[HideInInspector]
+	public GUIStyle buttonStyle;
+
+	[HideInInspector]
+	public GUIStyle labelStyle;
 	
 	public void CalcRect()
 	{
@@ -38,6 +44,21 @@ public class ButtonHelpInfo
 			topleft.x, topleft.y,
 			screenSize.x, screenSize.y);
 	}
+
+	public void CreateStyle()
+	{
+		//if(buttonStyle == null)
+		{
+			buttonStyle = new GUIStyle(GUI.skin.GetStyle("button"));
+			buttonStyle.fontSize = buttonFontSize;
+		}
+		
+		//if(labelStyle == null)
+		{
+			labelStyle = new GUIStyle(GUI.skin.GetStyle("label"));
+			labelStyle.fontSize = labelFontSize;
+		}
+	}
 }
 
 public class ButtonHelp : MyBehaviour {
@@ -46,10 +67,6 @@ public class ButtonHelp : MyBehaviour {
 	public static ButtonHelp Instance{get{return instance;}set{}}
 
 	public List<ButtonHelpInfo> helpInfos;
-
-	GUIStyle buttonStyle;
-
-	GUIStyle labelStyle;
 
 	void Awake()
 	{
@@ -81,16 +98,6 @@ public class ButtonHelp : MyBehaviour {
 
 	void OnGUI()
 	{
-		if(buttonStyle == null)
-		{
-			buttonStyle = new GUIStyle(GUI.skin.GetStyle("button"));
-		}
-
-		if(labelStyle == null)
-		{
-			labelStyle = new GUIStyle(GUI.skin.GetStyle("label"));
-		}
-
 		GUI.depth = 3;
 
 		foreach(var info in helpInfos)
@@ -100,19 +107,22 @@ public class ButtonHelp : MyBehaviour {
 				continue;
 			}
 
-			buttonStyle.fontSize = info.buttonFontSize;
-			labelStyle.fontSize = info.labelFontSize;
-
+			info.CreateStyle();
+			
 			ShowGUI(
 				info.area,
 				info.buttonString,
 				info.buttonSize,
 				info.labelString,
-				info.swap);
+				info.swap,
+				info.buttonStyle,
+				info.labelStyle);
 		}
 	}
 
-	void ShowGUI(Rect area, string button, float buttonSize, string label, bool swap)
+	void ShowGUI(
+		Rect area, string button, float buttonSize, string label, bool swap,
+		GUIStyle buttonStyle, GUIStyle labelStyle)
 	{		
 		GUILayout.BeginArea(area);
 		
@@ -126,11 +136,11 @@ public class ButtonHelp : MyBehaviour {
 
 		if(swap)
 		{
-			ShowLabel(label);
+			GUILayout.Label(label, labelStyle);
 		}
 		else
 		{
-			ShowButton(button, buttonSize);
+			GUILayout.Label(button, buttonStyle, GUILayout.MaxWidth(buttonSize), GUILayout.MinHeight(buttonSize));
 		}
 
 		GUILayout.FlexibleSpace();
@@ -143,11 +153,11 @@ public class ButtonHelp : MyBehaviour {
 		
 		if(swap)
 		{
-			ShowButton(button, buttonSize);
+			GUILayout.Label(button, buttonStyle, GUILayout.MaxWidth(buttonSize), GUILayout.MinHeight(buttonSize));
 		}
 		else
 		{
-			ShowLabel(label);
+			GUILayout.Label(label, labelStyle);
 		}
 		
 		GUILayout.FlexibleSpace();
@@ -159,15 +169,5 @@ public class ButtonHelp : MyBehaviour {
 		GUILayout.FlexibleSpace();
 		
 		GUILayout.EndArea();
-	}
-
-	void ShowButton(string button, float buttonSize)
-	{
-		GUILayout.Label(button, buttonStyle, GUILayout.MaxWidth(buttonSize), GUILayout.MinHeight(buttonSize));
-	}
-
-	void ShowLabel(string label)
-	{
-		GUILayout.Label(label, labelStyle);
 	}
 }
