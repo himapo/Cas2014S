@@ -13,8 +13,6 @@ public class Fader : MyBehaviour {
 	float blackAlpha = 1.0f;
 
 	float redAlpha = 0.0f;
-	
-	bool abort = false;
 
 	void Awake()
 	{
@@ -74,16 +72,19 @@ public class Fader : MyBehaviour {
 
 	public void FadeOut(float time)
 	{
+		StopAllCoroutines();
 		StartCoroutine(AsyncFadeBlack(blackAlpha, 1.0f, time));
 	}
 
 	public void FadeIn(float time)
 	{
+		StopAllCoroutines();
 		StartCoroutine(AsyncFadeBlack(blackAlpha, 0.0f, time));
 	}
 
 	public void RedFadeIn(float time)
 	{
+		StopAllCoroutines();
 		StartCoroutine(AsyncFadeRed(0.5f, 0.0f, time));
 	}
 
@@ -95,11 +96,6 @@ public class Fader : MyBehaviour {
 		
 		while(Time.time - startTime < time)
 		{
-			if(abort)
-			{
-				break;
-			}
-
 			blackAlpha = Mathf.Lerp(start, end, (Time.time - startTime) / time);
 			//Debug.Log (alpha);
 			
@@ -117,11 +113,6 @@ public class Fader : MyBehaviour {
 		
 		while(Time.time - startTime < time)
 		{
-			if(abort)
-			{
-				break;
-			}
-			
 			redAlpha = Mathf.Lerp(start, end, (Time.time - startTime) / time);
 			//Debug.Log (alpha);
 			
