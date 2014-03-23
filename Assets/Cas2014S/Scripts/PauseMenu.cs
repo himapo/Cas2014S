@@ -6,6 +6,8 @@ public class PauseMenu : MyBehaviour {
 	static PauseMenu instance;
 	public static PauseMenu Instance{get{return instance;}set{}}
 
+	public float soundVolume = 1.0f;
+
     public float mouseSensitivity;
 
 	public bool swapTrigger;
@@ -147,7 +149,7 @@ public class PauseMenu : MyBehaviour {
 
 		GUILayout.FlexibleSpace();
 
-		AudioListener.volume = 
+		soundVolume = AudioListener.volume = 
 			GUILayout.HorizontalSlider(
 				AudioListener.volume,
 				0.0f,
@@ -301,6 +303,7 @@ public class PauseMenu : MyBehaviour {
 	void OnRestart()
 	{
 		enabled = true;
+		AudioListener.volume = soundVolume;
 	}
 
 	void OnGotoTitle()
